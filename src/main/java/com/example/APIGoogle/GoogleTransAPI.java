@@ -75,7 +75,4 @@ public class GoogleTransAPI {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        System.out.println(translate("hello everybody dog",GoogleTransAPI.LANGUAGE.ENGLISH, LANGUAGE.CHINESE));
-    }
 }

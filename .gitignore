@@ -38,4 +38,6 @@ build/
 ### Mac OS ###
 .DS_Store
 
-database
+database/history.txt
+database/setting.txt
+
