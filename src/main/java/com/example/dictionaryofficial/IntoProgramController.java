@@ -108,7 +108,7 @@ public class IntoProgramController implements Initializable {
     }
 
     public void initHistory() throws IOException {
-        File file = new File("DictionaryOfficial-FX/database/history.txt");
+        File file = new File("database/history.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String word = "";
         historyContainer = new ArrayList<>();
@@ -122,7 +122,7 @@ public class IntoProgramController implements Initializable {
     public void saveHistory() throws IOException {
         FileWriter fw = null;
         try {
-            fw = new FileWriter("DictionaryOfficial-FX/database/history.txt");
+            fw = new FileWriter("database/history.txt");
             for (String s : historyContainer) {
                 fw.write(s + '\n');
             }
@@ -221,7 +221,7 @@ public class IntoProgramController implements Initializable {
 
 
         try {
-            File file = new File("DictionaryOfficial-FX/database/setting.txt");
+            File file = new File("database/setting.txt");
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 settingFont.add(scanner.nextLine());

@@ -52,7 +52,7 @@ public class DBConnect {
                                            String password) {
         Connection conn = null;
         try {
-            String dbPath = "DictionaryOfficial-FX/src/main/resources/com/example/Database/dictionary_database.db";
+            String dbPath = "src/main/resources/com/example/Database/dictionary_database.db";
             Class.forName("org.sqlite.JDBC");
             conn = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
             System.out.println("connect successfully!");

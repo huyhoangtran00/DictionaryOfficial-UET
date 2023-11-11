@@ -66,7 +66,7 @@ public class addAndChangeController implements Initializable {
     public void settingFont() {
         settingFont = new Vector<>();
         try {
-            File file = new File("DictionaryOfficial-FX/database/setting.txt");
+            File file = new File("database/setting.txt");
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 settingFont.add(scanner.nextLine());

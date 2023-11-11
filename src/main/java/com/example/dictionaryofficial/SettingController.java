@@ -52,7 +52,7 @@ public class SettingController  implements Initializable {
     public void buttonAccept(ActionEvent event) throws IOException {
 
         try{
-            File file = new File ("DictionaryOfficial-FX/database/setting.txt");
+            File file = new File ("database/setting.txt");
             FileWriter writer = new FileWriter(file);
             writer.write(font.getSelectionModel().getSelectedItem() + "\n" + fontSize.getSelectionModel().getSelectedItem() );
             writer.close();
@@ -81,7 +81,7 @@ public class SettingController  implements Initializable {
     public void setting()  {
        List<String> listFont = new ArrayList<>();
         try {
-            File file = new File("DictionaryOfficial-FX/database/setting.txt");
+            File file = new File("database/setting.txt");
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 listFont.add(scanner.nextLine());
