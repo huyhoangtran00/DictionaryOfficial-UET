@@ -53,6 +53,21 @@ public class IntoProgramController implements Initializable {
     @FXML
     private Button searchBar;
     @FXML
+    private Button search_button;
+    @FXML
+    private Button edit_button;
+    @FXML
+    private Button game_button;
+    @FXML
+    private Button setting_button;
+    @FXML
+    private Button speaker_button_1;
+    @FXML
+    private Button speaker_button_2;
+
+    @FXML
+    private Label taskbar;
+    @FXML
     private WebView searchResult;
     @FXML
     private ListView<String> historyList;

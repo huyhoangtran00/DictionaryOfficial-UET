@@ -10,11 +10,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane fx:id="basePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: LightSkyBlue; -fx-border-color: blue;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.IntoProgramController">
+<AnchorPane fx:id="basePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.IntoProgramController">
    <children>
       <Button fx:id="logoutButton" layoutX="891.0" layoutY="602.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
       <!--      <TextField fx:id="searchField" layoutX="71.0" layoutY="39.0" prefHeight="38.0" prefWidth="812.0" />-->
-      <TextField fx:id="searchField" layoutX="71.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="758.0">
+      <TextField fx:id="searchField" layoutX="71.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="758.0" stylesheets="@css/intoprogram.css">
          <font>
             <Font size="18.0" />
          </font></TextField>
@@ -22,76 +22,17 @@
          <children>
             <WebView fx:id="searchResult" prefHeight="390.0" prefWidth="572.0" />
          </children></AnchorPane>
-      <Button layoutX="407.0" layoutY="554.0" mnemonicParsing="false" onAction="#addScene" prefHeight="70.0" prefWidth="70.0">
-         <graphic>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/OOjs_UI_icon_add.svg.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button layoutX="483.0" layoutY="554.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0">
-         <graphic>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/tải%20xuống_preview_rev_1.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button layoutX="331.0" layoutY="554.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0">
-         <graphic>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/750px-Search_Icon.svg.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button layoutX="559.0" layoutY="554.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="70.0" prefWidth="70.0">
-         <graphic>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/settings.245x256.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button fx:id="searchBar" layoutX="834.0" layoutY="30.0" mnemonicParsing="false" onAction="#clickToSearch" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: White; -fx-border-color: Green;">
-         <graphic>
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/search%20bar.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button layoutX="834.0" layoutY="127.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="51.0" style="-fx-background-color: White; -fx-border-color: Blue;" textFill="#d1b0b0">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/audio.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button layoutX="834.0" layoutY="211.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="51.0" style="-fx-background-color: White; -fx-border-color: Red;">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/audio.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button layoutX="834.0" layoutY="469.0" mnemonicParsing="false" onAction="#removeWord" prefHeight="47.0" prefWidth="51.0" style="-fx-background-color: White; -fx-border-color: Brown;">
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/garbage_bin.jpg" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Label layoutX="852.0" layoutY="182.0" text="UK" />
-      <Label layoutX="852.0" layoutY="269.0" text="US" />
+      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="418.0" stylesheets="@css/intoprogram.css" />
+      <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#addScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="setting_button" layoutX="574.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="searchBar" layoutX="840.0" layoutY="28.0" mnemonicParsing="false" onAction="#clickToSearch" prefHeight="50.0" prefWidth="54.0" stylesheets="@css/button.css" />
+      <Button fx:id="speaker_button_2" layoutX="834.0" layoutY="110.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" stylesheets="@css/button.css" textFill="#d1b0b0" />
+      <Button fx:id="speaker_button_1" layoutX="837.0" layoutY="218.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" stylesheets="@css/button.css" />
+      <Button fx:id="remove_button" layoutX="834.0" layoutY="469.0" mnemonicParsing="false" onAction="#removeWord" prefHeight="47.0" prefWidth="51.0" stylesheets="@css/button.css" />
+      <Label layoutX="856.0" layoutY="173.0" style="-fx-background-color: #FFCCCC;" text="UK" />
+      <Label layoutX="859.0" layoutY="278.0" style="-fx-background-color: #FFCCCC;" text="US" />
       <ListView fx:id="historyList" layoutX="71.0" layoutY="154.0" prefHeight="363.0" prefWidth="167.0" />
       <Label alignment="CENTER" layoutX="71.0" layoutY="127.0" prefHeight="26.0" prefWidth="167.0" style="-fx-background-color: White;" text="       History" />
       <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="122.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
