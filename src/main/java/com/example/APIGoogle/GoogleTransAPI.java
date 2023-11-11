@@ -63,8 +63,4 @@ public class GoogleTransAPI {
             return this.lang;
         }
     }
-
-    public static void main(String[] args) throws IOException {
-        System.out.println(translate("hello everybody dog",GoogleTransAPI.LANGUAGE.ENGLISH, GoogleTransAPI.LANGUAGE.VIETNAMESE));
-    }
 }
