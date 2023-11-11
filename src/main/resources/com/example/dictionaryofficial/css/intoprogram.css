@@ -1,0 +1,21 @@
+#searchField {
+    -fx-background-radius: 20px;
+}
+
+.web-view {
+    -fx-background-color: red;
+}
+
+.list-view {
+    -fx-background-color: green;
+    -fx-background-radius: 20px;
+}
+.list-cell {
+    -fx-text-fill: red;
+    -fx-background-radius: 20px;
+}
+
+#taskbar {
+    -fx-background-color: rgb(255,255,255,0.4);
+    -fx-background-radius: 30px;
+}

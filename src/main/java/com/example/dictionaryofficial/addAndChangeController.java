@@ -14,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -50,6 +51,18 @@ public class addAndChangeController implements Initializable {
     private TextArea exampleInput;
     @FXML
     private Label notification;
+    @FXML
+    private Button search_button;
+    @FXML
+    private Button edit_button;
+    @FXML
+    private Button game_button;
+    @FXML
+    private Button setting_button;
+    @FXML
+    private Button check;
+    @FXML
+    private AnchorPane pane;
     @FXML
     private Button submitButton;
 
@@ -97,6 +110,7 @@ public class addAndChangeController implements Initializable {
             boolean isExist = DictionaryCommandline.isExist(addedWord, IntoProgramController.Connect);
             if (!isExist) {
                 notification.setText("Your word has not existed in Dictionary. You can add now!");
+                notification.setTextFill(Color.GREEN);
                 submitButton.setVisible(true);
                 pronunciationInput.setEditable(true);
                 nounInput.setEditable(true);
@@ -108,6 +122,7 @@ public class addAndChangeController implements Initializable {
             else {
                 notification.setText("Your word has existed in Dictionary. " +
                         "You can edit the word instead of adding again!");
+                notification.setTextFill(Color.RED);
             }
         } else if (mode.getValue().equals("Edit")) {
             String addedWord = wordInput.getText();
