@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 public class FavouriteWord {
 
-    public static Connection connect = DBConnect.connectDB();
+    private static Connection connect = DBConnect.connectDB();
 
     public static final String FAVOUR = "avFavorite";
     public static void showFavourite() {
@@ -34,8 +34,8 @@ public class FavouriteWord {
             checkIsFavour.setString(1, newFavour);
             ResultSet res = checkIsFavour.executeQuery();
             res.next();
-            int exsist = res.getInt(1);
-            if (exsist == 0) {
+            int exist = res.getInt(1);
+            if (exist == 0) {
                 return false;
             } else {
                 return true;
@@ -48,7 +48,7 @@ public class FavouriteWord {
         return false;
     }
 
-    public static void addFavorite(String newFavour) {
+    public static void addFavourite(String newFavour) {
         if (IsFavour(newFavour)) {
             return ;
         }
@@ -84,7 +84,7 @@ public class FavouriteWord {
     }
 
     public static void main(String[] args) {
-        addFavorite("apple");
+        addFavourite("apple");
         showFavourite();
         removeFavour("apple");
         showFavourite();

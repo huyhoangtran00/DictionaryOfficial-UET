@@ -17,7 +17,6 @@
 
 ;
 
-    -fx-prompt-text-fill: white;
 
 }
 .combo-box {
@@ -47,7 +46,12 @@
 }
 
 #pane {
-    -fx-background-color: rgb(255,255,255,0.3);
+    -fx-background-color: rgb(158,169,181,0.5);
+    -fx-background-radius: 30px;
+}
+
+#gamepane {
+    -fx-background-color: rgb(121, 191, 145,0.5);
     -fx-background-radius: 30px;
 }
 

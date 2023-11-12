@@ -1,6 +1,8 @@
 package com.example.dictionaryofficial;
 
+import com.example.APIGoogle.AudioGoogleAPI;
 import com.example.APIGoogle.GoogleTransAPI;
+import com.example.cilent.FavouriteWord;
 import com.example.commandLine.DBConnect;
 import com.example.commandLine.DictionaryCommandline;
 import com.example.commandLine.DictionaryManagement;
@@ -18,6 +20,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -29,6 +33,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 
 import javafx.stage.Stage;
+import javazoom.jl.decoder.JavaLayerException;
 
 import java.io.*;
 import java.net.URL;
@@ -64,7 +69,12 @@ public class IntoProgramController implements Initializable {
     private Button speaker_button_1;
     @FXML
     private Button speaker_button_2;
-
+    @FXML
+    private Button favour_button;
+    @FXML
+    private ImageView favour_star;
+    @FXML
+    private ImageView border_star;
     @FXML
     private Label taskbar;
     @FXML
@@ -75,7 +85,6 @@ public class IntoProgramController implements Initializable {
     private static List<String> historyContainer = new ArrayList<>();
     private Vector<String> settingFont ;
     public static TextField static_searchField ;
-    public static Connection Connect = DBConnect.connectDB();
 
     //-----------------------------------------------------------------------------------------------------//
     public void setFont(String font, double fontSize) {
@@ -89,7 +98,7 @@ public class IntoProgramController implements Initializable {
         alert.setTitle("Delete a word");
         alert.setHeaderText("Confirmation: Are you sure to delete this word?");
         if (alert.showAndWait().get() == ButtonType.OK) {
-            boolean check = DictionaryManagement.removeFromFront(searchWord, Connect);
+            boolean check = DictionaryManagement.removeFromFront(searchWord, DBConnect.connectDB());
             searchField.setText("");
             if (check) {
                 searchResult.getEngine().loadContent("Delete Successfully!");
@@ -109,18 +118,28 @@ public class IntoProgramController implements Initializable {
         searchWord = searchField.getText();
 
         addToHistory(searchWord);
-        //String result = DictionaryCommandline.getWord(searchWord, Connect);
-        String result = "<h1>" + GoogleTransAPI.translate(searchWord, GoogleTransAPI.LANGUAGE.ENGLISH, GoogleTransAPI.LANGUAGE.VIETNAMESE) + "</h1>";
+
+        favour_button.setVisible(false);
+        if (DictionaryCommandline.isExist(searchWord, DBConnect.connectDB())) {
+            favour_button.setVisible(true);
+            if (FavouriteWord.IsFavour(searchWord)) {
+                favour_button.setGraphic(favour_star);
+                favour_star.setVisible(true);
+                border_star.setVisible(false);
+            } else {
+                favour_button.setGraphic(border_star);
+                border_star.setVisible(true);
+                favour_star.setVisible(false);
+            }
+        }
+        String result = DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+//        String result = "<h1>" + GoogleTransAPI.translate(searchWord, GoogleTransAPI.LANGUAGE.ENGLISH, GoogleTransAPI.LANGUAGE.VIETNAMESE) + "</h1>";
         searchResult.getEngine().loadContent(result);
 
         suggestList.setVisible(false);
     }
 
-    // Switch Scene
-    public void addScene(ActionEvent event) throws IOException {
-        saveHistory();
-        ManageScene.showScene(root,stage,scene,event,"addAndChange.fxml");
-    }
+
 
     public void initHistory() throws IOException {
         File file = new File("database/history.txt");
@@ -158,6 +177,28 @@ public class IntoProgramController implements Initializable {
         historyList.getItems().add(0, word);
     }
 
+    public void UKAudio(ActionEvent event) throws IOException, JavaLayerException {
+        AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-UK"));
+    }
+
+    public void USAudio(ActionEvent event) throws IOException, JavaLayerException {
+        AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-US"));
+    }
+
+    public void favourHandler(ActionEvent event) {
+        if (FavouriteWord.IsFavour(searchWord)) {
+            FavouriteWord.removeFavour(searchWord);
+            favour_button.setGraphic(border_star);
+            favour_star.setVisible(false);
+            border_star.setVisible(true);
+        } else {
+            FavouriteWord.addFavourite(searchWord);
+            favour_button.setGraphic(favour_star);
+            border_star.setVisible(false);
+            favour_star.setVisible(true);
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 //        ListView<String> suggestList = new ListView<>();
@@ -171,6 +212,9 @@ public class IntoProgramController implements Initializable {
         }
 
         suggestList.setVisible(false);
+        favour_button.setVisible(false);
+        favour_star.setVisible(false);
+        border_star.setVisible(false);
         IntoProgramController tmp = new IntoProgramController();
 
         // setting font and font Size
@@ -179,7 +223,7 @@ public class IntoProgramController implements Initializable {
 
         searchField.textProperty().addListener((observable, oldValue, newValue) -> {
             suggestList.getItems().clear();
-            suggestList.getItems().addAll(DictionaryCommandline.suggestWord(newValue, Connect));
+            suggestList.getItems().addAll(DictionaryCommandline.suggestWord(newValue, DBConnect.connectDB()));
             suggestList.setVisible(true);
             if (newValue.isEmpty()) {
                 suggestList.setVisible(false);
@@ -195,12 +239,25 @@ public class IntoProgramController implements Initializable {
 
             searchWord = searchField.getText();
             addToHistory(searchWord);
-
-            String result = DictionaryCommandline.getWord(searchWord, Connect);
+            favour_button.setVisible(false);
+            if (DictionaryCommandline.isExist(searchWord, DBConnect.connectDB())) {
+                favour_button.setVisible(true);
+                if (FavouriteWord.IsFavour(searchWord)) {
+                    favour_button.setGraphic(favour_star);
+                    favour_star.setVisible(true);
+                    border_star.setVisible(false);
+                } else {
+                    favour_button.setGraphic(border_star);
+                    border_star.setVisible(true);
+                    favour_star.setVisible(false);
+                }
+            }
+            String result = DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
             searchResult.getEngine().loadContent(result);
             suggestList.setVisible(false);
         });
 
+        // Search by history
         historyList.setOnMouseClicked(event -> {
             String selectedSuggestion = historyList.getSelectionModel().getSelectedItem();
             if (selectedSuggestion != null) {
@@ -210,7 +267,20 @@ public class IntoProgramController implements Initializable {
             searchWord = searchField.getText();
             addToHistory(searchWord);
 
-            String result = DictionaryCommandline.getWord(searchWord, Connect);
+            favour_button.setVisible(false);
+            if (DictionaryCommandline.isExist(searchWord, DBConnect.connectDB())) {
+                favour_button.setVisible(true);
+                if (FavouriteWord.IsFavour(searchWord)) {
+                    favour_button.setGraphic(favour_star);
+                    favour_star.setVisible(true);
+                    border_star.setVisible(false);
+                } else {
+                    favour_button.setGraphic(border_star);
+                    border_star.setVisible(true);
+                    favour_star.setVisible(false);
+                }
+            }
+            String result = DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
             searchResult.getEngine().loadContent(result);
             suggestList.setVisible(false);
         });
@@ -218,17 +288,40 @@ public class IntoProgramController implements Initializable {
         // enter to search
         searchField.setOnAction(event -> {
             searchWord = searchField.getText();
-
             addToHistory(searchWord);
-            String result = DictionaryCommandline.getWord(searchWord, Connect);
+
+            favour_button.setVisible(false);
+            if (DictionaryCommandline.isExist(searchWord, DBConnect.connectDB())) {
+                favour_button.setVisible(true);
+                if (FavouriteWord.IsFavour(searchWord)) {
+                    favour_button.setGraphic(favour_star);
+                    favour_star.setVisible(true);
+                    border_star.setVisible(false);
+                } else {
+                    favour_button.setGraphic(border_star);
+                    border_star.setVisible(true);
+                    favour_star.setVisible(false);
+                }
+            }
+            String result = DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
             searchResult.getEngine().loadContent(result);
             suggestList.setVisible(false);
         });
+    }
+    // Switch Scene
+    public void addScene(ActionEvent event) throws IOException {
+        saveHistory();
+        ManageScene.showScene(root,stage,scene,event,"addAndChange.fxml");
     }
 
     public void showSettingScene(ActionEvent event) throws IOException {
         saveHistory();
         ManageScene.showScene(root,stage,scene,event,"Setting.fxml");
+    }
+
+    public void gameScene(ActionEvent event) throws IOException {
+        saveHistory();
+        ManageScene.showScene(root,stage,scene,event,"Game.fxml");
     }
 
     public void setting() {
