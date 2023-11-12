@@ -43,9 +43,6 @@ import java.util.concurrent.ForkJoinPool;
 
 public class IntoProgramController implements Initializable {
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     private String searchWord;
     @FXML
     private Button logoutButton;
@@ -109,7 +106,7 @@ public class IntoProgramController implements Initializable {
     }
 
     public void logout(ActionEvent event) throws IOException {
-        ManageScene.logout(stage,basePane);
+        ManageScene.logout(BaseController.getStage(),basePane);
     }
 
 
@@ -311,17 +308,17 @@ public class IntoProgramController implements Initializable {
     // Switch Scene
     public void addScene(ActionEvent event) throws IOException {
         saveHistory();
-        ManageScene.showScene(root,stage,scene,event,"addAndChange.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"addAndChange.fxml");
     }
 
     public void showSettingScene(ActionEvent event) throws IOException {
         saveHistory();
-        ManageScene.showScene(root,stage,scene,event,"Setting.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Setting.fxml");
     }
 
     public void gameScene(ActionEvent event) throws IOException {
         saveHistory();
-        ManageScene.showScene(root,stage,scene,event,"Game.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Game.fxml");
     }
 
     public void setting() {
