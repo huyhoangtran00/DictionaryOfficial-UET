@@ -85,10 +85,10 @@ public class FavouriteWord {
 
     public static void main(String[] args) {
 
-        addFavorite("apple");
-        addFavorite("app");
-        addFavorite("banana");
-        addFavorite("good");
+        addFavourite("apple");
+        addFavourite("app");
+        addFavourite("banana");
+        addFavourite("good");
         showFavourite();
     }
 }
