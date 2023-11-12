@@ -21,7 +21,7 @@ public class BlossomGame {
 
     public static int score = 0;
 
-    public static Connection connect = DBConnect.connectDB();
+
 
     public static void UltiGame() {
 
@@ -52,7 +52,7 @@ public class BlossomGame {
                 return false;
             }
         }
-        if(!DictionaryCommandline.isExist(answer,connect)) {
+        if(!DictionaryCommandline.isExist(answer,DBConnect.connectDB())) {
             return false;
         } else {
             ListAnswer.add(answer);

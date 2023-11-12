@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.addAndChangeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.addAndChangeController">
    <children>
       <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="418.0" stylesheets="@css/intoprogram.css" />
       <Button fx:id="setting_button" layoutX="574.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
@@ -30,27 +30,27 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="494.0" layoutY="159.0" stylesheets="@css/edit.css" text="Verb">
+            <Label layoutX="494.0" layoutY="159.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Verb">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="33.0" layoutY="241.0" stylesheets="@css/edit.css" text="Adjective">
+            <Label layoutX="33.0" layoutY="241.0" prefHeight="20.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Adjective">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="494.0" layoutY="241.0" stylesheets="@css/edit.css" text="Adverb">
+            <Label layoutX="494.0" layoutY="241.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Adverb">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="537.0" layoutY="33.0" stylesheets="@css/edit.css" text="Mode">
+            <Label layoutX="537.0" layoutY="33.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Mode">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="yourWord" layoutX="33.0" layoutY="22.0" prefHeight="23.0" prefWidth="91.0" stylesheets="@css/edit.css" text="Word input">
+            <Label fx:id="yourWord" layoutX="33.0" layoutY="22.0" prefHeight="23.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Word input">
                <font>
                   <Font size="14.0" />
                </font>
@@ -68,7 +68,7 @@
                   <URL value="@css/button.css" />
                </stylesheets>
             </Button>
-            <Label layoutX="34.0" layoutY="334.0" stylesheets="@css/edit.css" text="Example">
+            <Label layoutX="34.0" layoutY="334.0" prefHeight="20.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Example">
                <font>
                   <Font size="14.0" />
                </font>

@@ -107,7 +107,7 @@ public class addAndChangeController implements Initializable {
         notification.setVisible(true);
         if (mode.getValue().equals("Add")) {
             String addedWord = wordInput.getText();
-            boolean isExist = DictionaryCommandline.isExist(addedWord, IntoProgramController.Connect);
+            boolean isExist = DictionaryCommandline.isExist(addedWord, DBConnect.connectDB());
             if (!isExist) {
                 notification.setText("Your word has not existed in Dictionary. You can add now!");
                 notification.setTextFill(Color.GREEN);
@@ -118,27 +118,41 @@ public class addAndChangeController implements Initializable {
                 adjInput.setEditable(true);
                 advInput.setEditable(true);
                 exampleInput.setEditable(true);
-            }
-            else {
+            } else {
                 notification.setText("Your word has existed in Dictionary. " +
                         "You can edit the word instead of adding again!");
                 notification.setTextFill(Color.RED);
+                submitButton.setVisible(false);
+                pronunciationInput.setEditable(false);
+                nounInput.setEditable(false);
+                verbInput.setEditable(false);
+                adjInput.setEditable(false);
+                advInput.setEditable(false);
+                exampleInput.setEditable(false);
             }
         } else if (mode.getValue().equals("Edit")) {
             String addedWord = wordInput.getText();
-            boolean isExist = DictionaryCommandline.isExist(addedWord, IntoProgramController.Connect);
+            boolean isExist = DictionaryCommandline.isExist(addedWord, DBConnect.connectDB());
             if (isExist) {
                 notification.setText("Your word has existed in Dictionary. You can edit now!");
+                notification.setTextFill(Color.GREEN);
                 pronunciationInput.setEditable(true);
                 nounInput.setEditable(true);
                 verbInput.setEditable(true);
                 adjInput.setEditable(true);
                 advInput.setEditable(true);
                 exampleInput.setEditable(true);
-            }
-            else {
+            } else {
                 notification.setText("Your word has not existed. " +
-                        "You can add the word to the Dictionary!");
+                        "You can add the word to the Dictionary first!");
+                notification.setTextFill(Color.RED);
+                submitButton.setVisible(false);
+                pronunciationInput.setEditable(false);
+                nounInput.setEditable(false);
+                verbInput.setEditable(false);
+                adjInput.setEditable(false);
+                advInput.setEditable(false);
+                exampleInput.setEditable(false);
             }
         }
     }
@@ -147,9 +161,11 @@ public class addAndChangeController implements Initializable {
         notification.setVisible(true);
         if (mode.getValue().equals("Add")) {
             String addedWord = wordInput.getText();
-            boolean isExist = DictionaryCommandline.isExist(addedWord, IntoProgramController.Connect);
+            boolean isExist = DictionaryCommandline.isExist(addedWord, DBConnect.connectDB());
             if (!isExist) {
+                System.out.println("here");
                 notification.setText("Your word has not existed in Dictionary. You can add now!");
+                notification.setTextFill(Color.GREEN);
                 submitButton.setVisible(true);
                 pronunciationInput.setEditable(true);
                 nounInput.setEditable(true);
@@ -157,26 +173,41 @@ public class addAndChangeController implements Initializable {
                 adjInput.setEditable(true);
                 advInput.setEditable(true);
                 exampleInput.setEditable(true);
-            }
-            else {
+            } else {
                 notification.setText("Your word has existed in Dictionary. " +
                         "You can edit the word instead of adding again!");
+                notification.setTextFill(Color.RED);
+                submitButton.setVisible(false);
+                pronunciationInput.setEditable(false);
+                nounInput.setEditable(false);
+                verbInput.setEditable(false);
+                adjInput.setEditable(false);
+                advInput.setEditable(false);
+                exampleInput.setEditable(false);
             }
         } else if (mode.getValue().equals("Edit")) {
             String addedWord = wordInput.getText();
-            boolean isExist = DictionaryCommandline.isExist(addedWord, IntoProgramController.Connect);
+            boolean isExist = DictionaryCommandline.isExist(addedWord, DBConnect.connectDB());
             if (isExist) {
                 notification.setText("Your word has existed in Dictionary. You can edit now!");
+                notification.setTextFill(Color.GREEN);
                 pronunciationInput.setEditable(true);
                 nounInput.setEditable(true);
                 verbInput.setEditable(true);
                 adjInput.setEditable(true);
                 advInput.setEditable(true);
                 exampleInput.setEditable(true);
-            }
-            else {
+            } else {
                 notification.setText("Your word has not existed. " +
-                        "You can add the word to the Dictionary!");
+                        "You can add the word to the Dictionary first!");
+                notification.setTextFill(Color.RED);
+                submitButton.setVisible(false);
+                pronunciationInput.setEditable(false);
+                nounInput.setEditable(false);
+                verbInput.setEditable(false);
+                adjInput.setEditable(false);
+                advInput.setEditable(false);
+                exampleInput.setEditable(false);
             }
         }
     }
@@ -192,7 +223,7 @@ public class addAndChangeController implements Initializable {
         typeMeaning.put("Trạng từ", advInput.getText());
         String example = exampleInput.getText();
         boolean isOk = false;
-        isOk = DictionaryManagement.insertFromFront(word, pronunciation, typeMeaning, example, IntoProgramController.Connect);
+        isOk = DictionaryManagement.insertFromFront(word, pronunciation, typeMeaning, example, DBConnect.connectDB());
         if (isOk) {
             notification.setText("Added Successfully!");
             submitButton.setVisible(false);
@@ -205,11 +236,19 @@ public class addAndChangeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         submitButton.setVisible(false);
+        notification.setVisible(false);
+        pronunciationInput.setEditable(false);
+        nounInput.setEditable(false);
+        verbInput.setEditable(false);
+        adjInput.setEditable(false);
+        advInput.setEditable(false);
+        exampleInput.setEditable(false);
+
         mode.setItems(FXCollections.observableArrayList(
-                "Add",
-                "Edit"
+                "Add Words",
+                "Edit Words"
         ));
-        mode.setValue("Add");
+        mode.setValue("Add Words");
         settingFont();
 
         mode.valueProperty().addListener(new ChangeListener<String>() {
