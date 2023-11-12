@@ -26,9 +26,6 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class SettingController  implements Initializable {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
 
     @FXML
     ComboBox<String> fontSize ;
@@ -64,18 +61,21 @@ public class SettingController  implements Initializable {
 
     }
 
+    public void showGameScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Game.fxml");
+    }
 
     public void showIntoProgramScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"IntoProgram.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"IntoProgram.fxml");
     }
 
     public void showAddChangeScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"addAndChange.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"addAndChange.fxml");
     }
 
 
     public void logout (ActionEvent event) throws IOException {
-        ManageScene.logout(stage,pane);
+        ManageScene.logout(BaseController.getStage(),pane);
     }
 
     public void setting()  {

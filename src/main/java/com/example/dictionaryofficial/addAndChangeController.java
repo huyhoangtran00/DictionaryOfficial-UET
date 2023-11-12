@@ -30,9 +30,6 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class addAndChangeController implements Initializable {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     @FXML
     private ComboBox<String> mode;
     @FXML
@@ -73,7 +70,11 @@ public class addAndChangeController implements Initializable {
     //-----------------------------------------------------------------------------------------------------------//
     //Switch Scene
     public void searchScene(ActionEvent event) throws IOException {
-       ManageScene.showScene(root,stage,scene,event,"IntoProgram.fxml");
+       ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"IntoProgram.fxml");
+    }
+
+    public void gameScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Game.fxml");
     }
 
     public void settingFont() {
@@ -100,7 +101,7 @@ public class addAndChangeController implements Initializable {
     }
 
     public void showSettingScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root, stage, scene, event, "Setting.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "Setting.fxml");
     }
 
     public void checkExistingWord(ActionEvent event) throws IOException {
