@@ -73,7 +73,10 @@ public class addAndChangeController implements Initializable {
     //-----------------------------------------------------------------------------------------------------------//
     //Switch Scene
     public void searchScene(ActionEvent event) throws IOException {
-       ManageScene.showScene(root,stage,scene,event,"IntoProgram.fxml");
+
+        String src = "IntoProgram.fxml";
+
+        ManageScene.showScene(root,stage,scene,event,src);
     }
 
     public void settingFont() {
@@ -100,10 +103,11 @@ public class addAndChangeController implements Initializable {
     }
 
     public void showSettingScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root, stage, scene, event, "Setting.fxml");
+
+        ManageScene.showScene(root,stage,scene,event, "Setting.fxml");
     }
     public void showTranslateScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root, stage, scene, event, "Translate.fxml");
+                ManageScene.showScene(root,stage,scene,event,"Translate.fxml");
     }
 
     public void checkExistingWord(ActionEvent event) throws IOException {

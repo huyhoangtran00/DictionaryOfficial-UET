@@ -34,8 +34,13 @@ public class SettingController  implements Initializable {
     ComboBox<String> fontSize ;
     @FXML
     ComboBox<String> font;
+
+    @FXML
+    ComboBox<String> theme;
     @FXML
     private Pane pane;
+
+    List<String> list_theme = new ArrayList<>();
 
     private IntoProgramController intoProgramController;
 
@@ -54,7 +59,11 @@ public class SettingController  implements Initializable {
         try{
             File file = new File ("database/setting.txt");
             FileWriter writer = new FileWriter(file);
-            writer.write(font.getSelectionModel().getSelectedItem() + "\n" + fontSize.getSelectionModel().getSelectedItem() );
+            writer.write(font.getSelectionModel().getSelectedItem() +
+                    "\n" +
+                    fontSize.getSelectionModel().getSelectedItem() +
+                     "\n" +
+                    theme.getSelectionModel().getSelectedItem());
             writer.close();
         }
         catch (IOException e){
@@ -101,8 +110,14 @@ public class SettingController  implements Initializable {
         for(int i = 10 ; i <= 25 ; i++){
             fontSize.getItems().add(i+"");
         }
+        list_theme.add("basic");
+        list_theme.add("purple");
+
+        theme.getItems().addAll(ManageScene.THEME.getListTheme());
         font.setValue(listFont.get(0));
         fontSize.setValue(listFont.get(1));
+        theme.setValue(listFont.get(2));
+
 
     }
 

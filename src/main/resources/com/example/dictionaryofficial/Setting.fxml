@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: LightSkyBlue; -fx-border-color: blue;" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.SettingController">
     <children>
-      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="483.0" stylesheets="@css/intoprogram.css" />
+      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
         <Button fx:id="logoutButton" layoutX="891.0" layoutY="602.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
         <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddChangeScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
         <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />

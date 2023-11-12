@@ -118,7 +118,6 @@ public class IntoProgramController implements Initializable {
 
     // Switch Scene
     public void addScene(ActionEvent event) throws IOException {
-        saveHistory();
         ManageScene.showScene(root,stage,scene,event,"addAndChange.fxml");
     }
 
@@ -233,6 +232,7 @@ public class IntoProgramController implements Initializable {
 
     public void showTranslateScene(ActionEvent event) throws IOException {
         saveHistory();
+
         ManageScene.showScene(root,stage,scene,event,"Translate.fxml");
     }
 
@@ -255,4 +255,6 @@ public class IntoProgramController implements Initializable {
         ManageScene.setFont(searchField);
 //        suggestList.setStyle("-fx-font: "+settingFont.get(1) +"px " +"'"+settingFont.get(0) +"';");
     }
+
+
 }
