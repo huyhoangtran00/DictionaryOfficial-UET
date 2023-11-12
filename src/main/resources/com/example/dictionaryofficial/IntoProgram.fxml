@@ -22,11 +22,11 @@
          <children>
             <WebView fx:id="searchResult" prefHeight="390.0" prefWidth="572.0" />
          </children></AnchorPane>
-      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="418.0" stylesheets="@css/intoprogram.css" />
+      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="483.0" stylesheets="@css/intoprogram.css" />
       <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#addScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button fx:id="setting_button" layoutX="574.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="searchBar" layoutX="840.0" layoutY="28.0" mnemonicParsing="false" onAction="#clickToSearch" prefHeight="50.0" prefWidth="54.0" stylesheets="@css/button.css" />
       <Button fx:id="speaker_button_2" layoutX="834.0" layoutY="110.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" stylesheets="@css/button.css" textFill="#d1b0b0" />
       <Button fx:id="speaker_button_1" layoutX="837.0" layoutY="218.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" stylesheets="@css/button.css" />
@@ -41,5 +41,6 @@
          </image>
       </ImageView>
       <ListView fx:id="suggestList" layoutX="71.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="211.0" prefWidth="758.0" />
+      <Button fx:id="translate_button" layoutX="573.0" layoutY="561.0" mnemonicParsing="false" onAction="#showTranslateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
    </children>
 </AnchorPane>

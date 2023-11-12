@@ -231,6 +231,11 @@ public class IntoProgramController implements Initializable {
         ManageScene.showScene(root,stage,scene,event,"Setting.fxml");
     }
 
+    public void showTranslateScene(ActionEvent event) throws IOException {
+        saveHistory();
+        ManageScene.showScene(root,stage,scene,event,"Translate.fxml");
+    }
+
     public void setting() {
         settingFont = new Vector<>();
 
