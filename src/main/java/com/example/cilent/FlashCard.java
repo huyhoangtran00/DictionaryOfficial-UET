@@ -1,5 +1,6 @@
 package com.example.cilent;
 
+import com.example.commandLine.DBConnect;
 import com.example.commandLine.Word;
 import com.example.dictionaryofficial.IntoProgramController;
 
@@ -15,7 +16,7 @@ public class FlashCard {
     public static void GenListFlashCard() {
         try {
             String FlashCard = "Select word , description from " + FavouriteWord.FAVOUR;
-            PreparedStatement getFlashCard = IntoProgramController.Connect.prepareStatement(FlashCard);
+            PreparedStatement getFlashCard = DBConnect.connectDB().prepareStatement(FlashCard);
             ResultSet res = getFlashCard.executeQuery();
             while (res.next()) {
                 ListFlashCard.add(new Word(res.getString(1),res.getString(2)));
