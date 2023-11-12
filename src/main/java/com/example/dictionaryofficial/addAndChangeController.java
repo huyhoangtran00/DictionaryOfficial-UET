@@ -90,17 +90,20 @@ public class addAndChangeController implements Initializable {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        ManageScene.setFont(wordInput,settingFont);
-        ManageScene.setFont(pronunciationInput,settingFont);
-        ManageScene.setFont(nounInput,settingFont);
-        ManageScene.setFont(verbInput,settingFont);
-        ManageScene.setFont(adjInput,settingFont);
-        ManageScene.setFont(advInput,settingFont);
-        ManageScene.setFont(exampleInput, settingFont);
+        ManageScene.setFont(wordInput);
+        ManageScene.setFont(pronunciationInput);
+        ManageScene.setFont(nounInput);
+        ManageScene.setFont(verbInput);
+        ManageScene.setFont(adjInput);
+        ManageScene.setFont(advInput);
+        ManageScene.setFont(exampleInput);
     }
 
     public void showSettingScene(ActionEvent event) throws IOException {
         ManageScene.showScene(root, stage, scene, event, "Setting.fxml");
+    }
+    public void showTranslateScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(root, stage, scene, event, "Translate.fxml");
     }
 
     public void checkExistingWord(ActionEvent event) throws IOException {

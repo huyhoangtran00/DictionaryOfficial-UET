@@ -14,7 +14,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.Vector;
 
 public class ManageScene {
@@ -53,11 +56,38 @@ public class ManageScene {
             stage.close();
         }
     }
-    public static void setFont(TextField textField, Vector<String> settingFont){
+    public static void setFont(TextField textField){
+        Vector<String> settingFont = new Vector<>();
+        try {
+            File file = new File("database/setting.txt");
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                settingFont.add(scanner.nextLine());
+
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         textField.setFont(new Font(settingFont.get(0),Double.parseDouble(settingFont.get(1)) ));
     }
 
-    public static void setFont(TextArea textArea, Vector<String> settingFont){
+    public static void setFont(TextArea textArea){
+
+       Vector<String> settingFont = new Vector<>();
+        try {
+            File file = new File("database/setting.txt");
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                settingFont.add(scanner.nextLine());
+
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         textArea.setFont(new Font(settingFont.get(0),Double.parseDouble(settingFont.get(1)) ));
     }
 }

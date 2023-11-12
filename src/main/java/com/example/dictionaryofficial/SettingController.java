@@ -73,6 +73,9 @@ public class SettingController  implements Initializable {
         ManageScene.showScene(root,stage,scene,event,"addAndChange.fxml");
     }
 
+    public void showTranslateScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(root,stage,scene,event,"Translate.fxml");
+    }
 
     public void logout (ActionEvent event) throws IOException {
         ManageScene.logout(stage,pane);

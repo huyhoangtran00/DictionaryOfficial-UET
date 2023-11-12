@@ -252,7 +252,7 @@ public class IntoProgramController implements Initializable {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        ManageScene.setFont(searchField,settingFont);
+        ManageScene.setFont(searchField);
 //        suggestList.setStyle("-fx-font: "+settingFont.get(1) +"px " +"'"+settingFont.get(0) +"';");
     }
 }

@@ -22,7 +22,7 @@ public class TranslateController implements Initializable {
     private Parent root;
 
     @FXML
-    private Button translate_button;
+    private Button confirm_button;
     @FXML
     private TextArea src_text;
     @FXML
@@ -36,6 +36,7 @@ public class TranslateController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        setting();
         initTranslate();
     }
 
@@ -94,7 +95,7 @@ public class TranslateController implements Initializable {
         StringBuilder result = new StringBuilder();
 
         for (char c : text.toCharArray()) {
-            if (Character.isLetter(c) || c == ',') {
+            if (Character.isLetter(c) || c == ',' || c == ' ') {
                 result.append(c);
             }
         }
@@ -102,4 +103,9 @@ public class TranslateController implements Initializable {
         return ans[0];
     }
 
+
+    public void setting () {
+        ManageScene.setFont(src_text);
+        ManageScene.setFont(des_text);
+    }
 }
