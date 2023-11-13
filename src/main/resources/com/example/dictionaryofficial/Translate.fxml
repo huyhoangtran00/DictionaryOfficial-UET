@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="basePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.TranslateController">
+    <children>
+        <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="496.0" stylesheets="@css/intoprogram.css" />
+        <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddChangeScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+        <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+        <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" onAction="#showIntoProgramScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+        <Button fx:id="setting_button" layoutX="666.0" layoutY="564.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <TextArea fx:id="src_text" layoutX="50.0" layoutY="144.0" prefHeight="313.0" prefWidth="375.0" stylesheets="@css/translate.css" />
+      <TextArea fx:id="des_text" layoutX="504.0" layoutY="144.0" prefHeight="313.0" prefWidth="375.0" stylesheets="@css/translate.css" />
+      <ComboBox fx:id="src_option" layoutX="50.0" layoutY="119.0" prefWidth="150.0" />
+      <ComboBox fx:id="des_option" layoutX="504.0" layoutY="119.0" prefWidth="150.0" />
+      <Label layoutX="247.0" layoutY="29.0" style="-fx-text-fill: white;" text="Google Translate">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="115.0" fitWidth="110.0" layoutX="116.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/google.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="confirm_button" layoutX="425.0" layoutY="468.0" mnemonicParsing="false" onAction="#translate_language" prefHeight="70.0" prefWidth="70.0" stylesheets="@css/button.css" />
+      <Button fx:id="translate_button" layoutX="573.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+    </children>
+</AnchorPane>

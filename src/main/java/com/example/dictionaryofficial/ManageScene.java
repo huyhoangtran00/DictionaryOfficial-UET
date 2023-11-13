@@ -10,12 +10,19 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.Vector;
+
+import static com.example.dictionaryofficial.ManageScene.THEME.BASIC;
+import static com.example.dictionaryofficial.ManageScene.THEME.PURPLE;
 
 public class ManageScene {
     /**
@@ -27,7 +34,30 @@ public class ManageScene {
      * @param sourceScene: String ( name of file fxml which file you want to show scene)
 
      */
+
+   public enum THEME {
+       BASIC("basic"),
+        PURPLE("purple");
+
+
+        private final String basic;
+
+        THEME(String basic) {
+            this.basic = "basic";
+        }
+
+        public static List<String> getListTheme() {
+            List<String> list_theme = new ArrayList<>();
+            list_theme.add("basic");
+            list_theme.add("purple");
+            return list_theme;
+        }
+
+
+    }
     public static void showScene(Parent root , Stage stage, Scene scene, ActionEvent event , String sourceScene) throws IOException {
+
+        sourceScene = ManageScene.changeSrc(ManageScene.typeTheme(),sourceScene);
         root = FXMLLoader.load(ManageScene.class.getResource(sourceScene));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -53,11 +83,79 @@ public class ManageScene {
             stage.close();
         }
     }
-    public static void setFont(TextField textField, Vector<String> settingFont){
+    public static void setFont(TextField textField){
+        Vector<String> settingFont = new Vector<>();
+        try {
+            File file = new File("database/setting.txt");
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                settingFont.add(scanner.nextLine());
+
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         textField.setFont(new Font(settingFont.get(0),Double.parseDouble(settingFont.get(1)) ));
     }
 
-    public static void setFont(TextArea textArea, Vector<String> settingFont){
+    public static void setFont(TextArea textArea){
+
+       Vector<String> settingFont = new Vector<>();
+        try {
+            File file = new File("database/setting.txt");
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                settingFont.add(scanner.nextLine());
+
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         textArea.setFont(new Font(settingFont.get(0),Double.parseDouble(settingFont.get(1)) ));
     }
+
+    public static THEME typeTheme() {
+
+        Vector<String> setting = new Vector<>();
+        try {
+            File file = new File("database/setting.txt");
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                setting.add(scanner.nextLine());
+
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        switch (setting.get(2)) {
+            case "basic":
+                return BASIC;
+            case "purple":
+                return PURPLE;
+        }
+        return null;
+
+
+    }
+    public static String changeSrc(THEME theme,String src) {
+        switch (theme) {
+            case BASIC :
+
+               return "theme_basic/" + src;
+            case PURPLE:
+                return src;
+            default:
+                return src;
+
+        }
+
+
+    }
+
 }

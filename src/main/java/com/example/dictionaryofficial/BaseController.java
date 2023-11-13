@@ -26,8 +26,20 @@ public class BaseController {
 
 
     public void intoProgram(ActionEvent event) throws IOException {
-        ManageScene.showScene(root, stage, scene, event, "IntoProgram.fxml");
+        String src = "IntoProgram.fxml";
+        src = ManageScene.changeSrc(ManageScene.typeTheme(),src);
+        root = FXMLLoader.load(getClass().getResource(src));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.setFill(Color.CORNSILK);
+        stage.setScene(scene);
+        stage.setX(300);
+        stage.setY(100);
+        stage.setTitle("HHH-dictionary");
+        stage.show();
     }
+
+
 
     public static Stage getStage() {
         return stage;
