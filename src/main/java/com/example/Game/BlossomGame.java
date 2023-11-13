@@ -11,11 +11,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
 public class BlossomGame {
-    public static HashSet<Character> key = new HashSet<>();
+    private static HashSet<Character> key = new HashSet<>();
 
     public static HashSet<String> ListAnswer = new HashSet<>();
 
@@ -23,7 +24,7 @@ public class BlossomGame {
 
 
 
-    public static void UltiGame() {
+    public static HashSet<Character> UltiGame() {
 
         char[] nguyenam = {'a','u', 'e', 'o', 'i'};
         while (key.size() < 3) {
@@ -39,6 +40,7 @@ public class BlossomGame {
                 key.add(getKey);
             }
         }
+        return key;
     }
 
     public static boolean TrueOrFalse(String answer) {
