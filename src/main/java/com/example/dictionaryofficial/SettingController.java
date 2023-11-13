@@ -26,16 +26,18 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class SettingController  implements Initializable {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
 
     @FXML
     ComboBox<String> fontSize ;
     @FXML
     ComboBox<String> font;
+
+    @FXML
+    ComboBox<String> theme;
     @FXML
     private Pane pane;
+
+    List<String> list_theme = new ArrayList<>();
 
     private IntoProgramController intoProgramController;
 
@@ -54,7 +56,11 @@ public class SettingController  implements Initializable {
         try{
             File file = new File ("database/setting.txt");
             FileWriter writer = new FileWriter(file);
-            writer.write(font.getSelectionModel().getSelectedItem() + "\n" + fontSize.getSelectionModel().getSelectedItem() );
+            writer.write(font.getSelectionModel().getSelectedItem() +
+                    "\n" +
+                    fontSize.getSelectionModel().getSelectedItem() +
+                     "\n" +
+                    theme.getSelectionModel().getSelectedItem());
             writer.close();
         }
         catch (IOException e){
@@ -64,18 +70,24 @@ public class SettingController  implements Initializable {
 
     }
 
+    public void showGameScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Game.fxml");
+    }
 
     public void showIntoProgramScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"IntoProgram.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"IntoProgram.fxml");
     }
 
     public void showAddChangeScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"addAndChange.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"addAndChange.fxml");
     }
 
+    public void showTranslateScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Translate.fxml");
+    }
 
     public void logout (ActionEvent event) throws IOException {
-        ManageScene.logout(stage,pane);
+        ManageScene.logout(BaseController.getStage(),pane);
     }
 
     public void setting()  {
@@ -98,8 +110,14 @@ public class SettingController  implements Initializable {
         for(int i = 10 ; i <= 25 ; i++){
             fontSize.getItems().add(i+"");
         }
+        list_theme.add("basic");
+        list_theme.add("purple");
+
+        theme.getItems().addAll(ManageScene.THEME.getListTheme());
         font.setValue(listFont.get(0));
         fontSize.setValue(listFont.get(1));
+        theme.setValue(listFont.get(2));
+
 
     }
 

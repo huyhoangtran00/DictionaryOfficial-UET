@@ -12,20 +12,17 @@ import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
 
     public void searchScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"IntoProgram.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"IntoProgram.fxml");
     }
 
     public void addScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root, stage, scene, event, "addAndChange.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "addAndChange.fxml");
     }
 
     public void settingScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root, stage, scene, event, "Setting.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "Setting.fxml");
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
