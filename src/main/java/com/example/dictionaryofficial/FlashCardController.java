@@ -45,7 +45,7 @@ public class FlashCardController implements Initializable {
     @FXML
     private Label curLabel = new Label();
 
-    public static List<Word> ListFlashCard = FlashCard.getListFlashCard();
+    public List<Word> ListFlashCard;
 
     public void initialize() {
 
@@ -114,6 +114,7 @@ public class FlashCardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ListFlashCard = FlashCard.getListFlashCard();
         cardLabel.setStyle("-fx-font-size: 20px;");
         cardLabel.setText(ListFlashCard.get(0).getWordTarget());
         curLabel.setText(Integer.toString(cur) + "/" + Integer.toString(ListFlashCard.size()));
