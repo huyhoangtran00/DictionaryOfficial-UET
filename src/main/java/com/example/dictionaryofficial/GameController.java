@@ -24,8 +24,12 @@ public class GameController implements Initializable {
         ManageScene.showScene(root, stage, scene, event, "addAndChange.fxml");
     }
 
-    public void settingScene(ActionEvent event) throws IOException {
+    public void showSettingScene(ActionEvent event) throws IOException {
         ManageScene.showScene(root, stage, scene, event, "Setting.fxml");
+    }
+
+    public void PlayFlashCard(ActionEvent event) throws IOException {
+        ManageScene.showScene(root, stage, scene, event, "FlashCard.fxml");
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

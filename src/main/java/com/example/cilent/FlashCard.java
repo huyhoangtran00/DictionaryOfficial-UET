@@ -28,6 +28,7 @@ public class FlashCard {
     }
 
     public static List<Word> getListFlashCard() {
+        GenListFlashCard();
         Collections.shuffle(ListFlashCard);
         return ListFlashCard;
     }
