@@ -1,0 +1,10 @@
+#des_text {
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+
+}
+#src_text {
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+
+}

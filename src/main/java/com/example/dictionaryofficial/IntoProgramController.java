@@ -138,6 +138,8 @@ public class IntoProgramController implements Initializable {
 
 
 
+
+
     public void initHistory() throws IOException {
         File file = new File("database/history.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -175,11 +177,21 @@ public class IntoProgramController implements Initializable {
     }
 
     public void UKAudio(ActionEvent event) throws IOException, JavaLayerException {
-        AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-UK"));
+        try {
+            AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-UK"));
+        }
+        catch (IOException e) {
+            System.out.println("No word was selected");
+        }
     }
 
     public void USAudio(ActionEvent event) throws IOException, JavaLayerException {
-        AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-US"));
+        try {
+            AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-US"));
+        }
+        catch (IOException e) {
+            System.out.println("No word was selected");
+        }
     }
 
     public void favourHandler(ActionEvent event) {
@@ -321,6 +333,12 @@ public class IntoProgramController implements Initializable {
         ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Game.fxml");
     }
 
+    public void showTranslateScene(ActionEvent event) throws IOException {
+        saveHistory();
+
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Translate.fxml");
+    }
+
     public void setting() {
         settingFont = new Vector<>();
 
@@ -337,7 +355,9 @@ public class IntoProgramController implements Initializable {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        ManageScene.setFont(searchField,settingFont);
+        ManageScene.setFont(searchField);
 //        suggestList.setStyle("-fx-font: "+settingFont.get(1) +"px " +"'"+settingFont.get(0) +"';");
     }
+
+
 }

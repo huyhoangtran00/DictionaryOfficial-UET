@@ -9,13 +9,11 @@ import java.sql.Statement;
 
 public class FavouriteWord {
 
-    private static Connection connect = DBConnect.connectDB();
-
     public static final String FAVOUR = "avFavorite";
     public static void showFavourite() {
         try {
             String Favour = "Select word from " + FAVOUR;
-            PreparedStatement getFavour = connect.prepareStatement(Favour);
+            PreparedStatement getFavour = DBConnect.connectDB().prepareStatement(Favour);
             ResultSet res = getFavour.executeQuery();
             while (res.next()) {
                 System.out.println(res.getString(1));
@@ -30,7 +28,7 @@ public class FavouriteWord {
     public static boolean IsFavour(String newFavour) {
         try {
             String sql = "Select COUNT(*) from " + FAVOUR + " where word = ?";
-            PreparedStatement checkIsFavour = connect.prepareStatement(sql);
+            PreparedStatement checkIsFavour = DBConnect.connectDB().prepareStatement(sql);
             checkIsFavour.setString(1, newFavour);
             ResultSet res = checkIsFavour.executeQuery();
             res.next();
@@ -56,11 +54,11 @@ public class FavouriteWord {
             String sql = "Insert into " + FAVOUR + "(word, html, description, pronounce) " +
                         "select wordTarget, html, wordMeaning, pronounce from " + DBConnect.DB_NAME +
                         " where wordTarget = ?";
-            PreparedStatement addFavour = connect.prepareStatement(sql);
-            connect.setAutoCommit(false);
+            PreparedStatement addFavour = DBConnect.connectDB().prepareStatement(sql);
+            DBConnect.connectDB().setAutoCommit(false);
             addFavour.setString(1, newFavour);
             int a = addFavour.executeUpdate();
-            connect.commit();
+            DBConnect.connectDB().commit();
         } catch (Exception e) {
             System.out.println(e);
             System.out.println("Loi add");
@@ -71,11 +69,11 @@ public class FavouriteWord {
         try {
             String sql = " DELETE FROM " + FAVOUR
                     + " WHERE word = ?";
-            PreparedStatement revWord = connect.prepareStatement(sql);
-            connect.setAutoCommit(false);
+            PreparedStatement revWord = DBConnect.connectDB().prepareStatement(sql);
+            DBConnect.connectDB().setAutoCommit(false);
             revWord.setString(1,rev);
             revWord.executeUpdate();
-            connect.commit();
+            DBConnect.connectDB().commit();
 
         } catch (Exception e) {
             System.out.println(e);

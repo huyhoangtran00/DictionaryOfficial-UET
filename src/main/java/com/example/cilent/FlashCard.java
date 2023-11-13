@@ -15,6 +15,7 @@ public class FlashCard {
 
     public static void GenListFlashCard() {
         try {
+            ListFlashCard.clear();
             String FlashCard = "Select word , description from " + FavouriteWord.FAVOUR;
             PreparedStatement getFlashCard = DBConnect.connectDB().prepareStatement(FlashCard);
             ResultSet res = getFlashCard.executeQuery();
@@ -28,6 +29,7 @@ public class FlashCard {
     }
 
     public static List<Word> getListFlashCard() {
+        GenListFlashCard();
         Collections.shuffle(ListFlashCard);
         return ListFlashCard;
     }
