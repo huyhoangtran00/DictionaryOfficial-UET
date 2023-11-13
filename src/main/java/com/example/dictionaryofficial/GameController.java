@@ -28,6 +28,10 @@ public class GameController implements Initializable {
     public void PlayFlashCard(ActionEvent event) throws IOException {
         ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "FlashCard.fxml");
     }
+
+    public void PlayBlossomGame(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "BlossomGame.fxml");
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println(1);
