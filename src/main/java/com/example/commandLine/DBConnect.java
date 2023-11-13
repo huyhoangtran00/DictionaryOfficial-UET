@@ -12,6 +12,8 @@ public class DBConnect {
 
     public static final String DB_NAME = "av";
 
+    private static Connection connection;
+
     /**
      * main
      *
@@ -48,7 +50,7 @@ public class DBConnect {
      * @param password: password is used to login
      * @return connection
      */
-    public static Connection getConnection(String dbURL, String userName,
+    private static Connection getConnection(String dbURL, String userName,
                                            String password) {
         Connection conn = null;
         try {
@@ -64,7 +66,10 @@ public class DBConnect {
     }
 
     public static Connection connectDB() {
-        return getConnection(DB_URL, USER_NAME, PASSWORD);
+        if (connection == null) {
+            connection = getConnection(DB_URL, USER_NAME, PASSWORD);
+        }
+        return connection;
     }
 
 }

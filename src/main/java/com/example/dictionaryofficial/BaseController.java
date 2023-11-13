@@ -16,9 +16,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class BaseController {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+    private static Stage stage;
+    private static Scene scene;
+    private static Parent root;
     @FXML
     private Button logoutButton;
     @FXML
@@ -39,9 +39,17 @@ public class BaseController {
         stage.show();
     }
 
-    public void setting() {
 
 
+    public static Stage getStage() {
+        return stage;
     }
 
+    public static Scene getScene() {
+        return scene;
+    }
+
+    public static Parent getRoot() {
+        return root;
+    }
 }

@@ -61,4 +61,7 @@ public class AudioGoogleAPI {
         new Player(sound).play();
     }
 
+    public static void main(String[] args) throws IOException, JavaLayerException {
+        getInstance().play(getInstance().getAudio("hello", "vi"));
+    }
 }

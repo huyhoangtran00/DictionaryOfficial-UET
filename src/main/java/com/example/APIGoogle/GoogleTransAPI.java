@@ -50,7 +50,18 @@ public class GoogleTransAPI {
     }
 
     public enum LANGUAGE {
-        ENGLISH("en"), VIETNAMESE("vi"), AUTO("auto");
+        ENGLISH("en"),
+        VIETNAMESE("vi"),
+        AUTO("auto"),
+        JAPANESE("ja"),
+        CHINESE("zh"),
+        FRENCH("fr"),
+        SPANISH("es"),
+        GERMAN("de"),
+        RUSSIAN("ru"),
+        ARABIC("ar"),
+        KOREAN("ko"),
+        PORTUGUESE("pt");
 
         private String lang = "";
 
@@ -64,7 +75,4 @@ public class GoogleTransAPI {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        System.out.println(translate("hello everybody dog",GoogleTransAPI.LANGUAGE.ENGLISH, GoogleTransAPI.LANGUAGE.VIETNAMESE));
-    }
 }
