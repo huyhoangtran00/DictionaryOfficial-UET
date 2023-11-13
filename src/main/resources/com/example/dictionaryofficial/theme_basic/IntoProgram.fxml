@@ -26,12 +26,12 @@
       <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button fx:id="searchBar" layoutX="840.0" layoutY="28.0" mnemonicParsing="false" onAction="#clickToSearch" prefHeight="50.0" prefWidth="54.0" stylesheets="@css/button.css" />
+      <Button fx:id="searchBar" layoutX="840.0" layoutY="28.0" mnemonicParsing="false" onAction="#clickToSearch" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="speaker_button_2" layoutX="834.0" layoutY="110.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" stylesheets="@css/button.css" textFill="#d1b0b0" />
       <Button fx:id="speaker_button_1" layoutX="837.0" layoutY="218.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" stylesheets="@css/button.css" />
       <Button fx:id="remove_button" layoutX="834.0" layoutY="469.0" mnemonicParsing="false" onAction="#removeWord" prefHeight="47.0" prefWidth="51.0" stylesheets="@css/button.css" />
-      <Label layoutX="856.0" layoutY="173.0" style="-fx-background-color: #FFCCCC;" text="UK" />
-      <Label layoutX="859.0" layoutY="278.0" style="-fx-background-color: #FFCCCC;" text="US" />
+      <Label layoutX="856.0" layoutY="173.0" style="-fx-text-fill: white;" text="UK" />
+      <Label layoutX="859.0" layoutY="278.0" style="-fx-text-fill: white;" text="US" />
       <ListView fx:id="historyList" layoutX="71.0" layoutY="154.0" prefHeight="363.0" prefWidth="167.0" />
       <Label alignment="CENTER" layoutX="71.0" layoutY="127.0" prefHeight="26.0" prefWidth="167.0" style="-fx-background-color: White;" text="       History" />
       <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="122.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
