@@ -43,9 +43,6 @@ import java.util.concurrent.ForkJoinPool;
 
 public class IntoProgramController implements Initializable {
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     private String searchWord;
     @FXML
     private Button logoutButton;
@@ -109,7 +106,7 @@ public class IntoProgramController implements Initializable {
     }
 
     public void logout(ActionEvent event) throws IOException {
-        ManageScene.logout(stage,basePane);
+        ManageScene.logout(BaseController.getStage(),basePane);
     }
 
 
@@ -138,6 +135,8 @@ public class IntoProgramController implements Initializable {
 
         suggestList.setVisible(false);
     }
+
+
 
 
 
@@ -178,11 +177,21 @@ public class IntoProgramController implements Initializable {
     }
 
     public void UKAudio(ActionEvent event) throws IOException, JavaLayerException {
-        AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-UK"));
+        try {
+            AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-UK"));
+        }
+        catch (IOException e) {
+            System.out.println("No word was selected");
+        }
     }
 
     public void USAudio(ActionEvent event) throws IOException, JavaLayerException {
-        AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-US"));
+        try {
+            AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-US"));
+        }
+        catch (IOException e) {
+            System.out.println("No word was selected");
+        }
     }
 
     public void favourHandler(ActionEvent event) {
@@ -311,17 +320,23 @@ public class IntoProgramController implements Initializable {
     // Switch Scene
     public void addScene(ActionEvent event) throws IOException {
         saveHistory();
-        ManageScene.showScene(root,stage,scene,event,"addAndChange.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"addAndChange.fxml");
     }
 
     public void showSettingScene(ActionEvent event) throws IOException {
         saveHistory();
-        ManageScene.showScene(root,stage,scene,event,"Setting.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Setting.fxml");
     }
 
     public void gameScene(ActionEvent event) throws IOException {
         saveHistory();
-        ManageScene.showScene(root,stage,scene,event,"Game.fxml");
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Game.fxml");
+    }
+
+    public void showTranslateScene(ActionEvent event) throws IOException {
+        saveHistory();
+
+        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Translate.fxml");
     }
 
     public void setting() {
@@ -340,7 +355,9 @@ public class IntoProgramController implements Initializable {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        ManageScene.setFont(searchField,settingFont);
+        ManageScene.setFont(searchField);
 //        suggestList.setStyle("-fx-font: "+settingFont.get(1) +"px " +"'"+settingFont.get(0) +"';");
     }
+
+
 }

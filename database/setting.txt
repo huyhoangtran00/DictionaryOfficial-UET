@@ -1,2 +1,3 @@
-Arial
-15
+Calibri Light
+18
+basic
