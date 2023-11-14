@@ -7,11 +7,12 @@
 #FlashCardPane {
     -fx-border-radius : 25;
     -fx-border-width: 5;
-    -fx-border-color:linear-gradient(to right, rgba(238, 32, 40, 0.88), #1075af);
+    -fx-border-color: rgb(253, 118, 24);
     -fx-background-color: rgba(49, 179, 250, 0.84);
     -fx-background-radius: 27;
 }
 
 #FlashCardPane:hover {
-    -fx-border-color: rgba(225, 239, 16, 0.94);
+    -fx-border-color: rgb(255, 255, 255);
 }
+

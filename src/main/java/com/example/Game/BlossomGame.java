@@ -5,6 +5,7 @@ import com.example.APIGoogle.GoogleTransAPI;
 import com.example.commandLine.DBConnect;
 import com.example.commandLine.DictionaryCommandline;
 import com.example.commandLine.DictionaryManagement;
+import javafx.concurrent.Task;
 import javazoom.jl.decoder.JavaLayerException;
 
 import java.io.IOException;
