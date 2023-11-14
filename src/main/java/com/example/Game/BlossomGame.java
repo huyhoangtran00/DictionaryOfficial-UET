@@ -25,10 +25,17 @@ public class BlossomGame {
 
 
     public static HashSet<Character> UltiGame() {
-
+        key = new HashSet<>();
         char[] nguyenam = {'a','u', 'e', 'o', 'i'};
         while (key.size() < 3) {
             char tmp = nguyenam[(int)(Math.random()*4)];
+            if (!key.contains(tmp)) {
+                key.add(tmp);
+            }
+        }
+        char[] importantChar = {'l', 't', 'h'};
+        while (key.size() < 5) {
+            char tmp = importantChar[(int)(Math.random()*2)];
             if (!key.contains(tmp)) {
                 key.add(tmp);
             }
@@ -43,22 +50,22 @@ public class BlossomGame {
         return key;
     }
 
-    public static boolean TrueOrFalse(String answer) {
+    public static int TrueOrFalse(String answer) {
         if (ListAnswer.contains(answer)) {
             System.out.println("Answer is Exist");
-            return false;
+            return 1;
         }
         for (int i = 0; i < answer.length(); i++) {
             if(!key.contains(answer.charAt(i))) {
                 System.out.println("Not " + (answer.charAt(i)));
-                return false;
+                return 1;
             }
         }
         if(!DictionaryCommandline.isExist(answer,DBConnect.connectDB())) {
-            return false;
+            return 0;
         } else {
             ListAnswer.add(answer);
-            return true;
+            return 2;
         }
     }
 
@@ -70,7 +77,7 @@ public class BlossomGame {
         while(q --> 0) {
             System.out.println(key);
             String tmp = sc.next();
-            if (TrueOrFalse(tmp)) {
+            if (TrueOrFalse(tmp) == 2) {
                 AudioGoogleAPI audio = AudioGoogleAPI.getInstance();
                 InputStream sound = audio.getAudio(tmp, "en-UK");
                 audio.play(sound);
