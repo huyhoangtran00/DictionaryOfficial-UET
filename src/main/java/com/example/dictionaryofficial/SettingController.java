@@ -62,6 +62,7 @@ public class SettingController  implements Initializable {
                      "\n" +
                     theme.getSelectionModel().getSelectedItem());
             writer.close();
+            ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Setting.fxml");
         }
         catch (IOException e){
             e.printStackTrace();

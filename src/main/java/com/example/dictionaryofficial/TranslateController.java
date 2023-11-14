@@ -32,6 +32,12 @@ public class TranslateController implements Initializable  {
     private ComboBox<String> src_option;
     @FXML
     private ComboBox<String> des_option;
+    @FXML
+    private Button switch_button;
+    @FXML
+    private Button src_speaker;
+    @FXML
+    private Button des_speaker;
 
 
     @Override
@@ -49,7 +55,7 @@ public class TranslateController implements Initializable  {
                     return res;
                 }
             };
-
+            // ket thuc va hien thi
             task.setOnSucceeded(event -> {
 
                 javafx.application.Platform.runLater(() -> {
@@ -171,5 +177,24 @@ public class TranslateController implements Initializable  {
         ManageScene.setFont(des_text);
     }
 
+    public void switch_text_and_language(ActionEvent event) throws  IOException {
+
+
+
+     //switch_language
+        String temp_lan = src_option.getSelectionModel().getSelectedItem();
+        src_option.setValue(des_option.getSelectionModel().getSelectedItem());
+        des_option.setValue(temp_lan);
+
+        //switch_text
+        String temp_src = src_text.getText();
+        src_text.setText(des_text.getText());
+        des_text.setText(temp_src);
+
+
+    }
+
+    public void speaker_src_text(ActionEvent events) throws IOException {
+    }
 
 }
