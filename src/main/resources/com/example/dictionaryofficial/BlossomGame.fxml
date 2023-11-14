@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -8,20 +9,121 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.BlossomGameController">
    <children>
       <AnchorPane layoutX="67.0" layoutY="24.0" prefHeight="506.0" prefWidth="834.0" style="-fx-background-color: Aquamarine;">
          <children>
-            <AnchorPane layoutX="455.0" layoutY="24.0" prefHeight="430.0" prefWidth="354.0" style="-fx-background-color: Cornsilk;">
+            <AnchorPane layoutX="458.0" layoutY="12.0" prefHeight="482.0" prefWidth="361.0" style="-fx-background-color: Cornsilk;">
                <children>
-                  <Label layoutX="14.0" layoutY="365.0" prefHeight="50.0" prefWidth="78.0" text="Score:" textFill="#fa0202">
+                  <Label layoutX="14.0" layoutY="415.0" prefHeight="50.0" prefWidth="78.0" text="Score:" textFill="#fa0202">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="261.0" layoutY="365.0" prefHeight="50.0" prefWidth="78.0" text="Label" />
-                  <Label layoutX="17.0" layoutY="14.0" prefHeight="50.0" prefWidth="326.0" text="Label" />
-                  <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="80.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="score" layoutX="261.0" layoutY="365.0" prefHeight="50.0" prefWidth="78.0" />
+                  <Label layoutX="273.0" layoutY="14.0" prefHeight="43.0" prefWidth="63.0" text="x7">
+                     <font>
+                        <Font size="29.0" />
+                     </font></Label>
+                  <AnchorPane layoutX="18.0" layoutY="64.0" prefHeight="342.0" prefWidth="322.0" style="-fx-border-color: Black;">
+                     <children>
+                        <Button fx:id="word1" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="55.0">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/frogHead.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="word4" layoutX="14.0" layoutY="127.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="55.0">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/frogHead.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="word6" layoutX="233.0" layoutY="127.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="55.0">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/frogHead.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="word5" layoutX="124.0" layoutY="127.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="55.0">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/frogHead.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="word3" layoutX="233.0" layoutY="14.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="55.0">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/frogHead.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="word2" layoutX="124.0" layoutY="14.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="55.0">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/frogHead.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="word9" layoutX="233.0" layoutY="244.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="55.0">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/frogHead.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="word8" layoutX="124.0" layoutY="244.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="55.0">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/frogHead.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="word7" layoutX="14.0" layoutY="244.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="55.0">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/frogHead.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="ans1" alignment="CENTER" layoutX="14.0" layoutY="73.0" prefHeight="18.0" prefWidth="72.0" text="Intermediate" />
+                        <Label fx:id="ans2" alignment="CENTER" layoutX="124.0" layoutY="73.0" prefHeight="18.0" prefWidth="72.0" text="Intermediate" />
+                        <Label fx:id="ans3" alignment="CENTER" layoutX="233.0" layoutY="73.0" prefHeight="18.0" prefWidth="72.0" text="Intermediate" />
+                        <Label fx:id="ans4" alignment="CENTER" layoutX="14.0" layoutY="192.0" prefHeight="18.0" prefWidth="72.0" text="Intermediate" />
+                        <Label fx:id="ans5" alignment="CENTER" layoutX="124.0" layoutY="192.0" prefHeight="18.0" prefWidth="72.0" text="Intermediate" />
+                        <Label fx:id="ans6" alignment="CENTER" layoutX="233.0" layoutY="192.0" prefHeight="18.0" prefWidth="72.0" text="Intermediate" />
+                        <Label fx:id="ans7" alignment="CENTER" layoutX="14.0" layoutY="309.0" prefHeight="18.0" prefWidth="72.0" text="Intermediate" />
+                        <Label fx:id="ans8" alignment="CENTER" layoutX="124.0" layoutY="309.0" prefHeight="18.0" prefWidth="72.0" text="Intermediate" />
+                        <Label fx:id="ans9" alignment="CENTER" layoutX="233.0" layoutY="309.0" prefHeight="18.0" prefWidth="72.0" text="Intermediate" />
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="51.0" fitWidth="56.0" layoutX="210.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/heart.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <ImageView fitHeight="87.0" fitWidth="78.0" layoutX="112.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
@@ -59,20 +161,20 @@
                   <Image url="@Image/frog.png" />
                </image>
             </ImageView>
-            <Button layoutX="281.0" layoutY="274.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" text="2" />
-            <Button layoutX="125.0" layoutY="274.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" text="2" />
-            <Button layoutX="359.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" text="2" />
-            <Button layoutX="203.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" text="2" />
-            <Button layoutX="47.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" text="2" />
-            <Button layoutX="281.0" layoutY="56.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" text="2" />
-            <Button layoutX="125.0" layoutY="56.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" text="2" />
-            <Label layoutX="38.0" layoutY="364.0" text="Your Answer:">
+            <Button fx:id="letter7" layoutX="281.0" layoutY="274.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" />
+            <Button fx:id="letter6" layoutX="125.0" layoutY="274.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" />
+            <Button fx:id="letter5" layoutX="359.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" />
+            <Button fx:id="letter4" layoutX="203.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" />
+            <Button fx:id="letter3" layoutX="47.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" />
+            <Button fx:id="letter2" layoutX="281.0" layoutY="56.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" />
+            <Button fx:id="letter1" layoutX="125.0" layoutY="56.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0" />
+            <Label fx:id="yourAns" layoutX="38.0" layoutY="364.0" text="Your Answer:">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField layoutX="176.0" layoutY="364.0" prefHeight="31.0" prefWidth="210.0" />
-            <Button layoutX="253.0" layoutY="412.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0">
+            <TextField fx:id="ansField" editable="false" layoutX="176.0" layoutY="364.0" prefHeight="31.0" prefWidth="210.0" promptText="Show here" />
+            <Button fx:id="submitButton" layoutX="253.0" layoutY="412.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="52.0">
                <graphic>
                   <ImageView fitHeight="39.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -81,7 +183,12 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Button fx:id="startButton" layoutX="203.0" layoutY="163.0" mnemonicParsing="false" onAction="#startGame" prefHeight="50.0" prefWidth="52.0" text="Start" />
          </children>
       </AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@css/background.css" />
+      <URL value="@css/button.css" />
+   </stylesheets>
 </AnchorPane>

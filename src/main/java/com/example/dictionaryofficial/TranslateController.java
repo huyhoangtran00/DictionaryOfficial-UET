@@ -1,6 +1,7 @@
 package com.example.dictionaryofficial;
 
 import com.example.APIGoogle.GoogleTransAPI;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,7 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TranslateController implements Initializable {
+public class TranslateController implements Initializable  {
 
     private Stage stage;
     private Scene scene;
@@ -33,11 +34,33 @@ public class TranslateController implements Initializable {
     private ComboBox<String> des_option;
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setting();
         initTranslate();
+        src_text.textProperty().addListener((observable, oldValue, newValue) -> {
+            Task<String> task = new Task<String>() {
+                @Override
+                protected String call() throws Exception {
+                    String res = GoogleTransAPI.translate(src_text.getText(),
+                            switch_language(src_option.getSelectionModel().getSelectedItem()),
+                            switch_language(des_option.getSelectionModel().getSelectedItem()));
+                    res = outputTextFormatted(res);
+                    return res;
+                }
+            };
+
+            task.setOnSucceeded(event -> {
+
+                javafx.application.Platform.runLater(() -> {
+                    String result = task.getValue();
+                    javafx.application.Platform.runLater(() -> des_text.setText(result));
+                });
+            });
+            // Chạy Task trên một luồng mới
+            new Thread(task).start();
+
+        });
     }
 
     public void showIntoProgramScene(ActionEvent event) throws IOException {
@@ -55,10 +78,32 @@ public class TranslateController implements Initializable {
     public void initTranslate() {
         src_option.getItems().add("English");
         src_option.getItems().add("Vietnamese");
+        src_option.getItems().add("Japanese");
+        src_option.getItems().add("Chinese");
+        src_option.getItems().add("French");
+        src_option.getItems().add("Spanish");
+        src_option.getItems().add("German");
+        src_option.getItems().add("Russian");
+        src_option.getItems().add("Arabic");
+        src_option.getItems().add("Korean");
+        src_option.getItems().add("Portuguese");
         src_option.getItems().add("Phát hiện ngôn ngữ");
 
         des_option.getItems().add("English");
         des_option.getItems().add("Vietnamese");
+        des_option.getItems().add("English");
+        des_option.getItems().add("Vietnamese");
+        des_option.getItems().add("Japanese");
+        des_option.getItems().add("Chinese");
+        des_option.getItems().add("French");
+        des_option.getItems().add("Spanish");
+        des_option.getItems().add("German");
+        des_option.getItems().add("Russian");
+        des_option.getItems().add("Arabic");
+        des_option.getItems().add("Korean");
+        des_option.getItems().add("Portuguese");
+
+
 
         src_option.setValue("English");
         des_option.setValue("Vietnamese");
@@ -70,7 +115,6 @@ public class TranslateController implements Initializable {
         String res = GoogleTransAPI.translate(src_text.getText(),
                 switch_language(src_option.getSelectionModel().getSelectedItem()),
                 switch_language(des_option.getSelectionModel().getSelectedItem()));
-        res = outputTextFormatted(res);
         des_text.setText(res);
 
     }
@@ -85,6 +129,24 @@ public class TranslateController implements Initializable {
 
             case "Phát hiện ngôn ngữ":
                 return GoogleTransAPI.LANGUAGE.AUTO;
+            case "Japanese" :
+                return GoogleTransAPI.LANGUAGE.JAPANESE;
+            case "Chinese" :
+                return GoogleTransAPI.LANGUAGE.CHINESE;
+            case "French" :
+                return GoogleTransAPI.LANGUAGE.FRENCH;
+            case "Spanish":
+                return GoogleTransAPI.LANGUAGE.SPANISH;
+            case "German" :
+                return GoogleTransAPI.LANGUAGE.GERMAN;
+            case "Russian":
+                return GoogleTransAPI.LANGUAGE.RUSSIAN;
+            case "Arabic":
+                return GoogleTransAPI.LANGUAGE.ARABIC;
+            case "Korean":
+                return GoogleTransAPI.LANGUAGE.KOREAN;
+            case "Portuguese":
+                return GoogleTransAPI.LANGUAGE.PORTUGUESE;
             default:
                 break;
         }
@@ -95,7 +157,7 @@ public class TranslateController implements Initializable {
         StringBuilder result = new StringBuilder();
 
         for (char c : text.toCharArray()) {
-            if (Character.isLetter(c) || c == ',' || c == ' ') {
+            if (Character.isLetter(c) || c == ',' || c == ' ' ) {
                 result.append(c);
             }
         }
@@ -108,4 +170,6 @@ public class TranslateController implements Initializable {
         ManageScene.setFont(src_text);
         ManageScene.setFont(des_text);
     }
+
+
 }
