@@ -64,9 +64,11 @@ public class FlashCardController implements Initializable {
         rotate.play();
         rotate.setOnFinished(e -> {
             if (isFront) {
+                cardLabel.setStyle("-fx-font-size: 25px;-fx-font-weight: regular;");
                 selected = cardLabel.getText();
                 cardLabel.setText(ListFlashCard.get(cur - 1).getWordExplain());
             } else {
+                cardLabel.setStyle("-fx-font-size: 25px;-fx-font-weight: bold;");
                 cardLabel.setText(selected);
             }
             cardLabel.setVisible(true);
@@ -85,6 +87,14 @@ public class FlashCardController implements Initializable {
         translateTransition.setToX(0);
         translateTransition.setAutoReverse(true);
         fadeTrans();
+        if (!isFront) {
+            cardLabel.setStyle("-fx-font-size: 25px;-fx-font-weight: regular;");
+            selected = cardLabel.getText();
+            cardLabel.setText(ListFlashCard.get(cur - 1).getWordExplain());
+        } else {
+            cardLabel.setStyle("-fx-font-size: 25px;-fx-font-weight: bold;");
+            cardLabel.setText(selected);
+        }
         translateTransition.play();
     }
     private void right_trans() {
@@ -93,7 +103,29 @@ public class FlashCardController implements Initializable {
         translateTransition.setToX(0);
         translateTransition.setAutoReverse(true);
         fadeTrans();
+        if (!isFront) {
+            cardLabel.setStyle("-fx-font-size: 25px;-fx-font-weight: regular;");
+            selected = cardLabel.getText();
+            cardLabel.setText(ListFlashCard.get(cur - 1).getWordExplain());
+        } else {
+            cardLabel.setStyle("-fx-font-size: 25px;-fx-font-weight: bold;");
+            cardLabel.setText(selected);
+        }
         translateTransition.play();
+    }
+
+    public void showButton(int pt) {
+        if (pt == 1) {
+            prevButton.setVisible(false);
+        } else {
+            prevButton.setVisible(true);
+        }
+
+        if (pt == ListFlashCard.size()) {
+            nextButton.setVisible(false);
+        } else {
+            nextButton.setVisible(true);
+        }
     }
 
     public void showSettingScene(ActionEvent event) throws IOException {
@@ -115,24 +147,28 @@ public class FlashCardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ListFlashCard = FlashCard.getListFlashCard();
-        cardLabel.setStyle("-fx-font-size: 20px;");
+        cardLabel.setStyle("-fx-font-size: 25px;");
         cardLabel.setText(ListFlashCard.get(0).getWordTarget());
-        curLabel.setText(Integer.toString(cur) + "/" + Integer.toString(ListFlashCard.size()));
-        cardLabel.setStyle("-fx-font-size: 20px;");
-        cardLabel.setText(ListFlashCard.get(0).getWordTarget());
-        curLabel.setText(Integer.toString(cur) + "/" + Integer.toString(ListFlashCard.size()));
+        curLabel.setText(Integer.toString(cur) + " / " + Integer.toString(ListFlashCard.size()));
         FlashCardPane.setOnMouseClicked(event -> {
             cardLabel.setVisible(false);
             rotatePane();
         });
+        if (cur == 1) {
+            prevButton.setVisible(false);
+        } else {
+            prevButton.setVisible(true);
+        }
+
         nextButton.setOnMouseClicked(event -> {
             if (cur < ListFlashCard.size()) {
                 isFront = true;
                 right_trans();
                 cur++;
+                showButton(cur);
                 selected = ListFlashCard.get(cur - 1).getWordTarget();
                 cardLabel.setText(selected);
-                curLabel.setText(Integer.toString(cur) + "/" + Integer.toString(ListFlashCard.size()));
+                curLabel.setText(Integer.toString(cur) + " / " + Integer.toString(ListFlashCard.size()));
             }
         });
         prevButton.setOnMouseClicked(event -> {
@@ -140,6 +176,7 @@ public class FlashCardController implements Initializable {
                 isFront = true;
                 left_trans();
                 cur--;
+                showButton(cur);
                 selected = ListFlashCard.get(cur - 1).getWordTarget();
                 cardLabel.setText(selected);
                 curLabel.setText(Integer.toString(cur) + " / " + Integer.toString(ListFlashCard.size()));

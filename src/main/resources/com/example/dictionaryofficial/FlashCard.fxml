@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="640.0" prefWidth="960.0" stylesheets="@css/FlashCard.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.FlashCardController">
    <children>
@@ -14,10 +15,14 @@
       <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" onAction="#searchScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <StackPane fx:id="FlashCardPane" layoutX="143.0" layoutY="41.0" onMouseClicked="#initialize" prefHeight="386.0" prefWidth="674.0">
          <children>
-            <Label fx:id="cardLabel" alignment="CENTER" prefHeight="328.0" prefWidth="410.0" />
+            <Label fx:id="cardLabel" alignment="CENTER" prefHeight="328.0" prefWidth="410.0" textAlignment="CENTER" wrapText="true" />
          </children></StackPane>
-      <Button fx:id="prevButton" layoutX="391.0" layoutY="478.0" mnemonicParsing="false" text="Prev" />
-      <Button fx:id="nextButton" layoutX="521.0" layoutY="478.0" mnemonicParsing="false" text="Next" />
-      <Label fx:id="curLabel" layoutX="459.0" layoutY="481.0" prefHeight="19.0" prefWidth="42.0" text="Label" />
+      <Button fx:id="prevButton" layoutX="357.0" layoutY="455.0" mnemonicParsing="false" opacity="0.8" prefHeight="70.0" prefWidth="70.0" rotate="180.0" stylesheets="@css/button.css" />
+      <Button fx:id="nextButton" layoutX="539.0" layoutY="455.0" mnemonicParsing="false" opacity="0.8" prefHeight="70.0" prefWidth="70.0" styleClass="root" stylesheets="@css/button.css" />
+      <Label fx:id="curLabel" layoutX="455.0" layoutY="475.0" prefHeight="30.0" prefWidth="50.0" text="Label">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Label>
+      <Button fx:id="returnButton" layoutX="28.0" layoutY="27.0" mnemonicParsing="false" onAction="#gameScene" opacity="0.8" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
    </children>
 </AnchorPane>
