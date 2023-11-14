@@ -62,6 +62,6 @@ public class AudioGoogleAPI {
     }
 
     public static void main(String[] args) throws IOException, JavaLayerException {
-        getInstance().play(getInstance().getAudio("hello", "vi"));
+        getInstance().play(getInstance().getAudio("Incorrect! Try it again.", "en-US"));
     }
 }
