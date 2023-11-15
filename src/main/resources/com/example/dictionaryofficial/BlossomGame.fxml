@@ -199,13 +199,48 @@
             </Button>
             <AnchorPane fx:id="notification" layoutX="109.0" layoutY="104.0" prefHeight="335.0" prefWidth="586.0" style="-fx-background-color: White;">
                <children>
-                  <Label alignment="CENTER" layoutX="177.0" layoutY="27.0" prefHeight="50.0" prefWidth="234.0" text="YOUR SCORE" />
-                  <Label fx:id="scoreNoti" alignment="CENTER" layoutX="177.0" layoutY="77.0" prefHeight="50.0" prefWidth="234.0" text="9/9" />
+                  <Label alignment="CENTER" layoutX="177.0" layoutY="14.0" prefHeight="50.0" prefWidth="234.0" text="YOUR SCORE" />
+                  <Label fx:id="scoreNoti" alignment="CENTER" layoutX="176.0" layoutY="64.0" prefHeight="50.0" prefWidth="234.0" text="9/9" />
                   <Button fx:id="restart" layoutX="247.0" layoutY="227.0" mnemonicParsing="false" onAction="#restartGame" prefHeight="59.0" prefWidth="94.0" text="Restart" />
+                  <ImageView fitHeight="51.0" fitWidth="51.0" layoutX="152.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/star_border.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="72.0" layoutX="259.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/star_border.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="59.0" fitWidth="51.0" layoutX="385.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/star_border.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star1" fitHeight="79.0" fitWidth="78.0" layoutX="135.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/star_favor.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star2" fitHeight="92.0" fitWidth="94.0" layoutX="244.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/star_favor.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star3" fitHeight="79.0" fitWidth="78.0" layoutX="368.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/star_favor.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
+      <Label fx:id="taskbar" layoutX="265.0" layoutY="561.0" prefHeight="70.0" prefWidth="418.0" stylesheets="@css/intoprogram.css" />
+      <Button fx:id="setting_button" layoutX="584.0" layoutY="571.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="edit_button" layoutX="421.0" layoutY="571.0" mnemonicParsing="false" onAction="#addScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="game_button" layoutX="502.0" layoutY="571.0" mnemonicParsing="false" onAction="#gameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="search_button" layoutX="327.0" layoutY="574.0" mnemonicParsing="false" onAction="#searchScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
    </children>
    <stylesheets>
       <URL value="@css/background.css" />
