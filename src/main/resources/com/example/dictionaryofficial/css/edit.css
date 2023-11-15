@@ -50,10 +50,6 @@
     -fx-background-radius: 30px;
 }
 
-#gamepane {
-    -fx-background-color: rgb(121, 191, 145,0.5);
-    -fx-background-radius: 30px;
-}
 
 #submitButton {
     -fx-background-color: transparent;
