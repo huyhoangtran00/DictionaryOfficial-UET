@@ -180,8 +180,8 @@ public class IntoProgramController implements Initializable {
         try {
             AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-UK"));
         }
-        catch (IOException e) {
-            System.out.println("No word was selected");
+        catch (Exception e) {
+            AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio("Please search a word!", "en-UK"));
         }
     }
 
@@ -189,8 +189,8 @@ public class IntoProgramController implements Initializable {
         try {
             AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-US"));
         }
-        catch (IOException e) {
-            System.out.println("No word was selected");
+        catch (Exception e) {
+            AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio("Please search a word!", "en-US"));
         }
     }
 

@@ -25,6 +25,10 @@ public class GameController implements Initializable {
         ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "Setting.fxml");
     }
 
+    public void showTranslateScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Translate.fxml");
+    }
+
     public void PlayFlashCard(ActionEvent event) throws IOException {
         ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "FlashCard.fxml");
     }
