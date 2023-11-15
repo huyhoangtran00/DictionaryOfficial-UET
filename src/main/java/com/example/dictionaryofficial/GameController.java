@@ -32,6 +32,9 @@ public class GameController implements Initializable {
     public void PlayBlossomGame(ActionEvent event) throws IOException {
         ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "BlossomGame.fxml");
     }
+    public void  PlayMultiChoiceGame(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "MultiChoice.fxml");
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println(1);
