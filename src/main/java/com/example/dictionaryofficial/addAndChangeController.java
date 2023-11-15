@@ -164,8 +164,9 @@ public class addAndChangeController implements Initializable {
     }
 
     public void checkExistingWord() {
+        System.out.println(111);
         notification.setVisible(true);
-        if (mode.getValue().equals("Add")) {
+        if (mode.getValue().equals("Add Words")) {
             String addedWord = wordInput.getText();
             boolean isExist = DictionaryCommandline.isExist(addedWord, DBConnect.connectDB());
             if (!isExist) {
@@ -191,7 +192,7 @@ public class addAndChangeController implements Initializable {
                 advInput.setEditable(false);
                 exampleInput.setEditable(false);
             }
-        } else if (mode.getValue().equals("Edit")) {
+        } else if (mode.getValue().equals("Edit Words")) {
             String addedWord = wordInput.getText();
             boolean isExist = DictionaryCommandline.isExist(addedWord, DBConnect.connectDB());
             if (isExist) {

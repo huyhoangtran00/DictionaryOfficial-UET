@@ -480,4 +480,9 @@ public class BlossomGameController implements Initializable {
     public void showSettingScene(ActionEvent event) throws IOException {
         ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Setting.fxml");
     }
+
+    public void showTranslateScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Translate.fxml");
+    }
+
 }
