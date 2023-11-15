@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javazoom.jl.decoder.JavaLayerException;
 
@@ -90,6 +91,12 @@ public class BlossomGameController implements Initializable {
     private Label scoreNoti;
     @FXML
     private Button restart;
+    @FXML
+    private ImageView star1;
+    @FXML
+    private ImageView star2;
+    @FXML
+    private ImageView star3;
 
     private static ArrayList<Button> letter;
     private static ArrayList<Button> word;
@@ -113,29 +120,7 @@ public class BlossomGameController implements Initializable {
         ans = new ArrayList<>();
         soundList = new ArrayList<>();
 
-        thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    sound = audio.getAudio("You have submitted this answer, try another one.", "en-US");
-                    audio.play(sound);
-                } catch (IOException | JavaLayerException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
 
-        thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    sound = audio.getAudio("Incorrect! Try it again", "en-US");
-                    audio.play(sound);
-                } catch (IOException | JavaLayerException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
 
         initArray();
 
@@ -383,13 +368,32 @@ public class BlossomGameController implements Initializable {
         }
     }
 
+    public void showNoti() {
+        notification.setVisible(true);
+        scoreNoti.setText(scoreInt + "/9");
+        star1.setVisible(true);
+        star2.setVisible(true);
+        star3.setVisible(true);
+        if (scoreInt < 8) {
+            star3.setVisible(false);
+        }
+        if (scoreInt < 5) {
+            star2.setVisible(false);
+        }
+        if (scoreInt < 2) {
+            star1.setVisible(false);
+        }
+
+    }
+
     public void submit(ActionEvent event) throws IOException, JavaLayerException {
         String tmp = ansField.getText();
         int result = BlossomGame.TrueOrFalse(tmp);
         if (tmp.length() >= 3 && result == 2) {
-            if (scoreInt == 9) {
-                notification.setVisible(true);
-                scoreNoti.setText(scoreInt + "/9");
+
+            if (scoreInt == 8) {
+                scoreInt++;
+                showNoti();
             } else {
                 thread1 = new Thread(new Runnable() {
                     @Override
@@ -414,19 +418,39 @@ public class BlossomGameController implements Initializable {
             heartInt--;
             heart.setText("x" + heartInt);
             if (heartInt == 0) {
-                notification.setVisible(true);
-                scoreNoti.setText(scoreInt + "/9");
+                showNoti();
             } else {
+                thread2 = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            sound = audio.getAudio("You have submitted this answer, try another one.", "en-US");
+                            audio.play(sound);
+                        } catch (IOException | JavaLayerException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                });
                 thread2.start();
             }
 
-        } else {
+        } else if (result == 0 || tmp.length() < 3){
             heartInt--;
             heart.setText("x" + heartInt);
             if (heartInt == 0) {
-                notification.setVisible(true);
-                scoreNoti.setText(scoreInt + "/9");
+                showNoti();
             } else {
+                thread3 = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            sound = audio.getAudio("Incorrect! Try it again", "en-US");
+                            audio.play(sound);
+                        } catch (IOException | JavaLayerException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                });
                 thread3.start();
             }
         }
@@ -439,5 +463,21 @@ public class BlossomGameController implements Initializable {
     }
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initGame();
+    }
+
+    public void searchScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "IntoProgram.fxml");
+    }
+
+    public void addScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "addAndChange.fxml");
+    }
+
+    public void gameScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Game.fxml");
+    }
+
+    public void showSettingScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Setting.fxml");
     }
 }
