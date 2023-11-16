@@ -26,6 +26,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.web.HTMLEditor;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
@@ -78,11 +79,51 @@ public class IntoProgramController implements Initializable {
     private WebView searchResult;
     @FXML
     private ListView<String> historyList;
+    @FXML
+    private Button EditButton;
+    @FXML
+    private HTMLEditor editField;
+    @FXML
+    private Button submitEditButton;
+
 
     private static List<String> historyContainer = new ArrayList<>();
     private Vector<String> settingFont ;
     public static TextField static_searchField ;
 
+    private final String style = "<style>\n" +
+            "        h1 {\n" +
+            "            color: red;\n" +
+            "            font-weight: 800;\n" +
+            "        }\n" +
+            "        h3 i {\n" +
+            "            color: green;\n" +
+            "        }\n" +
+            "        h2 {\n" +
+            "            color: rgb(0, 213, 255);\n" +
+            "            font-weight: 700;\n" +
+            "        }\n" +
+            "        ul > li {\n" +
+            "            font-weight: 700;\n" +
+            "        }\n" +
+            "\n" +
+            "        ol > li {\n" +
+            "            font-weight: 700;\n" +
+            "        }\n" +
+            "        ol > li > ul > li {\n" +
+            "            font-style: italic;\n" +
+            "            font-weight: 400;\n" +
+            "        }\n" +
+            "        \n" +
+            "        ul > li > ul > li {\n" +
+            "            font-weight: 600;\n" +
+            "        }\n" +
+            "\n" +
+            "        ul > li > ul > li > ul ,i {\n" +
+            "            font-style: italic;\n" +
+            "            font-weight: 400;\n" +
+            "        }\n" +
+            "    </style>";
     //-----------------------------------------------------------------------------------------------------//
     public void setFont(String font, double fontSize) {
         searchField.setFont(new Font(font,fontSize));
@@ -129,7 +170,7 @@ public class IntoProgramController implements Initializable {
                 favour_star.setVisible(false);
             }
         }
-        String result = DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+        String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
 //        String result = "<h1>" + GoogleTransAPI.translate(searchWord, GoogleTransAPI.LANGUAGE.ENGLISH, GoogleTransAPI.LANGUAGE.VIETNAMESE) + "</h1>";
         searchResult.getEngine().loadContent(result);
 
@@ -208,6 +249,33 @@ public class IntoProgramController implements Initializable {
         }
     }
 
+    public void EditWord(ActionEvent e) {
+        submitEditButton.setVisible(true);
+        String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+
+        ToolBar toolBar = (ToolBar) editField.lookup(".top-toolbar");
+        toolBar.setManaged(false);
+        toolBar.setVisible(false);
+
+        ToolBar paragraphToolBar = (ToolBar) editField.lookup(".bottom-toolbar");
+        paragraphToolBar.setManaged(false);
+        paragraphToolBar.setVisible(false);
+
+        editField.setHtmlText(result);
+        editField.setVisible(true);
+        EditButton.setVisible(false);
+    }
+
+    public void submitEditWord (ActionEvent e) {
+        String result = editField.getHtmlText();
+        DictionaryManagement.EditFromFront(searchWord, result, DBConnect.connectDB());
+
+        searchResult.getEngine().loadContent(result);
+
+        editField.setVisible(false);
+        submitEditButton.setVisible(false);
+        EditButton.setVisible(true);
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 //        ListView<String> suggestList = new ListView<>();
@@ -224,6 +292,8 @@ public class IntoProgramController implements Initializable {
         favour_button.setVisible(false);
         favour_star.setVisible(false);
         border_star.setVisible(false);
+        editField.setVisible(false);
+        submitEditButton.setVisible(false);
         IntoProgramController tmp = new IntoProgramController();
 
         // setting font and font Size
@@ -261,7 +331,7 @@ public class IntoProgramController implements Initializable {
                     favour_star.setVisible(false);
                 }
             }
-            String result = DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+            String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
             searchResult.getEngine().loadContent(result);
             suggestList.setVisible(false);
         });
@@ -289,7 +359,7 @@ public class IntoProgramController implements Initializable {
                     favour_star.setVisible(false);
                 }
             }
-            String result = DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+            String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
             searchResult.getEngine().loadContent(result);
             suggestList.setVisible(false);
         });
@@ -312,7 +382,7 @@ public class IntoProgramController implements Initializable {
                     favour_star.setVisible(false);
                 }
             }
-            String result = DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+            String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
             searchResult.getEngine().loadContent(result);
             suggestList.setVisible(false);
         });
