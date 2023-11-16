@@ -85,7 +85,7 @@ public class DictionaryCommandline {
     public static List<String> suggestWord(String word, Connection connect) {
         List<String> ListSuggest = new ArrayList<>();
         try {
-            System.out.println("Có vẻ từ bạn tìm không tồn tại, có phải ý bạn là: ");
+            //System.out.println("Có vẻ từ bạn tìm không tồn tại, có phải ý bạn là: ");
             Statement smt = connect.createStatement();
             ResultSet res = smt.executeQuery("Select id, wordTarget, wordMeaning from " + DBConnect.DB_NAME
                                             + " where wordTarget like '" + word +"%'" + " limit 100");
@@ -128,7 +128,7 @@ public class DictionaryCommandline {
 //                                mean[i]);
                         meaning = meaning + mean[i] + '\n';
                     } else {
-                        System.out.printf("%-3s   %-15s | %-20s \n", "", "", mean[i]);
+                        //System.out.printf("%-3s   %-15s | %-20s \n", "", "", mean[i]);
                         meaning = meaning + mean[i] + '\n';
                     }
                 }

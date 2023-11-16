@@ -244,4 +244,19 @@ public class DictionaryManagement {
             dictionary.wordArr.add(word);
         }
     }
+
+    public static void EditFromFront(String word, String html, Connection connect) {
+        try {
+            connect.setAutoCommit(false);
+            String sql = "UPDATE " + DBConnect.DB_NAME + " SET html = ? WHERE wordTarget = ?";
+            PreparedStatement stmt = connect.prepareStatement(sql);
+            stmt.setString(1,html);
+            stmt.setString(2,word);
+            stmt.executeUpdate();
+            connect.commit();
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println("Loi sua tu frontend");
+        }
+    }
 }
