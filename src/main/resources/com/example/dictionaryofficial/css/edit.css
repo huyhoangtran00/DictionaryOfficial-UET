@@ -34,8 +34,8 @@
     -fx-content-display: center;
     -fx-font-family:Arial;
     -fx-text-fill: white;
-    -fx-font-size: 17;
-    -fx-background-color: rgb(244,164,96);
+    -fx-font-size: 20;
+
     -fx-background-radius: 10px;
 }
 
@@ -46,7 +46,7 @@
 }
 
 #pane {
-    -fx-background-color: rgb(158,169,181,0.5);
+    -fx-background-color: FFB6D9;
     -fx-background-radius: 30px;
 }
 
@@ -57,7 +57,7 @@
     -fx-border-color: transparent;
 
     -fx-background-image: url('../Image/confirm_icon.png');
-    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-size: cover; /* Kích thớc của hình ảnh theo tỷ lệ */
     -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
     -fx-background-position: center center; /* Căn giữa hình ảnh */
 }

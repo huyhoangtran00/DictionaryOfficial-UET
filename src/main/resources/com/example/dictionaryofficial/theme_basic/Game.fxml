@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="bkg_game" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/game.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.GameController">
+   <children>
+      <AnchorPane fx:id="gamepane" layoutX="67.0" layoutY="24.0" prefHeight="506.0" prefWidth="834.0" style="-fx-background-color: FFEBD8; -fx-background-radius: 30;">
+         <children>
+            <Label fx:id="notification" layoutX="51.0" layoutY="476.0" prefHeight="18.0" prefWidth="678.0" style="-fx-background-color: none;" />
+            <Label alignment="CENTER" layoutX="51.0" layoutY="14.0" prefHeight="70.0" prefWidth="743.0" style="-fx-background-color: C7DCA7; -fx-background-radius: 30;" text="STUDY SMART - PLAY HARD" textFill="#fffdfd">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </Label>
+            <Button fx:id="flash_card" layoutX="115.0" layoutY="173.0" mnemonicParsing="false" onAction="#PlayFlashCard" prefHeight="79.0" prefWidth="616.0" stylesheets="@css/button.css" text="Flash Card" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font></Button>
+            <Button fx:id="bloss" layoutX="115.0" layoutY="275.0" mnemonicParsing="false" onAction="#PlayBlossomGame" prefHeight="79.0" prefWidth="616.0" stylesheets="@css/button.css" text="Blossom Game" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font></Button>
+            <Button fx:id="multi" layoutX="115.0" layoutY="384.0" mnemonicParsing="false" onAction="#PlayMultiChoiceGame" prefHeight="79.0" prefWidth="616.0" stylesheets="@css/button.css" text="Multiple Choice" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
+      <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#addScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" onAction="#searchScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="translate_button" layoutX="573.0" layoutY="561.0" mnemonicParsing="false" onAction="#showTranslateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+   </children>
+</AnchorPane>

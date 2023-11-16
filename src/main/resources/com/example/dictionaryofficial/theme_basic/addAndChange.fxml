@@ -20,12 +20,12 @@
          <children>
             <TextField fx:id="wordInput" layoutX="33.0" layoutY="49.0" prefHeight="40.0" prefWidth="300.0" promptText="Type your word and check" stylesheets="@css/edit.css" />
             <TextField fx:id="pronunciationInput" layoutX="33.0" layoutY="118.0" prefHeight="40.0" prefWidth="300.0" promptText="Type pronunciation" stylesheets="@css/edit.css" />
-            <Label alignment="BASELINE_LEFT" layoutX="33.0" layoutY="94.0" prefHeight="23.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Pronunciation">
+            <Label alignment="BASELINE_LEFT" layoutX="31.0" layoutY="94.0" prefHeight="23.0" prefWidth="132.0" stylesheets="@css/edit.css" text="Pronunciation">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="33.0" layoutY="159.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Noun">
+            <Label layoutX="28.0" layoutY="159.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Noun">
                <font>
                   <Font size="14.0" />
                </font>
@@ -50,7 +50,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="yourWord" layoutX="33.0" layoutY="22.0" prefHeight="23.0" prefWidth="91.0" stylesheets="@css/edit.css" text="Word input">
+            <Label fx:id="yourWord" layoutX="21.0" layoutY="26.0" prefHeight="23.0" prefWidth="122.0" stylesheets="@css/edit.css" text="Word input">
                <font>
                   <Font size="14.0" />
                </font>

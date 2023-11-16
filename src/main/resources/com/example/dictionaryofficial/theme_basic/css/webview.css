@@ -1,0 +1,46 @@
+* {
+    font-family: Helvetica, sans-serif;
+}
+
+h1 {
+    color: #1D2A57;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+h3 {
+    color: #0066ff;
+    font-size: 14px;
+}
+
+h2 {
+    color: #1D2A57;
+    font-size: 16px;
+}
+
+ul {
+    color: #1D2A57;
+    font-size: 13px;
+}
+
+ul ul li i {
+    color: red;
+}
+
+ol {
+    color: #1D2A57;
+    font-size: 13px;
+}
+
+ol li {
+    font-style: italic;
+}
+
+ol li ul li {
+    font-style: normal;
+    color: red;
+}
+
+ol li ul li li {
+    color: #1D2A57;
+}

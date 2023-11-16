@@ -17,7 +17,6 @@
 
 ;
 
-    -fx-prompt-text-fill: white;
 
 }
 .combo-box {
@@ -34,21 +33,23 @@
     -fx-alignment: center;
     -fx-content-display: center;
     -fx-font-family:Arial;
-    -fx-text-fill: white;
-    -fx-font-size: 17;
+    -fx-text-fill: #0766AD;
+    -fx-font-size: 20;
+
     -fx-background-radius: 10px;
 }
 
 #check {
-    -fx-background-color: linear-gradient(to top, #ff94b2,  #ffa62e);
+    -fx-background-color:#0766AD;
     -fx-text-fill: white;
     -fx-font-size: 15;
 }
 
 #pane {
-    -fx-background-color: rgb(255,255,255,0.3);
+    -fx-background-color: C5E898;
     -fx-background-radius: 30px;
 }
+
 
 #submitButton {
     -fx-background-color: transparent;
@@ -56,7 +57,7 @@
     -fx-border-color: transparent;
 
     -fx-background-image: url('../Image/confirm_icon.png');
-    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-size: cover; /* Kích thớc của hình ảnh theo tỷ lệ */
     -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
     -fx-background-position: center center; /* Căn giữa hình ảnh */
 }

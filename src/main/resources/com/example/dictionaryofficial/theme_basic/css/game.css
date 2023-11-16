@@ -1,0 +1,7 @@
+#bkg_game{
+    -fx-background-color: #FFC5C5;
+}
+.button {
+    -fx-background-color: #89B9AD ;
+    -fx-background-radius: 30px;
+}

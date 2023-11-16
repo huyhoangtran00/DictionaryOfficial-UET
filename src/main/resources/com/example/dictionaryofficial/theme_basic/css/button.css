@@ -75,7 +75,7 @@
     -fx-background-color: transparent;
     -fx-border-width: 0; /* Loại bỏ viền của nút */
     -fx-border-color: transparent;
-    -fx-background-image: url('../Image/confirm_icon.png');
+    -fx-background-image: url('../Image/accept.png');
     -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
     -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
     -fx-background-position: center center; /* Căn giữa hình ảnh */
@@ -141,3 +141,140 @@
     -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
 }
 
+#nextButton {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/next-button.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
+#nextButton:hover {
+    -fx-opacity: 1;
+}
+
+#prevButton {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/next-button.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
+#prevButton:hover {
+    -fx-opacity: 1;
+}
+
+#returnButton {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/arrow-left.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
+#returnButton {
+    -fx-opacity: 1;
+}
+
+#src_speaker {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/volume.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
+#des_speaker {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/volume.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
+#switch_button {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/change.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
+#ans_A {
+    -fx-background-radius: 10px;
+    -fx-background-color: F3F3F3;
+}
+
+#ans_B{
+    -fx-background-radius: 10px;
+    -fx-background-color: F3F3F3;
+}
+#ans_C {
+    -fx-background-radius: 10px;
+    -fx-background-color: F3F3F3;
+}
+#ans_D {
+    -fx-background-radius: 10px;
+    -fx-background-color: F3F3F3;
+}
+
+#reset_game {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/right-arrow.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
+#back_menu_game {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/left-arrow.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
+#submitButton {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/confirm_game.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+#deleteButton {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/cross.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+#restart {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/refresh.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="back_g" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/MultiChoice.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.MultiChoiceGame">
+    <children>
+        <AnchorPane fx:id="pane_mulit_choice" layoutX="71.0" layoutY="26.0" prefHeight="507.0" prefWidth="833.0" style="-fx-background-radius: 30px;" stylesheets="@css/MultiChoice.css">
+            <children>
+                <Button fx:id="ans_A" layoutX="94.0" layoutY="254.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="289.0" stylesheets="@css/button.css">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+                <Button fx:id="ans_B" layoutX="470.0" layoutY="254.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="278.0" stylesheets="@css/button.css" text="Button">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+                <Button fx:id="ans_C" layoutX="94.0" layoutY="384.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="290.0" stylesheets="@css/button.css" text="Button">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+                <Button fx:id="ans_D" layoutX="470.0" layoutY="384.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="278.0" stylesheets="@css/button.css" text="Button">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+                <Label fx:id="ques_game" alignment="CENTER" layoutX="65.0" layoutY="47.0" prefHeight="128.0" prefWidth="702.0" stylesheets="@css/MultiChoice.css" text="Write your here" textAlignment="JUSTIFY">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+            <Button fx:id="reset_game" layoutX="761.0" layoutY="443.0" mnemonicParsing="false" onAction="#game_over_reset" prefHeight="60.0" prefWidth="60.0" stylesheets="@css/button.css" />
+            </children>
+        </AnchorPane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="830.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/matroi.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="taskbar" layoutX="271.0" layoutY="561.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
+      <Button fx:id="back_menu_game" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="setting_button" layoutX="666.0" layoutY="571.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="game_button" layoutX="502.0" layoutY="571.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="edit_button" layoutX="421.0" layoutY="571.0" mnemonicParsing="false" onAction="#showAddScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="search_button" layoutX="327.0" layoutY="574.0" mnemonicParsing="false" onAction="#showSearchScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="translate_button" layoutX="583.0" layoutY="571.0" mnemonicParsing="false" onAction="#showTranslateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+    </children>
+</AnchorPane>

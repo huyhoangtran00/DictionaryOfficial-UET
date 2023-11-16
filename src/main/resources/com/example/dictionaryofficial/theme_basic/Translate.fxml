@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -11,6 +12,15 @@
 
 <AnchorPane fx:id="basePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.TranslateController">
     <children>
+      <AnchorPane layoutX="4.0" layoutY="14.0" prefHeight="518.0" prefWidth="937.0" style="-fx-background-radius: 30px; -fx-background-color: C5E898;">
+         <children>
+            <ImageView fitHeight="115.0" fitWidth="110.0" layoutX="107.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/google.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
         <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="499.0" stylesheets="@css/intoprogram.css" />
         <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddChangeScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
         <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
@@ -25,12 +35,20 @@
             <Font size="38.0" />
          </font>
       </Label>
-      <ImageView fitHeight="115.0" fitWidth="110.0" layoutX="116.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/google.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="confirm_button" layoutX="457.0" layoutY="458.0" mnemonicParsing="false" onAction="#translate_language" prefHeight="70.0" prefWidth="70.0" stylesheets="@css/button.css" />
+      <Button fx:id="confirm_button" layoutX="457.0" layoutY="458.0" mnemonicParsing="false" onAction="#translate_language" prefHeight="60.0" prefWidth="60.0" stylesheets="@css/button.css" />
       <Button fx:id="translate_button" layoutX="573.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="switch_button" layoutX="467.0" layoutY="275.0" mnemonicParsing="false" onAction="#switch_text_and_language" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="src_speaker" layoutX="411.0" layoutY="417.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0">
+         <stylesheets>
+            <URL value="@../css/button.css" />
+            <URL value="@css/button.css" />
+         </stylesheets>
+      </Button>
+      <Button fx:id="des_speaker" layoutX="866.0" layoutY="417.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0">
+         <stylesheets>
+            <URL value="@../css/button.css" />
+            <URL value="@css/button.css" />
+         </stylesheets>
+      </Button>
     </children>
 </AnchorPane>
