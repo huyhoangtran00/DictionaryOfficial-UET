@@ -86,7 +86,6 @@ public class IntoProgramController implements Initializable {
     @FXML
     private Button submitEditButton;
 
-
     private static List<String> historyContainer = new ArrayList<>();
     private Vector<String> settingFont ;
     public static TextField static_searchField ;
@@ -128,7 +127,6 @@ public class IntoProgramController implements Initializable {
     public void setFont(String font, double fontSize) {
         searchField.setFont(new Font(font,fontSize));
     }
-
 
     public void removeWord() {
         searchWord = searchField.getText();
