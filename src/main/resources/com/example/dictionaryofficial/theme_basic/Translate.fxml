@@ -23,7 +23,7 @@
       </AnchorPane>
         <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="499.0" stylesheets="@css/intoprogram.css" />
         <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddChangeScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-        <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+        <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
         <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" onAction="#showIntoProgramScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
         <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <TextArea fx:id="src_text" layoutX="84.0" layoutY="144.0" prefHeight="313.0" prefWidth="375.0" stylesheets="@css/translate.css" />
@@ -38,13 +38,13 @@
       <Button fx:id="confirm_button" layoutX="457.0" layoutY="458.0" mnemonicParsing="false" onAction="#translate_language" prefHeight="60.0" prefWidth="60.0" stylesheets="@css/button.css" />
       <Button fx:id="translate_button" layoutX="573.0" layoutY="561.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="switch_button" layoutX="467.0" layoutY="275.0" mnemonicParsing="false" onAction="#switch_text_and_language" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button fx:id="src_speaker" layoutX="411.0" layoutY="417.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0">
+      <Button fx:id="src_speaker" layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#speaker_src_text" prefHeight="40.0" prefWidth="40.0">
          <stylesheets>
             <URL value="@../css/button.css" />
             <URL value="@css/button.css" />
          </stylesheets>
       </Button>
-      <Button fx:id="des_speaker" layoutX="866.0" layoutY="417.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0">
+      <Button fx:id="des_speaker" layoutX="866.0" layoutY="417.0" mnemonicParsing="false" onAction="#speaker_des_text" prefHeight="40.0" prefWidth="40.0">
          <stylesheets>
             <URL value="@../css/button.css" />
             <URL value="@css/button.css" />

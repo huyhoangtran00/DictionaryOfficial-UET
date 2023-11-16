@@ -1,5 +1,6 @@
 package com.example.dictionaryofficial;
 
+import com.example.APIGoogle.AudioGoogleAPI;
 import com.example.APIGoogle.GoogleTransAPI;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
@@ -11,8 +12,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import javazoom.jl.decoder.JavaLayerException;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -79,6 +82,9 @@ public class TranslateController implements Initializable  {
 
     public void showSettingScene(ActionEvent event) throws IOException {
         ManageScene.showScene(root,stage,scene,event,"Setting.fxml");
+    }
+    public void showGameScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(root,stage,scene,event,"Game.fxml");
     }
 
     public void initTranslate() {
@@ -195,6 +201,41 @@ public class TranslateController implements Initializable  {
     }
 
     public void speaker_src_text(ActionEvent events) throws IOException {
+        Thread au = new Thread(()->{
+            AudioGoogleAPI audio = AudioGoogleAPI.getInstance();
+            InputStream sound = null;
+            try {
+                sound = audio.getAudio(src_text.getText(),switch_language(src_option.getValue()).toString());
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                audio.play(sound);
+            } catch (JavaLayerException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        au.start();
+    }
+
+    public void speaker_des_text(ActionEvent events) throws IOException {
+        Thread au = new Thread(()->{
+            AudioGoogleAPI audio = AudioGoogleAPI.getInstance();
+            InputStream sound = null;
+            try {
+                sound = audio.getAudio(des_text.getText(), switch_language(des_option.getValue()).toString());
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                audio.play(sound);
+            } catch (JavaLayerException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        au.start();
     }
 
 }
