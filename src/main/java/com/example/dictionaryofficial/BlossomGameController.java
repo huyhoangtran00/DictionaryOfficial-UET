@@ -415,7 +415,7 @@ public class BlossomGameController implements Initializable {
             score.setText(String.valueOf(scoreInt));
             ansField.setText("");
         } else if (result == 1) {
-            heartInt--;
+            if (heartInt > 0) heartInt--;
             heart.setText("x" + heartInt);
             if (heartInt == 0) {
                 showNoti();
@@ -435,7 +435,7 @@ public class BlossomGameController implements Initializable {
             }
 
         } else if (result == 0 || tmp.length() < 3){
-            heartInt--;
+            if (heartInt > 0) heartInt--;
             heart.setText("x" + heartInt);
             if (heartInt == 0) {
                 showNoti();
