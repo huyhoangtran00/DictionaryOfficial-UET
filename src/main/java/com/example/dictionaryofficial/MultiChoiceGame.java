@@ -69,6 +69,8 @@ public class MultiChoiceGame implements Initializable {
            InputStream sound = null;
            try {
                sound = audio.getAudio("Correct", "en-UK");
+               reset_game.setVisible(true);
+
            } catch (IOException e) {
                throw new RuntimeException(e);
            }
@@ -80,7 +82,7 @@ public class MultiChoiceGame implements Initializable {
            }
        });
        au.start();
-       initGame();
+
 
     }
 
