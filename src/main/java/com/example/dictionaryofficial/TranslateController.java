@@ -48,28 +48,41 @@ public class TranslateController implements Initializable  {
         setting();
         initTranslate();
         src_text.textProperty().addListener((observable, oldValue, newValue) -> {
-            Task<String> task = new Task<String>() {
-                @Override
-                protected String call() throws Exception {
-                    String res = GoogleTransAPI.translate(src_text.getText(),
-                            switch_language(src_option.getSelectionModel().getSelectedItem()),
-                            switch_language(des_option.getSelectionModel().getSelectedItem()));
-                    res = outputTextFormatted(res);
-                    return res;
-                }
-            };
-            // ket thuc va hien thi
-            task.setOnSucceeded(event -> {
 
-                javafx.application.Platform.runLater(() -> {
-                    String result = task.getValue();
-                    javafx.application.Platform.runLater(() -> des_text.setText(result));
+                Task<String> task = new Task<String>() {
+                    @Override
+                    protected String call() throws Exception {
+                        String res = "";
+                        if(src_text.getText().isEmpty()) {
+                            res = "";
+                        }
+                        else {
+                           res = GoogleTransAPI.translate(src_text.getText(),
+                                    switch_language(src_option.getSelectionModel().getSelectedItem()),
+                                    switch_language(des_option.getSelectionModel().getSelectedItem()));
+                            res = outputTextFormatted(res);
+                        }
+                        return res;
+                    }
+                };
+                // ket thuc va hien thi
+                task.setOnSucceeded(event -> {
+
+                    javafx.application.Platform.runLater(() -> {
+                        if(src_text.getText().isEmpty()) {
+                            javafx.application.Platform.runLater(() -> des_text.setText(""));
+                        }
+                        else {
+                            String result = task.getValue();
+                            javafx.application.Platform.runLater(() -> des_text.setText(result));
+                        }
+                    });
                 });
-            });
-            // Chạy Task trên một luồng mới
-            new Thread(task).start();
+                // Chạy Task trên một luồng mới
+                new Thread(task).start();
 
-        });
+            });
+
     }
 
     public void showIntoProgramScene(ActionEvent event) throws IOException {
@@ -166,18 +179,18 @@ public class TranslateController implements Initializable  {
     }
 
     public String outputTextFormatted(String text) {
-
-            String result = "";
-            if(text.charAt(0) == '[' && text.charAt(text.length()-1) == ']') {
-                text = text.substring(1, text.length()-1);
-                if(text.charAt(0) == '[' && text.charAt(text.length()-1) == ']' && text.charAt(text.length()-4) == ','){
-                    text = text.substring(1, text.length()-4);
-                }
+        if(text == "" || text == null) {
+            return "";
+        }
+        String result = "";
+        if(text.charAt(0) == '[' && text.charAt(text.length()-1) == ']') {
+            text = text.substring(1, text.length()-1);
+            if(text.charAt(0) == '[' && text.charAt(text.length()-1) == ']' && text.charAt(text.length()-4) == ','){
+                text = text.substring(1, text.length()-4);
             }
-            text = text.replace("\\n", "\n");
-            return text.trim();
-
-
+        }
+        text = text.replace("\\n", "\n");
+        return text.trim();
     }
 
 
