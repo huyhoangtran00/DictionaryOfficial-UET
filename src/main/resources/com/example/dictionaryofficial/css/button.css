@@ -91,6 +91,13 @@
     -fx-background-position: center center; /* Căn giữa hình ảnh */
 }
 
+#favour_button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
 #speaker_button_1 {
     -fx-background-color: transparent;
     -fx-border-width: 0; /* Loại bỏ viền của nút */
