@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.addAndChangeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.addAndChangeController">
    <children>
 
       <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
@@ -27,45 +27,45 @@
             </Button>
             <TextField fx:id="wordInput" layoutX="33.0" layoutY="49.0" prefHeight="40.0" prefWidth="300.0" promptText="Type your word and check" stylesheets="@css/edit.css" />
             <TextField fx:id="pronunciationInput" layoutX="33.0" layoutY="118.0" prefHeight="40.0" prefWidth="300.0" promptText="Type pronunciation" stylesheets="@css/edit.css" />
-            <Label alignment="TOP_RIGHT" layoutX="18.0" layoutY="95.0" prefHeight="23.0" prefWidth="127.0" stylesheets="@css/edit.css" text="Pronunciation">
+            <Label alignment="TOP_RIGHT" layoutX="32.0" layoutY="95.0" prefHeight="23.0" prefWidth="127.0" stylesheets="@css/edit.css" text="Pronunciation">
                <font>
-                  <Font name="System Bold" size="19.0" />
+                  <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Label alignment="TOP_RIGHT" layoutX="21.0" layoutY="162.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Noun">
+            <Label alignment="TOP_RIGHT" layoutX="24.0" layoutY="159.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Noun">
                <font>
-                  <Font name="System Bold" size="19.0" />
+                  <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Label alignment="TOP_RIGHT" layoutX="481.0" layoutY="161.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Verb">
+            <Label alignment="TOP_RIGHT" layoutX="479.0" layoutY="159.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Verb">
                <font>
-                  <Font name="System Bold" size="19.0" />
+                  <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Label alignment="TOP_RIGHT" layoutX="8.0" layoutY="242.0" prefHeight="20.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Adjective">
+            <Label alignment="TOP_RIGHT" layoutX="17.0" layoutY="239.0" prefHeight="20.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Adjective">
                <font>
-                  <Font name="System Bold" size="19.0" />
+                  <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Label alignment="TOP_RIGHT" layoutX="487.0" layoutY="242.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Adverb">
+            <Label alignment="TOP_RIGHT" layoutX="486.0" layoutY="240.0" prefHeight="28.0" prefWidth="85.0" stylesheets="@css/edit.css" text="Adverb">
                <font>
-                  <Font name="System Bold" size="19.0" />
+                  <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Label fx:id="yourWord" alignment="TOP_RIGHT" layoutX="16.0" layoutY="27.0" prefHeight="23.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Word input">
+            <Label fx:id="yourWord" alignment="TOP_RIGHT" layoutX="25.0" layoutY="27.0" prefHeight="23.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Word input">
                <font>
-                  <Font name="System Bold" size="19.0" />
+                  <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Button fx:id="check" layoutX="333.0" layoutY="49.0" mnemonicParsing="false" onAction="#checkExistingWord" prefHeight="40.0" prefWidth="64.0" text="Check">
+            <Button fx:id="check" layoutX="333.0" layoutY="49.0" mnemonicParsing="false" onAction="#checkExistingWord" prefHeight="40.0" prefWidth="64.0" style="-fx-background-color: FFC5C5;" text="Check">
                <stylesheets>
                   <URL value="@css/button.css" />
                   <URL value="@css/edit.css" />
                </stylesheets>
             </Button>
-            <Label layoutX="6.0" layoutY="331.0" prefHeight="20.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Example">
+            <Label layoutX="15.0" layoutY="330.0" prefHeight="20.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Example">
                <font>
-                  <Font name="System Bold" size="19.0" />
+                  <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
             <TextArea fx:id="adjInput" layoutX="33.0" layoutY="263.0" prefHeight="54.0" prefWidth="300.0" promptText="Type the meaning of adjective" stylesheets="@css/edit.css" />

@@ -32,10 +32,7 @@
 .label {
     -fx-alignment: center;
     -fx-content-display: center;
-    -fx-font-family:Arial;
-    -fx-text-fill: Blue;
-    -fx-font-size: 15;
-
+    -fx-text-fill: #white;
     -fx-background-radius: 10px;
 }
 
@@ -46,7 +43,7 @@
 }
 
 #pane {
-    -fx-background-color: FFB6D9;
+    -fx-background-color: #FFEBD8;
     -fx-background-radius: 30px;
 }
 

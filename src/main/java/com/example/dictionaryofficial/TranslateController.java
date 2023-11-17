@@ -166,15 +166,18 @@ public class TranslateController implements Initializable  {
     }
 
     public String outputTextFormatted(String text) {
-        StringBuilder result = new StringBuilder();
 
-        for (char c : text.toCharArray()) {
-            if (Character.isLetter(c) || c == ',' || c == ' ' ) {
-                result.append(c);
+            String result = "";
+            if(text.charAt(0) == '[' && text.charAt(text.length()-1) == ']') {
+                text = text.substring(1, text.length()-1);
+                if(text.charAt(0) == '[' && text.charAt(text.length()-1) == ']' && text.charAt(text.length()-4) == ','){
+                    text = text.substring(1, text.length()-4);
+                }
             }
-        }
-        String[] ans = result.toString().split(",");
-        return ans[0];
+            text = text.replace("\\n", "\n");
+            return text.trim();
+
+
     }
 
 

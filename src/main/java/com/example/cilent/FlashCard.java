@@ -20,7 +20,7 @@ public class FlashCard {
             PreparedStatement getFlashCard = DBConnect.connectDB().prepareStatement(FlashCard);
             ResultSet res = getFlashCard.executeQuery();
             while (res.next()) {
-                ListFlashCard.add(new Word(res.getString(1),res.getString(2)));
+                ListFlashCard.add(new Word(res.getString(1),res.getString(2) != "" ? res.getString(2) : "null" ));
             }
         } catch (Exception e) {
             System.out.println(e);
