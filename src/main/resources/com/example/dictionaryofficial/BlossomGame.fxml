@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: FFFFDD;" styleClass="-" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.BlossomGameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: FFFFDD;" styleClass="-" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.BlossomGameController">
    <children>
       <AnchorPane layoutX="67.0" layoutY="24.0" prefHeight="506.0" prefWidth="834.0" style="-fx-background-color: D2DE32; -fx-background-radius: 30;">
          <children>
@@ -116,6 +116,80 @@
                            <font>
                               <Font size="18.0" />
                            </font></Label>
+                        <AnchorPane fx:id="instruction" layoutX="-2.0" layoutY="-2.0" prefHeight="350.0" prefWidth="331.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="133.0" text="Instruction:">
+                                 <font>
+                                    <Font name="System Bold Italic" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="54.0" prefHeight="18.0" prefWidth="293.0" text="In this game, you will have 3 turns to play">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="74.0" prefHeight="18.0" prefWidth="293.0" text="Your task is to arrange given letters to make">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="22.0" layoutY="114.0" prefHeight="18.0" prefWidth="294.0" text="Each submitted word must have length equal">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="13.0" layoutY="134.0" prefHeight="18.0" prefWidth="293.0" text="or greater than 3">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="22.0" layoutY="154.0" prefHeight="18.0" prefWidth="294.0" text="Each word can be submitted only once in a">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="22.0" layoutY="194.0" prefHeight="12.0" prefWidth="294.0" text="You will win the game if you submit 9 legal">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="13.0" layoutY="214.0" prefHeight="12.0" prefWidth="294.0" text="words and you have greater than 0 turns left">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="22.0" layoutY="234.0" prefHeight="12.0" prefWidth="294.0" text="You will lose if you have 0 turns left">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="22.0" layoutY="254.0" prefHeight="12.0" prefWidth="294.0" text="That's all. If you are good with instructions. ">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="13.0" layoutY="300.0" prefHeight="12.0" prefWidth="294.0" text="Good Luck!">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="13.0" layoutY="94.0" prefHeight="18.0" prefWidth="293.0" text="a word">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="174.0" prefHeight="18.0" prefWidth="294.0" text="game">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="22.0" layoutY="274.0" prefHeight="12.0" prefWidth="294.0" text="Let's begin!">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
                   <ImageView fitHeight="51.0" fitWidth="56.0" layoutX="210.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
@@ -240,7 +314,7 @@
                   <Font name="System Bold" size="14.0" />
                </font></Button>
             <Button fx:id="deleteButton" layoutX="396.0" layoutY="363.0" mnemonicParsing="false" onAction="#deleteAChar" prefHeight="40.0" prefWidth="40.0" stylesheets="@css/button.css" />
-            <AnchorPane fx:id="notification" layoutX="109.0" layoutY="104.0" prefHeight="335.0" prefWidth="586.0" style="-fx-background-color: F1EB90; -fx-background-radius: 30px;">
+            <AnchorPane fx:id="notification" layoutX="102.0" layoutY="106.0" prefHeight="335.0" prefWidth="586.0" style="-fx-background-color: F1EB90; -fx-background-radius: 30px;">
                <children>
                   <Label alignment="CENTER" layoutX="177.0" layoutY="14.0" prefHeight="50.0" prefWidth="234.0" text="YOUR SCORE" textFill="#c73a13">
                      <font>
@@ -285,7 +359,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
+      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" style="-fx-background-color: #E6E6E6; -fx-background-radius: 30px;" />
       <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#addScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" onAction="#gameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
