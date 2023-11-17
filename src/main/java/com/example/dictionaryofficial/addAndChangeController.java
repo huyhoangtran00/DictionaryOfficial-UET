@@ -114,6 +114,7 @@ public class addAndChangeController implements Initializable {
         if (!isExist) {
             notification.setText("Your word has not existed in Dictionary. You can add now!");
             notification.setTextFill(Color.GREEN);
+            wordInput.setEditable(false);
             submitButton.setVisible(true);
             pronunciationInput.setEditable(true);
             nounInput.setEditable(true);
@@ -144,6 +145,7 @@ public class addAndChangeController implements Initializable {
             System.out.println("here");
             notification.setText("Your word has not existed in Dictionary. You can add now!");
             notification.setTextFill(Color.GREEN);
+            wordInput.setEditable(false);
             submitButton.setVisible(true);
             pronunciationInput.setEditable(true);
             nounInput.setEditable(true);
@@ -168,7 +170,7 @@ public class addAndChangeController implements Initializable {
 
     public void addWord(ActionEvent event) {
         String word = wordInput.getText();
-        String pronunciation = pronunciationInput.getText();
+        String pronunciation = "/" + pronunciationInput.getText() + "/";
         HashMap<String, String> typeMeaning = new HashMap<>();
         typeMeaning.put("Danh từ", nounInput.getText());
         typeMeaning.put("Động từ", verbInput.getText());
@@ -184,6 +186,14 @@ public class addAndChangeController implements Initializable {
             notification.setText("Added Failed! Please add again");
             submitButton.setVisible(false);
         }
+        wordInput.setEditable(true);
+        pronunciationInput.setText("");
+        nounInput.setText("");
+        verbInput.setText("");
+        adjInput.setText("");
+        advInput.setText("");
+        exampleInput.setText("");
+
         submitButton.setVisible(false);
         pronunciationInput.setEditable(false);
         nounInput.setEditable(false);

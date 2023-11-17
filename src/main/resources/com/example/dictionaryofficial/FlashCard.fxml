@@ -17,9 +17,9 @@
          <children>
             <Label fx:id="cardLabel" alignment="CENTER" prefHeight="328.0" prefWidth="410.0" textAlignment="CENTER" wrapText="true" />
          </children></StackPane>
-      <Button fx:id="prevButton" layoutX="357.0" layoutY="455.0" mnemonicParsing="false" opacity="0.8" prefHeight="70.0" prefWidth="70.0" rotate="180.0" stylesheets="@css/button.css" />
-      <Button fx:id="nextButton" layoutX="539.0" layoutY="455.0" mnemonicParsing="false" opacity="0.8" prefHeight="70.0" prefWidth="70.0" styleClass="root" stylesheets="@css/button.css" />
-      <Label fx:id="curLabel" layoutX="455.0" layoutY="475.0" prefHeight="30.0" prefWidth="50.0" text="Label">
+      <Button fx:id="prevButton" layoutX="333.0" layoutY="456.0" mnemonicParsing="false" opacity="0.8" prefHeight="70.0" prefWidth="70.0" rotate="180.0" stylesheets="@css/button.css" />
+      <Button fx:id="nextButton" layoutX="564.0" layoutY="456.0" mnemonicParsing="false" opacity="0.8" prefHeight="70.0" prefWidth="70.0" styleClass="root" stylesheets="@css/button.css" />
+      <Label fx:id="curLabel" alignment="CENTER" layoutX="417.0" layoutY="475.0" prefHeight="32.0" prefWidth="136.0" text="Label">
          <font>
             <Font name="System Bold" size="22.0" />
          </font></Label>

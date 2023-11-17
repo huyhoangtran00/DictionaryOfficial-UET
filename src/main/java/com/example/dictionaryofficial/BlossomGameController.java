@@ -97,6 +97,8 @@ public class BlossomGameController implements Initializable {
     private ImageView star2;
     @FXML
     private ImageView star3;
+    @FXML
+    private AnchorPane instruction;
 
     private static ArrayList<Button> letter;
     private static ArrayList<Button> word;
@@ -119,7 +121,7 @@ public class BlossomGameController implements Initializable {
         word = new ArrayList<>();
         ans = new ArrayList<>();
         soundList = new ArrayList<>();
-
+        instruction.setVisible(true);
 
 
         initArray();
@@ -174,6 +176,7 @@ public class BlossomGameController implements Initializable {
     }
 
     public void startGame(ActionEvent event) {
+        instruction.setVisible(false);
         scoreInt = 0;
         heartInt = MAX_HEART;
         heart.setText("x" + heartInt);

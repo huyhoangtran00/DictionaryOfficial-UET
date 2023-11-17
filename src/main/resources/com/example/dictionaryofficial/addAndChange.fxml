@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.addAndChangeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.addAndChangeController">
    <children>
 
       <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
@@ -27,43 +27,46 @@
             </Button>
             <TextField fx:id="wordInput" layoutX="33.0" layoutY="49.0" prefHeight="40.0" prefWidth="300.0" promptText="Type your word and check" stylesheets="@css/edit.css" />
             <TextField fx:id="pronunciationInput" layoutX="33.0" layoutY="118.0" prefHeight="40.0" prefWidth="300.0" promptText="Type pronunciation" stylesheets="@css/edit.css" />
-            <Label alignment="TOP_RIGHT" layoutX="32.0" layoutY="95.0" prefHeight="23.0" prefWidth="127.0" stylesheets="@css/edit.css" text="Pronunciation">
+            <Label alignment="TOP_RIGHT" layoutX="36.0" layoutY="93.0" prefHeight="23.0" prefWidth="127.0" stylesheets="@css/edit.css" text="Pronunciation">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Label alignment="TOP_RIGHT" layoutX="24.0" layoutY="159.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Noun">
+            <Label alignment="TOP_RIGHT" layoutX="28.0" layoutY="157.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Noun">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Label alignment="TOP_RIGHT" layoutX="479.0" layoutY="159.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Verb">
+            <Label alignment="TOP_RIGHT" layoutX="483.0" layoutY="158.0" prefHeight="20.0" prefWidth="64.0" stylesheets="@css/edit.css" text="Verb">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Label alignment="TOP_RIGHT" layoutX="17.0" layoutY="239.0" prefHeight="20.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Adjective">
+            <Label alignment="TOP_RIGHT" layoutX="17.0" layoutY="236.0" prefHeight="20.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Adjective">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Label alignment="TOP_RIGHT" layoutX="486.0" layoutY="240.0" prefHeight="28.0" prefWidth="85.0" stylesheets="@css/edit.css" text="Adverb">
+            <Label alignment="TOP_RIGHT" layoutX="486.0" layoutY="238.0" prefHeight="28.0" prefWidth="85.0" stylesheets="@css/edit.css" text="Adverb">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Label fx:id="yourWord" alignment="TOP_RIGHT" layoutX="25.0" layoutY="27.0" prefHeight="23.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Word input">
+            <Label fx:id="yourWord" alignment="TOP_RIGHT" layoutX="29.0" layoutY="23.0" prefHeight="23.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Word input">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <Button fx:id="check" layoutX="333.0" layoutY="49.0" mnemonicParsing="false" onAction="#checkExistingWord" prefHeight="40.0" prefWidth="64.0" style="-fx-background-color: FFC5C5;" text="Check">
+            <Button fx:id="check" layoutX="333.0" layoutY="49.0" mnemonicParsing="false" onAction="#checkExistingWord" prefHeight="40.0" prefWidth="64.0" style="-fx-background-color: #3ce853;" text="Check" textFill="RED">
                <stylesheets>
                   <URL value="@css/button.css" />
                   <URL value="@css/edit.css" />
                </stylesheets>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Label layoutX="15.0" layoutY="330.0" prefHeight="20.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Example">
+            <Label layoutX="17.0" layoutY="318.0" prefHeight="20.0" prefWidth="114.0" stylesheets="@css/edit.css" text="Example">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
@@ -72,7 +75,7 @@
             <TextArea fx:id="advInput" layoutX="494.0" layoutY="263.0" prefHeight="54.0" prefWidth="300.0" promptText="Type the meaning of adverb" stylesheets="@css/edit.css" />
             <TextArea fx:id="nounInput" layoutX="33.0" layoutY="182.0" prefHeight="54.0" prefWidth="300.0" promptText="Type the meaning of noun" stylesheets="@css/edit.css" />
             <TextArea fx:id="verbInput" layoutX="494.0" layoutY="182.0" prefHeight="54.0" prefWidth="300.0" promptText="Type the meaning of verb" stylesheets="@css/edit.css" />
-            <TextArea fx:id="exampleInput" layoutX="33.0" layoutY="353.0" prefHeight="104.0" prefWidth="762.0" promptText="Type the meaning of adjective" stylesheets="@css/edit.css" />
+            <TextArea fx:id="exampleInput" layoutX="33.0" layoutY="347.0" prefHeight="110.0" prefWidth="762.0" promptText="Type the meaning of adjective" stylesheets="@css/edit.css" />
             <Label fx:id="notification" layoutX="51.0" layoutY="476.0" prefHeight="18.0" prefWidth="678.0" style="-fx-background-color: none;" />
          </children>
       </AnchorPane>
