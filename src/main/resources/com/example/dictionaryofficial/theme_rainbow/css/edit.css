@@ -32,18 +32,21 @@
 .label {
     -fx-alignment: center;
     -fx-content-display: center;
-    -fx-text-fill: #white;
+    -fx-font-family:Arial;
+    -fx-text-fill: #0766AD;
+    -fx-font-size: 20;
+
     -fx-background-radius: 10px;
 }
 
 #check {
-    -fx-background-color: linear-gradient(to top, #ff94b2,  #ffa62e);
+    -fx-background-color:#0766AD;
     -fx-text-fill: white;
     -fx-font-size: 15;
 }
 
 #pane {
-    -fx-background-color: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+    -fx-background-color: C5E898;
     -fx-background-radius: 30px;
 }
 

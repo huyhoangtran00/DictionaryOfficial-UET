@@ -1,0 +1,18 @@
+.root {
+    -fx-background-image: url('../Image/flashcard_back.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+#FlashCardPane {
+    -fx-border-radius : 25;
+    -fx-border-width: 5;
+    -fx-border-color: rgba(49, 179, 250, 0.84);
+    -fx-background-color: rgba(49, 179, 250, 0.84);
+    -fx-background-radius: 27;
+}
+
+#FlashCardPane:hover {
+    -fx-border-color: rgb(255, 255, 255);
+}
+

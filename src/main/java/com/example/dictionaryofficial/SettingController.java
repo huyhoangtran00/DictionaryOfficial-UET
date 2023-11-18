@@ -113,6 +113,7 @@ public class SettingController  implements Initializable {
         }
         list_theme.add("basic");
         list_theme.add("purple");
+        list_theme.add("rain-bow");
 
         theme.getItems().addAll(ManageScene.THEME.getListTheme());
         font.setValue(listFont.get(0));

@@ -21,8 +21,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Vector;
 
-import static com.example.dictionaryofficial.ManageScene.THEME.BASIC;
-import static com.example.dictionaryofficial.ManageScene.THEME.PURPLE;
+import static com.example.dictionaryofficial.ManageScene.THEME.*;
 
 public class ManageScene {
     /**
@@ -37,7 +36,7 @@ public class ManageScene {
 
    public enum THEME {
        BASIC("basic"),
-        PURPLE("purple");
+        PURPLE("purple"), RAIN_BOW("rain-bow");
 
 
         private final String basic;
@@ -50,6 +49,7 @@ public class ManageScene {
             List<String> list_theme = new ArrayList<>();
             list_theme.add("basic");
             list_theme.add("purple");
+            list_theme.add("rain-bow");
             return list_theme;
         }
 
@@ -138,6 +138,8 @@ public class ManageScene {
                 return BASIC;
             case "purple":
                 return PURPLE;
+            case"rain-bow" :
+                return RAIN_BOW;
         }
         return null;
 
@@ -150,6 +152,8 @@ public class ManageScene {
                return "theme_basic/" + src;
             case PURPLE:
                 return src;
+            case RAIN_BOW:
+                return "theme_rainbow/" +src;
             default:
                 return src;
 

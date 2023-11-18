@@ -1,0 +1,5 @@
+.root {
+    -fx-background-color: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}

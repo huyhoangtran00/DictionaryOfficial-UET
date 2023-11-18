@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/start.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.BaseController">
+   <children>
+      <Button fx:id="logoutButton" layoutX="417.0" layoutY="294.0" mnemonicParsing="false" onAction="#intoProgram" prefHeight="51.0" prefWidth="126.0" stylesheets="@css/button.css" text="Start" textAlignment="CENTER" AnchorPane.topAnchor="294.0">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="202.0" layoutY="88.0" prefHeight="51.0" prefWidth="556.0" text="WELCOME TO HHH-DICTIONARY" textAlignment="CENTER" textFill="#10a3ad">
+         <font>
+            <Font name="Arial" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
