@@ -18,10 +18,10 @@
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <AnchorPane layoutX="257.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="572.0" style="-fx-background-color: White;">
+      <AnchorPane layoutX="257.0" layoutY="115.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="572.0" style="-fx-background-color: White;">
          <children>
-            <WebView fx:id="searchResult" prefHeight="390.0" prefWidth="572.0" stylesheets="@css/webview.css" />
-            <HTMLEditor fx:id="editField" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="390.0" prefWidth="572.0" />
+            <WebView fx:id="searchResult" prefHeight="402.0" prefWidth="572.0" stylesheets="@css/webview.css" />
+            <HTMLEditor fx:id="editField" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="402.0" prefWidth="572.0" />
          </children></AnchorPane>
       <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
       <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#addScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
@@ -40,17 +40,10 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <ListView fx:id="historyList" layoutX="71.0" layoutY="154.0" prefHeight="363.0" prefWidth="167.0" />
-      <Label alignment="CENTER" layoutX="71.0" layoutY="127.0" prefHeight="26.0" prefWidth="167.0" style="-fx-background-color: White;" text="       History" />
-      <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="122.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/historyClock.png" />
-         </image>
-      </ImageView>
+      <ListView fx:id="historyList" layoutX="71.0" layoutY="148.0" prefHeight="369.0" prefWidth="167.0" />
 <!--      <ListView fx:id="suggestList" layoutX="71.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="211.0" prefWidth="758.0" />-->
       <Button fx:id="translate_button" layoutX="573.0" layoutY="561.0" mnemonicParsing="false" onAction="#showTranslateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="favour_button" layoutX="834.0" layoutY="306.0" mnemonicParsing="false" onAction="#favourHandler" prefHeight="50.0" prefWidth="54.0" stylesheets="@css/button.css" />
-      <ListView fx:id="suggestList" layoutX="123.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="211.0" prefWidth="706.0" />
       <ImageView fx:id="favour_star" fitHeight="38.0" fitWidth="40.0" layoutX="885.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/star_favor.png" />
@@ -61,12 +54,26 @@
             <Image url="@Image/star_border.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="70.0" fitWidth="75.0" layoutX="52.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/DicLogo_preview_rev_1.png" />
-         </image>
-      </ImageView>
       <Button fx:id="EditButton" layoutX="838.0" layoutY="384.0" mnemonicParsing="false" onAction="#EditWord" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="submitEditButton" layoutX="837.0" layoutY="384.0" mnemonicParsing="false" onAction="#submitEditWord" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button layoutX="71.0" layoutY="115.0" mnemonicParsing="false" onAction="#resetHistory" prefHeight="23.0" prefWidth="167.0" text="History">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/historyClock.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ListView fx:id="suggestList" layoutX="123.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="211.0" prefWidth="706.0" />
+      <Button fx:id="home_button" layoutX="64.0" layoutY="28.0" mnemonicParsing="false" onAction="#homeScene" stylesheets="@css/button.css">
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/DicLogo_preview_rev_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

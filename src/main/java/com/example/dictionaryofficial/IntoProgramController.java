@@ -215,22 +215,51 @@ public class IntoProgramController implements Initializable {
         historyList.getItems().add(0, word);
     }
 
-    public void UKAudio(ActionEvent event) throws IOException, JavaLayerException {
+    public void resetHistory() {
+        historyContainer.clear();
+        historyList.getItems().clear();
         try {
-            AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-UK"));
+            saveHistory();
+        } catch (IOException e) {
+            System.out.println("Can't write file");
         }
-        catch (Exception e) {
+    }
+
+    public void UKAudio(ActionEvent event) throws IOException, JavaLayerException {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-UK"));
+                } catch (JavaLayerException | IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+        try {
+            thread.start();
+        } catch (Exception e) {
             AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio("Please search a word!", "en-UK"));
         }
     }
 
     public void USAudio(ActionEvent event) throws IOException, JavaLayerException {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-US"));
+                } catch (JavaLayerException | IOException e) {
+                    throw new RuntimeException();
+                }
+            }
+        });
         try {
-            AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio(searchWord, "en-US"));
-        }
-        catch (Exception e) {
+            thread.start();
+        } catch (Exception e) {
             AudioGoogleAPI.getInstance().play(AudioGoogleAPI.getInstance().getAudio("Please search a word!", "en-US"));
         }
+
     }
 
     public void favourHandler(ActionEvent event) {
@@ -270,6 +299,7 @@ public class IntoProgramController implements Initializable {
 
         searchResult.getEngine().loadContent(result);
 
+//        searchResult.setDisable(true);
         editField.setVisible(false);
         submitEditButton.setVisible(false);
         EditButton.setVisible(true);
@@ -405,6 +435,11 @@ public class IntoProgramController implements Initializable {
         saveHistory();
 
         ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Translate.fxml");
+    }
+
+    public void homeScene(ActionEvent event) throws IOException {
+        saveHistory();
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Base.fxml");
     }
 
     public void setting() {

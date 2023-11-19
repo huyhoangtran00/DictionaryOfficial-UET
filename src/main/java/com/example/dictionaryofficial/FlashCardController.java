@@ -24,10 +24,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class FlashCardController implements Initializable {
-
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     @FXML
     private StackPane FlashCardPane = new StackPane();
     @FXML
@@ -129,19 +125,23 @@ public class FlashCardController implements Initializable {
     }
 
     public void showSettingScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root, stage, scene, event, "Setting.fxml");
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Setting.fxml");
     }
 
     public void searchScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"IntoProgram.fxml");
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(),event,"IntoProgram.fxml");
     }
 
     public void addScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root, stage, scene, event, "addAndChange.fxml");
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "addAndChange.fxml");
     }
 
     public void gameScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"Game.fxml");
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(),event,"Game.fxml");
+    }
+
+    public void translateScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Translate.fxml");
     }
 
     @Override
