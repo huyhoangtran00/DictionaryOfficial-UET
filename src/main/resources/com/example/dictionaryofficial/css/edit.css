@@ -37,7 +37,7 @@
 }
 
 #check {
-    -fx-background-color: linear-gradient(to top, #ff94b2,  #ffa62e);
+    -fx-background-color: green;
     -fx-text-fill: white;
     -fx-font-size: 15;
 }

@@ -8,8 +8,8 @@
 
 <AnchorPane prefHeight="640.0" prefWidth="960.0" stylesheets="@css/FlashCard.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.FlashCardController">
    <children>
-      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="418.0" stylesheets="@css/intoprogram.css" />
-      <Button fx:id="setting_button" layoutX="574.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
+      <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#addScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" onAction="#gameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" onAction="#searchScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
@@ -24,5 +24,6 @@
             <Font name="System Bold" size="22.0" />
          </font></Label>
       <Button fx:id="returnButton" layoutX="28.0" layoutY="27.0" mnemonicParsing="false" onAction="#gameScene" opacity="0.8" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="translate_button" layoutX="573.0" layoutY="561.0" mnemonicParsing="false" onAction="#translateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
    </children>
 </AnchorPane>
