@@ -11,9 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
@@ -31,7 +33,8 @@ public class Main extends Application {
             stage.setScene(scene);
             stage.setX(300);
             stage.setY(100);
-            stage.setTitle("HHH-dictionary");
+            stage.setTitle("TripH Dictionary");
+            stage.getIcons().add(new Image(new FileInputStream("src/main/resources/com/example/dictionaryofficial/Image/DicLogo_preview_rev_1.png")));
             stage.show();
 
             stage.setOnCloseRequest(event -> {
