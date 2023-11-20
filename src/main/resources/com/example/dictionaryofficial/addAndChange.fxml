@@ -76,7 +76,10 @@
             <TextArea fx:id="nounInput" layoutX="33.0" layoutY="182.0" prefHeight="54.0" prefWidth="300.0" promptText="Type the meaning of noun" stylesheets="@css/edit.css" />
             <TextArea fx:id="verbInput" layoutX="494.0" layoutY="182.0" prefHeight="54.0" prefWidth="300.0" promptText="Type the meaning of verb" stylesheets="@css/edit.css" />
             <TextArea fx:id="exampleInput" layoutX="33.0" layoutY="347.0" prefHeight="110.0" prefWidth="762.0" promptText="Type the meaning of adjective" stylesheets="@css/edit.css" />
-            <Label fx:id="notification" layoutX="51.0" layoutY="476.0" prefHeight="18.0" prefWidth="678.0" style="-fx-background-color: none;" />
+            <Label fx:id="notification" layoutX="51.0" layoutY="476.0" prefHeight="18.0" prefWidth="678.0" style="-fx-background-color: none;">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
          </children>
       </AnchorPane>
       <Button fx:id="translate_button" layoutX="573.0" layoutY="561.0" mnemonicParsing="false" onAction="#showTranslateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />

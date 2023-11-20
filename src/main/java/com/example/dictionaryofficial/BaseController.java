@@ -35,7 +35,7 @@ public class BaseController {
         stage.setScene(scene);
         stage.setX(300);
         stage.setY(100);
-        stage.setTitle("HHH-dictionary");
+        stage.setTitle("TripH-dictionary");
         stage.show();
     }
 
