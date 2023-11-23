@@ -66,6 +66,14 @@ public class ManageScene {
         stage.show();
     }
 
+    public static void showHomeScene(Parent root , Stage stage, Scene scene, ActionEvent event) throws IOException {
+        root = FXMLLoader.load(ManageScene.class.getResource("Base.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("HHH-dictionary");
+        stage.show();
+    }
 
     /**
      * The fuction help to show status logout

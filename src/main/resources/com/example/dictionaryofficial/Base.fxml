@@ -24,11 +24,6 @@
             <Image url="@Image/Duo_Love.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="112.0" layoutX="742.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/dou.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="233.0" fitWidth="233.0" layoutX="126.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/smileFrg.png" />

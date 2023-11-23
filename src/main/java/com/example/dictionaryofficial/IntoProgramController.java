@@ -439,7 +439,7 @@ public class IntoProgramController implements Initializable {
 
     public void homeScene(ActionEvent event) throws IOException {
         saveHistory();
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Base.fxml");
+        ManageScene.showHomeScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event);
     }
 
     public void setting() {
