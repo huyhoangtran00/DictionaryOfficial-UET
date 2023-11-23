@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="back_g" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/MultiChoice.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.MultiChoiceGame">
+<AnchorPane fx:id="back_g" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/MultiChoice.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.MultiChoiceGame">
     <children>
         <AnchorPane fx:id="pane_mulit_choice" layoutX="71.0" layoutY="26.0" prefHeight="507.0" prefWidth="833.0" style="-fx-background-radius: 30px;" stylesheets="@css/MultiChoice.css">
             <children>
@@ -40,12 +40,12 @@
             <Image url="@Image/matroi.png" />
          </image>
       </ImageView>
-      <Label fx:id="taskbar" layoutX="271.0" layoutY="561.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
+      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
       <Button fx:id="back_menu_game" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button fx:id="setting_button" layoutX="666.0" layoutY="571.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button fx:id="game_button" layoutX="502.0" layoutY="571.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button fx:id="edit_button" layoutX="421.0" layoutY="571.0" mnemonicParsing="false" onAction="#showAddScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button fx:id="search_button" layoutX="327.0" layoutY="574.0" mnemonicParsing="false" onAction="#showSearchScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button fx:id="translate_button" layoutX="583.0" layoutY="571.0" mnemonicParsing="false" onAction="#showTranslateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" onAction="#showSearchScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="translate_button" layoutX="573.0" layoutY="561.0" mnemonicParsing="false" onAction="#showTranslateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
     </children>
 </AnchorPane>

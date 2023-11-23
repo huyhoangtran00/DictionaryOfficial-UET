@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: FFFFDD;" styleClass="-" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.BlossomGameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: #2ECCAA;" styleClass="-" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.BlossomGameController">
    <children>
       <AnchorPane layoutX="67.0" layoutY="24.0" prefHeight="506.0" prefWidth="834.0" style="-fx-background-color: D2DE32; -fx-background-radius: 30;">
          <children>
@@ -359,7 +359,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" style="-fx-background-color: #E6E6E6; -fx-background-radius: 30px;" />
+      <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" style="-fx-background-radius: 30px; -fx-background-color: #FFFFFF;" />
       <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#addScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" onAction="#gameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />

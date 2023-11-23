@@ -24,5 +24,6 @@
             <Font name="System Bold" size="22.0" />
          </font></Label>
       <Button fx:id="returnButton" layoutX="28.0" layoutY="27.0" mnemonicParsing="false" onAction="#gameScene" opacity="0.8" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="translate_button" layoutX="574.0" layoutY="562.0" mnemonicParsing="false" onAction="#translateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
    </children>
 </AnchorPane>

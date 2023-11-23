@@ -56,7 +56,7 @@
       </ImageView>
       <Button fx:id="EditButton" layoutX="838.0" layoutY="384.0" mnemonicParsing="false" onAction="#EditWord" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="submitEditButton" layoutX="837.0" layoutY="384.0" mnemonicParsing="false" onAction="#submitEditWord" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button layoutX="71.0" layoutY="115.0" mnemonicParsing="false" onAction="#resetHistory" prefHeight="23.0" prefWidth="167.0" text="History">
+      <Button layoutX="70.0" layoutY="115.0" mnemonicParsing="false" onAction="#resetHistory" prefHeight="23.0" prefWidth="167.0" text="History">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>

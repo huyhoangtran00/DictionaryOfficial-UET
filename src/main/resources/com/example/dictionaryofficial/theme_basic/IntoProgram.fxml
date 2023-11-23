@@ -55,7 +55,6 @@
          </image>
       </ImageView>
       <Button fx:id="EditButton" layoutX="838.0" layoutY="384.0" mnemonicParsing="false" onAction="#EditWord" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button fx:id="submitEditButton" layoutX="837.0" layoutY="384.0" mnemonicParsing="false" onAction="#submitEditWord" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="home_button" layoutX="67.0" layoutY="29.0" mnemonicParsing="false" onAction="#homeScene" stylesheets="@../css/button.css">
          <graphic>
             <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
@@ -80,5 +79,6 @@
             <Image url="@../Image/star_favor.png" />
          </image>
       </ImageView>
+      <Button fx:id="submitEditButton" layoutX="839.0" layoutY="384.0" mnemonicParsing="false" onAction="#submitEditWord" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
    </children>
 </AnchorPane>
