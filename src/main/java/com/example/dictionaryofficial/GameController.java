@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class GameController implements Initializable {
+public class GameController extends BaseController implements Initializable {
 
     @FXML
     private Button flash_card;
@@ -29,22 +29,6 @@ public class GameController implements Initializable {
     private ImageView img_3;
 
 
-
-    public void searchScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"IntoProgram.fxml");
-    }
-
-    public void addScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "addAndChange.fxml");
-    }
-
-    public void showSettingScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "Setting.fxml");
-    }
-
-    public void showTranslateScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Translate.fxml");
-    }
 
     public void PlayFlashCard(ActionEvent event) throws IOException {
         ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "FlashCard.fxml");

@@ -12,9 +12,9 @@
     <children>
       <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
         <Button fx:id="logoutButton" layoutX="891.0" layoutY="602.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
-        <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddChangeScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+        <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
         <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-        <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" onAction="#showIntoProgramScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+        <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" onAction="#showSearchScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Pane fx:id="pane" layoutX="47.0" layoutY="22.0" prefHeight="525.0" prefWidth="864.0" stylesheets="@css/setting.css">
          <children>
             <Label alignment="CENTER" layoutX="106.0" layoutY="9.0" prefHeight="37.0" prefWidth="65.0" text="Font" textAlignment="JUSTIFY" textFill="#083c63">

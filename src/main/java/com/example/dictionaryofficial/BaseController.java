@@ -16,30 +16,38 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class BaseController {
-    private static Stage stage;
-    private static Scene scene;
-    private static Parent root;
+    protected static Stage stage;
+    protected static Scene scene;
+    protected static Parent root;
     @FXML
     private Button logoutButton;
     @FXML
     private AnchorPane basePane;
 
 
-    public void intoProgram(ActionEvent event) throws IOException {
-        String src = "IntoProgram.fxml";
-        src = ManageScene.changeSrc(ManageScene.typeTheme(),src);
-        root = FXMLLoader.load(getClass().getResource(src));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        scene.setFill(Color.CORNSILK);
-        stage.setScene(scene);
-        stage.setX(300);
-        stage.setY(100);
-        stage.setTitle("TripH-dictionary");
-        stage.show();
+    public void showSearchScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(root,stage, scene, event, "IntoProgram.fxml");
     }
 
+    public void showAddScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(root,stage,scene,event,"addAndChange.fxml");
+    }
 
+    public void showSettingScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(root,stage,scene,event,"Setting.fxml");
+    }
+
+    public void showGameScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(root,stage,scene,event,"Game.fxml");
+    }
+
+    public void showTranslateScene(ActionEvent event) throws IOException {
+        ManageScene.showScene(root,stage,scene,event,"Translate.fxml");
+    }
+
+    public void showHomeScene(ActionEvent event) throws IOException {
+        ManageScene.showHomeScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event);
+    }
 
     public static Stage getStage() {
         return stage;
@@ -52,4 +60,6 @@ public class BaseController {
     public static Parent getRoot() {
         return root;
     }
+
+
 }

@@ -19,7 +19,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TranslateController implements Initializable  {
+public class TranslateController extends BaseController implements Initializable  {
 
     private Stage stage;
     private Scene scene;
@@ -85,20 +85,6 @@ public class TranslateController implements Initializable  {
 
     }
 
-    public void showIntoProgramScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"IntoProgram.fxml");
-    }
-
-    public void showAddChangeScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"addAndChange.fxml");
-    }
-
-    public void showSettingScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"Setting.fxml");
-    }
-    public void showGameScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(root,stage,scene,event,"Game.fxml");
-    }
 
     public void initTranslate() {
         src_option.getItems().add("English");

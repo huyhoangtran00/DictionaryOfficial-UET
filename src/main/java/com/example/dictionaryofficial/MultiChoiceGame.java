@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MultiChoiceGame implements Initializable {
+public class MultiChoiceGame extends GameController implements Initializable {
 
     private Button[] ans = new Button[4];
     private int pivot;
@@ -140,29 +140,7 @@ public class MultiChoiceGame implements Initializable {
         setupButtonEvents();
     }
 
-    public void showSearchScene(ActionEvent event) throws IOException {
 
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"IntoProgram.fxml");
-    }
-    public void showAddScene(ActionEvent event) throws IOException {
-
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"addAndChange.fxml");
-    }
-
-    public void showSettingScene(ActionEvent event) throws IOException {
-
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Setting.fxml");
-    }
-
-    public void showGameScene(ActionEvent event) throws IOException {
-
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Game.fxml");
-    }
-
-    public void showTranslateScene(ActionEvent event) throws IOException {
-
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Translate.fxml");
-    }
     public void game_over_reset(ActionEvent event) throws  IOException{
         initGame();
     }

@@ -20,7 +20,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
-public class BlossomGameController implements Initializable {
+public class BlossomGameController extends GameController implements Initializable {
     @FXML
     private Button letter1;
     @FXML
@@ -468,24 +468,6 @@ public class BlossomGameController implements Initializable {
         initGame();
     }
 
-    public void searchScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "IntoProgram.fxml");
-    }
 
-    public void addScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "addAndChange.fxml");
-    }
-
-    public void gameScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Game.fxml");
-    }
-
-    public void showSettingScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Setting.fxml");
-    }
-
-    public void showTranslateScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Translate.fxml");
-    }
 
 }

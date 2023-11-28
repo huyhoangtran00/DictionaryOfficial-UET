@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class FlashCardController implements Initializable {
+public class FlashCardController extends GameController implements Initializable {
     @FXML
     private StackPane FlashCardPane = new StackPane();
     @FXML
@@ -122,26 +122,6 @@ public class FlashCardController implements Initializable {
         } else {
             nextButton.setVisible(true);
         }
-    }
-
-    public void showSettingScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Setting.fxml");
-    }
-
-    public void searchScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(),event,"IntoProgram.fxml");
-    }
-
-    public void addScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "addAndChange.fxml");
-    }
-
-    public void gameScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(),event,"Game.fxml");
-    }
-
-    public void translateScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "Translate.fxml");
     }
 
     @Override

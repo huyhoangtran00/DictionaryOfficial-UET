@@ -42,7 +42,7 @@ import java.sql.Connection;
 import java.util.*;
 import java.util.concurrent.ForkJoinPool;
 
-public class IntoProgramController implements Initializable {
+public class IntoProgramController extends BaseController implements Initializable {
 
     private String searchWord;
     @FXML
@@ -278,6 +278,7 @@ public class IntoProgramController implements Initializable {
 
     public void EditWord(ActionEvent e) {
         submitEditButton.setVisible(true);
+        searchField.setEditable(false);
         String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
 
         ToolBar toolBar = (ToolBar) editField.lookup(".top-toolbar");
@@ -294,6 +295,7 @@ public class IntoProgramController implements Initializable {
     }
 
     public void submitEditWord (ActionEvent e) {
+        searchField.setEditable(true);
         String result = editField.getHtmlText();
         DictionaryManagement.EditFromFront(searchWord, result, DBConnect.connectDB());
 
@@ -415,29 +417,33 @@ public class IntoProgramController implements Initializable {
             suggestList.setVisible(false);
         });
     }
-    // Switch Scene
-    public void addScene(ActionEvent event) throws IOException {
+
+    @Override
+    public void showAddScene(ActionEvent event) throws IOException {
         saveHistory();
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"addAndChange.fxml");
+        ManageScene.showScene(root, stage, scene,event,"addAndChange.fxml");
     }
 
+    @Override
     public void showSettingScene(ActionEvent event) throws IOException {
         saveHistory();
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Setting.fxml");
+        ManageScene.showScene(root, stage, scene,event,"Setting.fxml");
     }
 
-    public void gameScene(ActionEvent event) throws IOException {
+    @Override
+    public void showGameScene(ActionEvent event) throws IOException {
         saveHistory();
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Game.fxml");
+        ManageScene.showScene(root, stage, scene,event,"Game.fxml");
     }
 
+    @Override
     public void showTranslateScene(ActionEvent event) throws IOException {
         saveHistory();
-
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Translate.fxml");
+        ManageScene.showScene(root, stage, scene, event,"Translate.fxml");
     }
 
-    public void homeScene(ActionEvent event) throws IOException {
+    @Override
+    public void showHomeScene(ActionEvent event) throws IOException {
         saveHistory();
         ManageScene.showHomeScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event);
     }

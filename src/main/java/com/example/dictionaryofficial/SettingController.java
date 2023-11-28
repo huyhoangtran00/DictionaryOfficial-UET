@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class SettingController  implements Initializable {
+public class SettingController extends BaseController implements Initializable {
 
     @FXML
     ComboBox<String> fontSize ;
@@ -71,21 +71,6 @@ public class SettingController  implements Initializable {
 
     }
 
-    public void showGameScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Game.fxml");
-    }
-
-    public void showIntoProgramScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"IntoProgram.fxml");
-    }
-
-    public void showAddChangeScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"addAndChange.fxml");
-    }
-
-    public void showTranslateScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Translate.fxml");
-    }
 
     public void logout (ActionEvent event) throws IOException {
         ManageScene.logout(BaseController.getStage(),pane);

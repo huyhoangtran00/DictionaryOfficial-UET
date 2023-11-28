@@ -29,7 +29,7 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class addAndChangeController implements Initializable {
+public class addAndChangeController extends BaseController implements Initializable {
     @FXML
     private TextField wordInput;
     @FXML
@@ -66,16 +66,8 @@ public class addAndChangeController implements Initializable {
 //    Connection connection = DBConnect.connectDB();
 
     //-----------------------------------------------------------------------------------------------------------//
-    //Switch Scene
-    public void searchScene(ActionEvent event) throws IOException {
 
-       ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"IntoProgram.fxml");
-    }
 
-    public void gameScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(),event,"Game.fxml");
-
-    }
 
     public void settingFont() {
         settingFont = new Vector<>();
@@ -100,12 +92,6 @@ public class addAndChangeController implements Initializable {
         ManageScene.setFont(exampleInput);
     }
 
-    public void showSettingScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "Setting.fxml");
-    }
-    public void showTranslateScene(ActionEvent event) throws IOException {
-        ManageScene.showScene(BaseController.getRoot(),BaseController.getStage(),BaseController.getScene(), event, "Translate.fxml");
-    }
 
     public void checkExistingWord(ActionEvent event) throws IOException {
         notification.setVisible(true);
