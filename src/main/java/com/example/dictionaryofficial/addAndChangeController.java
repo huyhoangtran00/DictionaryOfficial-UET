@@ -157,14 +157,19 @@ public class addAndChangeController extends BaseController implements Initializa
     public void addWord(ActionEvent event) {
         String word = wordInput.getText();
         String pronunciation = "/" + pronunciationInput.getText() + "/";
+        String meaning = "";
         HashMap<String, String> typeMeaning = new HashMap<>();
         typeMeaning.put("Danh từ", nounInput.getText());
+        meaning += "Danh từ: " + nounInput.getText() + "\n";
         typeMeaning.put("Động từ", verbInput.getText());
+        meaning += "Động từ: " + verbInput.getText() + "\n";
         typeMeaning.put("Tính từ", adjInput.getText());
+        meaning += "Tính từ: " + adjInput.getText() + "\n";
         typeMeaning.put("Trạng từ", advInput.getText());
+        meaning += "Trạng từ: " + advInput.getText() + "\n";
         String example = exampleInput.getText();
         boolean isOk = false;
-        isOk = DictionaryManagement.insertFromFront(word, pronunciation, typeMeaning, example, DBConnect.connectDB());
+        isOk = DictionaryManagement.insertFromFront(word, pronunciation, typeMeaning, example, meaning, DBConnect.connectDB());
         if (isOk) {
             notification.setText("Added Successfully!");
             submitButton.setVisible(false);
@@ -191,7 +196,6 @@ public class addAndChangeController extends BaseController implements Initializa
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        suggestLabel();
         submitButton.setVisible(false);
         notification.setVisible(false);
         pronunciationInput.setEditable(false);
