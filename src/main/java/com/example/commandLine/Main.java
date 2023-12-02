@@ -18,6 +18,5 @@ public class Main {
 //        }
         HashMap<String, String> danhtu = new HashMap<>();
         danhtu.put("Danh tu", "nghi1\nnghia3\nnghia4");
-        DictionaryManagement.insertFromFront("abcde","vui",danhtu,"exp1\nExp2",Connect);
     }
 }

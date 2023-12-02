@@ -189,7 +189,7 @@ public class DictionaryManagement {
         }
     }
 
-    public static boolean insertFromFront(String wordTarget, String pronounce, HashMap<String, String> TypeMeaning, String example, Connection connect) {
+    public static boolean insertFromFront(String wordTarget, String pronounce, HashMap<String, String> TypeMeaning, String example, String meaning, Connection connect) {
         String html = "<h1>" + wordTarget + "</h1>" + "<h3><i>" + pronounce + "</i></h3>";
         for (Map.Entry<String, String> TypeWithMeaning : TypeMeaning.entrySet()) {
             if (Objects.equals(TypeWithMeaning.getValue(), "")) continue;
@@ -218,12 +218,13 @@ public class DictionaryManagement {
 
             if (exist == 0) {
                 String WordInsert = "INSERT INTO " + DBConnect.DB_NAME
-                        + " (wordTarget,html) VALUES (?, ?)";
+                        + " (wordTarget,html,wordMeaning) VALUES (?, ?, ?)";
 
                 PreparedStatement stmt = connect.prepareStatement(WordInsert);
                 connect.setAutoCommit(false);
                 stmt.setString(1,wordTarget);
                 stmt.setString(2,html);
+                stmt.setString(3,meaning);
                 int a = stmt.executeUpdate();
                 connect.commit();
             } else {
