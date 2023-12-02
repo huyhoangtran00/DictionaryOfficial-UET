@@ -466,6 +466,7 @@ public class BlossomGameController extends GameController implements Initializab
     }
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initGame();
+        suggestLabel();
     }
 
 

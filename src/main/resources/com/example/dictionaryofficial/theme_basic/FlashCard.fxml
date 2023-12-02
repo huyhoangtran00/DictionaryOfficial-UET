@@ -25,5 +25,30 @@
          </font></Label>
       <Button fx:id="returnButton" layoutX="28.0" layoutY="27.0" mnemonicParsing="false" onAction="#showGameScene" opacity="0.8" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="translate_button" layoutX="574.0" layoutY="562.0" mnemonicParsing="false" onAction="#showTranslateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Label fx:id="search_label" layoutX="318.0" layoutY="531.0" prefHeight="18.0" prefWidth="60.0" text="Search" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="edit_label" layoutX="411.0" layoutY="531.0" prefHeight="27.0" prefWidth="38.0" text="Add" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="studying_label" layoutX="480.0" layoutY="530.0" prefHeight="27.0" prefWidth="72.0" text="Studying" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="gg_label" layoutX="529.0" layoutY="530.0" prefHeight="27.0" prefWidth="137.0" text="Google Translate" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="setting_label" layoutX="656.0" layoutY="531.0" prefHeight="27.0" prefWidth="72.0" text="Setting" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

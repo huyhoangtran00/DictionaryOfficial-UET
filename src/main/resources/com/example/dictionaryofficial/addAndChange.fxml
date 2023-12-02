@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.addAndChangeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.addAndChangeController">
    <children>
 
       <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
@@ -83,5 +83,30 @@
          </children>
       </AnchorPane>
       <Button fx:id="translate_button" layoutX="573.0" layoutY="561.0" mnemonicParsing="false" onAction="#showTranslateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Label fx:id="search_label" layoutX="313.0" layoutY="601.0" prefHeight="18.0" prefWidth="60.0" text="Search" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="edit_label" layoutX="418.0" layoutY="601.0" prefHeight="27.0" prefWidth="38.0" text="Add" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="studying_label" layoutX="477.0" layoutY="601.0" prefHeight="27.0" prefWidth="72.0" text="Studying" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="gg_label" layoutX="530.0" layoutY="601.0" prefHeight="27.0" prefWidth="137.0" text="Google Translate" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="setting_label" layoutX="657.0" layoutY="601.0" prefHeight="27.0" prefWidth="72.0" text="Setting" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

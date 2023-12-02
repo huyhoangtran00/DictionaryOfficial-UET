@@ -87,6 +87,7 @@ public class TranslateController extends BaseController implements Initializable
 
 
     public void initTranslate() {
+        suggestLabel();
         src_option.getItems().add("English");
         src_option.getItems().add("Vietnamese");
         src_option.getItems().add("Japanese");

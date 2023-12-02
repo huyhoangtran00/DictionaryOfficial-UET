@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="basePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.TranslateController">
+<AnchorPane fx:id="basePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.TranslateController">
     <children>
         <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
         <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
@@ -34,5 +34,30 @@
       <Button fx:id="switch_button" layoutX="435.0" layoutY="288.0" mnemonicParsing="false" onAction="#switch_text_and_language" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="src_speaker" layoutX="374.0" layoutY="407.0" mnemonicParsing="false" onAction="#speaker_src_text" prefHeight="40.0" prefWidth="40.0" stylesheets="@css/button.css" />
       <Button fx:id="des_speaker" layoutX="828.0" layoutY="407.0" mnemonicParsing="false" onAction="#speaker_des_text" prefHeight="40.0" prefWidth="40.0" stylesheets="@css/button.css" />
+      <Label fx:id="search_label" layoutX="313.0" layoutY="601.0" prefHeight="18.0" prefWidth="60.0" text="Search" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="edit_label" layoutX="418.0" layoutY="601.0" prefHeight="27.0" prefWidth="38.0" text="Add" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="studying_label" layoutX="477.0" layoutY="601.0" prefHeight="27.0" prefWidth="72.0" text="Studying" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="gg_label" layoutX="530.0" layoutY="601.0" prefHeight="27.0" prefWidth="137.0" text="Google Translate" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="setting_label" layoutX="657.0" layoutY="601.0" prefHeight="27.0" prefWidth="72.0" text="Setting" textFill="#040505">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

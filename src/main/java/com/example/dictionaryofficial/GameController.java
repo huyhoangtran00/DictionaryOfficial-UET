@@ -42,6 +42,7 @@ public class GameController extends BaseController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        suggestLabel();
 
         flash_card.setOnMouseEntered(mouseEvent -> {
             img_1.setScaleX(1.4);
