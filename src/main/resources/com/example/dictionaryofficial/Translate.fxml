@@ -12,9 +12,9 @@
 <AnchorPane fx:id="basePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/background.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.TranslateController">
     <children>
         <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
-        <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddChangeScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+        <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
         <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-        <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" onAction="#showIntoProgramScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+        <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" onAction="#showSearchScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
         <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <TextArea fx:id="src_text" layoutX="50.0" layoutY="144.0" prefHeight="313.0" prefWidth="375.0" stylesheets="@css/translate.css" />
       <TextArea fx:id="des_text" layoutX="503.0" layoutY="144.0" prefHeight="313.0" prefWidth="375.0" stylesheets="@css/translate.css" />

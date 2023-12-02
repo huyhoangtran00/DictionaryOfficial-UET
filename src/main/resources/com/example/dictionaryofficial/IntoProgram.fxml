@@ -24,8 +24,8 @@
             <HTMLEditor fx:id="editField" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="402.0" prefWidth="572.0" />
          </children></AnchorPane>
       <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
-      <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#addScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
-      <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" onAction="#gameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="search_button" layoutX="317.0" layoutY="564.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="searchBar" layoutX="840.0" layoutY="28.0" mnemonicParsing="false" onAction="#clickToSearch" prefHeight="50.0" prefWidth="54.0" stylesheets="@css/button.css" />
@@ -66,7 +66,7 @@
          </graphic>
       </Button>
       <ListView fx:id="suggestList" layoutX="123.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="211.0" prefWidth="706.0" />
-      <Button fx:id="home_button" layoutX="64.0" layoutY="28.0" mnemonicParsing="false" onAction="#homeScene" stylesheets="@css/button.css">
+      <Button fx:id="home_button" layoutX="64.0" layoutY="28.0" mnemonicParsing="false" onAction="#showHomeScene" stylesheets="@css/button.css">
          <graphic>
             <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
