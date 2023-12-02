@@ -44,7 +44,6 @@ public class FlashCardController extends GameController implements Initializable
     public List<Word> ListFlashCard;
 
     public void initialize() {
-
     }
     public void rotatePane() {
 
@@ -126,6 +125,7 @@ public class FlashCardController extends GameController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        suggestLabel();
         ListFlashCard = FlashCard.getListFlashCard();
         cardLabel.setStyle("-fx-font-size: 25px;");
         cardLabel.setText(ListFlashCard.get(0).getWordTarget());

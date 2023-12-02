@@ -45,7 +45,7 @@ public class SettingController extends BaseController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        suggestLabel();
         setting();
 
     }

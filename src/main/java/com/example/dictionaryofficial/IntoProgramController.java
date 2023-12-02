@@ -311,12 +311,17 @@ public class IntoProgramController extends BaseController implements Initializab
 //        ListView<String> suggestList = new ListView<>();
 //        static_searchField = searchField;
 
+
+
+        suggestLabel();
         //init history
         try {
             initHistory();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
 
         suggestList.setVisible(false);
         favour_button.setVisible(false);

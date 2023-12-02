@@ -191,6 +191,7 @@ public class addAndChangeController extends BaseController implements Initializa
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        suggestLabel();
         submitButton.setVisible(false);
         notification.setVisible(false);
         pronunciationInput.setEditable(false);

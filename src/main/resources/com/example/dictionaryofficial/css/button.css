@@ -22,7 +22,7 @@
 #search_button:hover {
     -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
     -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
-    -fx-rotate: 10deg;
+    -fx-translate-y: -20px;
 
 }
 
@@ -38,7 +38,7 @@
 #edit_button:hover {
     -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
     -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
-    -fx-rotate: 10deg;
+    -fx-translate-y: -20px;
 }
 
 
@@ -54,7 +54,7 @@
 #game_button:hover {
     -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
     -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
-    -fx-rotate: 10deg;
+    -fx-translate-y: -20px;
 }
 #setting_button {
     -fx-background-color: transparent;
@@ -68,8 +68,25 @@
 #setting_button:hover{
     -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
     -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
-    -fx-rotate: 10deg;
+    -fx-translate-y: -20px;
 }
+
+#translate_button {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/google.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
+#translate_button:hover {
+    -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
+    -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
+    -fx-translate-y: -20px;
+}
+
 
 #confirm_button {
     -fx-background-color: transparent;
@@ -137,15 +154,6 @@
 }
 
 
-#translate_button {
-    -fx-background-color: transparent;
-    -fx-border-width: 0; /* Loại bỏ viền của nút */
-    -fx-border-color: transparent;
-    -fx-background-image: url('../Image/google.png');
-    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
-    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
-    -fx-background-position: center center; /* Căn giữa hình ảnh */
-}
 
 #nextButton {
     -fx-background-color: transparent;

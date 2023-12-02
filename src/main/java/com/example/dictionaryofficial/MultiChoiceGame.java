@@ -42,6 +42,7 @@ public class MultiChoiceGame extends GameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     playGame();
+    suggestLabel();
     }
 
 
@@ -53,7 +54,7 @@ public class MultiChoiceGame extends GameController implements Initializable {
 
    public void setupButtonEvents() {
         ans[pivot].setOnAction(event -> handleCorrectAnswer());
-        for (int i = 0; i < 4; i++) {
+         for (int i = 0; i < 4; i++) {
             if (i != pivot) {
                 int wrong_key = i; //
                 ans[i].setOnAction(event -> handleWrongAnswer(wrong_key));
@@ -69,19 +70,21 @@ public class MultiChoiceGame extends GameController implements Initializable {
            InputStream sound = null;
            try {
                sound = audio.getAudio("Correct", "en-UK");
-               reset_game.setVisible(true);
 
            } catch (IOException e) {
-               throw new RuntimeException(e);
+               System.out.println("Please connect the internet !");
            }
            try {
                audio.play(sound);
 
            } catch (JavaLayerException e) {
-               throw new RuntimeException(e);
+               System.out.println("Please connect the internet !");
            }
+
        });
        au.start();
+
+       reset_game.setVisible(true);
 
 
     }
@@ -91,20 +94,23 @@ public class MultiChoiceGame extends GameController implements Initializable {
             AudioGoogleAPI audio = AudioGoogleAPI.getInstance();
             InputStream sound = null;
             try {
-                sound = audio.getAudio("Wrong", "en-UK");
+
                 ans[answerIndex].setStyle("-fx-background-color: #EA5455");
                 ans[pivot].setStyle("-fx-background-color: #349f34");
-                reset_game.setVisible(true);
+                sound = audio.getAudio("Wrong", "en-UK");
+
             } catch (IOException e) {
-                throw new RuntimeException(e);
+               System.out.println("Please connect the internet !");
             }
             try {
                 audio.play(sound);
             } catch (JavaLayerException e) {
-                throw new RuntimeException(e);
+                System.out.println("Please connect the internet !");
             }
+
         });
         au.start();
+        reset_game.setVisible(true);
     }
 
     public void initGame() {
