@@ -19,6 +19,7 @@
 
 
 }
+
 #search_button:hover {
     -fx-background-image: url('../Image/searching.gif');
     -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
@@ -320,4 +321,15 @@
     -fx-background-position: center center; /* Căn giữa hình ảnh */
 }
 
+#correctionButton {
+    -fx-background-color: transparent;
+    -fx-text-fill: darkblue;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+}
+
+#correctionButton:hover {
+    -fx-scale-x: 1.4;
+    -fx-scale-y: 1.4;
+}
 
