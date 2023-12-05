@@ -7,18 +7,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/start.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.BaseController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/start.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.BaseController">
    <children>
       <Button fx:id="logoutButton" layoutX="398.0" layoutY="330.0" mnemonicParsing="false" onAction="#showSearchScene" prefHeight="131.0" prefWidth="115.0" stylesheets="@css/button.css" textAlignment="CENTER" AnchorPane.topAnchor="330.0">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="81.0" layoutY="270.0" prefHeight="252.0" prefWidth="287.0" style="-fx-wrap-text: true;" text="WELCOME TO TRIPH-DICTIONARY" textAlignment="CENTER" textFill="#1c4024">
-         <font>
-            <Font name="Arial Bold" size="24.0" />
-         </font>
-      </Label>
       <ImageView fitHeight="142.0" fitWidth="244.0" layoutX="702.0" layoutY="453.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/1_preview_rev_1.png" />
@@ -29,5 +24,11 @@
             <Image url="@Image/2_preview_rev_1.png" />
          </image>
       </ImageView>
+      <Label fx:id="welcome" alignment="CENTER" layoutX="136.0" layoutY="281.0" prefHeight="98.0" prefWidth="181.0" text="Welcome to " />
+      <Label fx:id="nameDic" alignment="CENTER" layoutX="97.0" layoutY="338.0" prefHeight="116.0" prefWidth="258.0" text="TRIPH - DICTIONARY">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
