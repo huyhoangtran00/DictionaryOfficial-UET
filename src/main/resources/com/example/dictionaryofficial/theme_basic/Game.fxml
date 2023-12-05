@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="bkg_game" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/game.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.GameController">
+<AnchorPane fx:id="bkg_game" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/game.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.GameController">
    <children>
-      <AnchorPane fx:id="gamepane" layoutX="67.0" layoutY="24.0" prefHeight="506.0" prefWidth="834.0" style="-fx-background-color: FFEBD8; -fx-background-radius: 30;">
+      <AnchorPane fx:id="gamepane" layoutX="57.0" layoutY="14.0" prefHeight="506.0" prefWidth="834.0" style="-fx-background-color: FFEBD8; -fx-background-radius: 30;">
          <children>
             <Label fx:id="notification" layoutX="51.0" layoutY="476.0" prefHeight="18.0" prefWidth="678.0" style="-fx-background-color: none;" />
             <Label alignment="CENTER" layoutX="51.0" layoutY="14.0" prefHeight="70.0" prefWidth="743.0" style="-fx-background-color: C7DCA7; -fx-background-radius: 30;" text="STUDY SMART - PLAY HARD" textFill="#656e1b">

@@ -40,6 +40,7 @@ public class GameController extends BaseController implements Initializable {
     public void  PlayMultiChoiceGame(ActionEvent event) throws IOException {
         ManageScene.showScene(BaseController.getRoot(), BaseController.getStage(), BaseController.getScene(), event, "MultiChoice.fxml");
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         suggestLabel();

@@ -9,19 +9,19 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@css/start.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryofficial.BaseController">
    <children>
-      <Button fx:id="logoutButton" layoutX="398.0" layoutY="330.0" mnemonicParsing="false" onAction="#showSearchScene" prefHeight="131.0" prefWidth="115.0" stylesheets="@css/button.css" textAlignment="CENTER" AnchorPane.topAnchor="330.0">
+      <Label alignment="CENTER" layoutX="202.0" layoutY="88.0" prefHeight="51.0" prefWidth="556.0" text="WELCOME TO TRIPH-DICTIONARY" textAlignment="CENTER" textFill="#10a3ad">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>
       </Button>
       <ImageView fitHeight="142.0" fitWidth="244.0" layoutX="702.0" layoutY="453.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Image/1_preview_rev_1.png" />
+            <Image url="@Image/Duo_Love.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="142.0" fitWidth="244.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="233.0" fitWidth="233.0" layoutX="126.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Image/2_preview_rev_1.png" />
+            <Image url="@Image/smileFrg.png" />
          </image>
       </ImageView>
       <Label fx:id="welcome" alignment="CENTER" layoutX="136.0" layoutY="281.0" prefHeight="98.0" prefWidth="181.0" text="Welcome to " />

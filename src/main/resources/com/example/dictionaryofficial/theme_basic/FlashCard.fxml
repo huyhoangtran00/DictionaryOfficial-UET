@@ -23,7 +23,7 @@
          <font>
             <Font name="System Bold" size="22.0" />
          </font></Label>
-      <Button fx:id="returnButton" layoutX="28.0" layoutY="27.0" mnemonicParsing="false" onAction="#showGameScene" opacity="0.8" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <Button fx:id="returnButton" layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#showGameScene" opacity="0.8" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="translate_button" layoutX="574.0" layoutY="562.0" mnemonicParsing="false" onAction="#showTranslateScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Label fx:id="search_label" layoutX="318.0" layoutY="531.0" prefHeight="18.0" prefWidth="60.0" text="Search" textFill="#040505">
          <font>
@@ -50,5 +50,6 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="nextGameButton" layoutX="902.0" layoutY="14.0" mnemonicParsing="false" onAction="#PlayBlossomGame" opacity="0.8" prefHeight="50.0" prefWidth="50.0" stylesheets="@../css/button.css" />
    </children>
 </AnchorPane>

@@ -354,3 +354,18 @@
     -fx-scale-x: 1.4;
     -fx-scale-y: 1.4;
 }
+
+
+#nextGameButton {
+    -fx-background-color: transparent;
+    -fx-border-width: 0; /* Loại bỏ viền của nút */
+    -fx-border-color: transparent;
+    -fx-background-image: url('../Image/arrow-right.png');
+    -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
+    -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+    -fx-background-position: center center; /* Căn giữa hình ảnh */
+}
+
+#nextGameButton {
+    -fx-opacity: 1;
+}
