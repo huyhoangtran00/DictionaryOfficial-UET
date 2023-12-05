@@ -2,6 +2,7 @@ package com.example.dictionaryofficial;
 
 import com.example.APIGoogle.AudioGoogleAPI;
 import com.example.APIGoogle.GoogleTransAPI;
+import com.example.AutoCorrection.AutoCorrect;
 import com.example.cilent.FavouriteWord;
 import com.example.commandLine.DBConnect;
 import com.example.commandLine.DictionaryCommandline;
@@ -85,8 +86,9 @@ public class IntoProgramController extends BaseController implements Initializab
     private HTMLEditor editField;
     @FXML
     private Button submitEditButton;
+    @FXML
+    private Button correctionButton;
 
-    private static List<String> historyContainer = new ArrayList<>();
     private Vector<String> settingFont ;
     public static TextField static_searchField ;
 
@@ -150,12 +152,8 @@ public class IntoProgramController extends BaseController implements Initializab
 
 
     /* click button to start search */
-    public void clickToSearch(ActionEvent event) throws IOException {
-        searchWord = searchField.getText();
-
-        addToHistory(searchWord);
-
-        favour_button.setVisible(false);
+    public void resultProcessing() {
+        correctionButton.setVisible(false);
         if (DictionaryCommandline.isExist(searchWord, DBConnect.connectDB())) {
             favour_button.setVisible(true);
             if (FavouriteWord.IsFavour(searchWord)) {
@@ -167,25 +165,48 @@ public class IntoProgramController extends BaseController implements Initializab
                 border_star.setVisible(true);
                 favour_star.setVisible(false);
             }
+        } else {
+            //suggest word
+            correctionButton.setVisible(true);
+            searchWord = AutoCorrect.closestWord(searchWord);
+            correctionButton.setText(searchWord);
         }
+    }
+
+    public void clickToSearch(ActionEvent event) throws IOException {
+        searchWord = searchField.getText();
+
+        addToHistory(searchWord);
+        favour_button.setVisible(false);
+
         String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
-//        String result = "<h1>" + GoogleTransAPI.translate(searchWord, GoogleTransAPI.LANGUAGE.ENGLISH, GoogleTransAPI.LANGUAGE.VIETNAMESE) + "</h1>";
+        resultProcessing();
+
+        searchResult.getEngine().loadContent(result);
+
+        suggestList.setVisible(false);
+    }
+
+    public void searchBySuggestion(ActionEvent event) throws IOException {
+        searchField.setText(searchWord);
+
+        addToHistory(searchWord);
+        favour_button.setVisible(false);
+
+        String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+        resultProcessing();
+
         searchResult.getEngine().loadContent(result);
 
         suggestList.setVisible(false);
     }
 
 
-
-
-
     public void initHistory() throws IOException {
         File file = new File("database/history.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String word = "";
-        historyContainer = new ArrayList<>();
         while ((word = br.readLine()) != null) {
-            historyContainer.add(word);
             historyList.getItems().add(word);
         }
         br.close();
@@ -195,7 +216,7 @@ public class IntoProgramController extends BaseController implements Initializab
         FileWriter fw = null;
         try {
             fw = new FileWriter("database/history.txt");
-            for (String s : historyContainer) {
+            for (String s : historyList.getItems()) {
                 fw.write(s + '\n');
             }
         } catch (Exception e) {
@@ -206,17 +227,21 @@ public class IntoProgramController extends BaseController implements Initializab
     }
 
     public void addToHistory(String word) {
-        while (historyContainer.size() >= 50) {
-            historyContainer.remove(49);
-            historyList.getItems().remove(49);
-
+        for (int i = 0; i < historyList.getItems().size(); i++) {
+            if (historyList.getItems().get(i).equals(word)) {
+                historyList.getItems().remove(i);
+                break;
+            }
         }
-        historyContainer.add(0, word);
+
+        while (historyList.getItems().size() >= 50) {
+            historyList.getItems().remove(49);
+        }
+
         historyList.getItems().add(0, word);
     }
 
     public void resetHistory() {
-        historyContainer.clear();
         historyList.getItems().clear();
         try {
             saveHistory();
@@ -312,12 +337,9 @@ public class IntoProgramController extends BaseController implements Initializab
         submitEditButton.setVisible(false);
         EditButton.setVisible(true);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        ListView<String> suggestList = new ListView<>();
-//        static_searchField = searchField;
-
-
 
         suggestLabel();
         //init history
@@ -328,7 +350,7 @@ public class IntoProgramController extends BaseController implements Initializab
         }
 
 
-
+        correctionButton.setVisible(false);
         suggestList.setVisible(false);
         favour_button.setVisible(false);
         favour_star.setVisible(false);
@@ -360,19 +382,10 @@ public class IntoProgramController extends BaseController implements Initializab
             searchWord = searchField.getText();
             addToHistory(searchWord);
             favour_button.setVisible(false);
-            if (DictionaryCommandline.isExist(searchWord, DBConnect.connectDB())) {
-                favour_button.setVisible(true);
-                if (FavouriteWord.IsFavour(searchWord)) {
-                    favour_button.setGraphic(favour_star);
-                    favour_star.setVisible(true);
-                    border_star.setVisible(false);
-                } else {
-                    favour_button.setGraphic(border_star);
-                    border_star.setVisible(true);
-                    favour_star.setVisible(false);
-                }
-            }
+
             String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+            resultProcessing();
+
             searchResult.getEngine().loadContent(result);
             suggestList.setVisible(false);
         });
@@ -386,21 +399,11 @@ public class IntoProgramController extends BaseController implements Initializab
 
             searchWord = searchField.getText();
             addToHistory(searchWord);
-
             favour_button.setVisible(false);
-            if (DictionaryCommandline.isExist(searchWord, DBConnect.connectDB())) {
-                favour_button.setVisible(true);
-                if (FavouriteWord.IsFavour(searchWord)) {
-                    favour_button.setGraphic(favour_star);
-                    favour_star.setVisible(true);
-                    border_star.setVisible(false);
-                } else {
-                    favour_button.setGraphic(border_star);
-                    border_star.setVisible(true);
-                    favour_star.setVisible(false);
-                }
-            }
+
             String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+            resultProcessing();
+
             searchResult.getEngine().loadContent(result);
             suggestList.setVisible(false);
         });
@@ -411,19 +414,10 @@ public class IntoProgramController extends BaseController implements Initializab
             addToHistory(searchWord);
 
             favour_button.setVisible(false);
-            if (DictionaryCommandline.isExist(searchWord, DBConnect.connectDB())) {
-                favour_button.setVisible(true);
-                if (FavouriteWord.IsFavour(searchWord)) {
-                    favour_button.setGraphic(favour_star);
-                    favour_star.setVisible(true);
-                    border_star.setVisible(false);
-                } else {
-                    favour_button.setGraphic(border_star);
-                    border_star.setVisible(true);
-                    favour_star.setVisible(false);
-                }
-            }
+
             String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+            resultProcessing();
+
             searchResult.getEngine().loadContent(result);
             suggestList.setVisible(false);
         });

@@ -22,6 +22,7 @@
          <children>
             <WebView fx:id="searchResult" prefHeight="390.0" prefWidth="572.0" stylesheets="@css/webview.css" />
             <HTMLEditor fx:id="editField" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="390.0" prefWidth="572.0" />
+            <Button fx:id="correctionButton" layoutX="133.0" layoutY="60.0" mnemonicParsing="false" onAction="#searchBySuggestion" prefHeight="26.0" prefWidth="144.0" stylesheets="@css/button.css" />
          </children></AnchorPane>
       <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
       <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
@@ -98,12 +99,12 @@
             </ImageView>
          </graphic>
       </Button>
-      <ListView fx:id="suggestList" layoutX="123.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="211.0" prefWidth="706.0" />
       <ImageView fx:id="favour_star" fitHeight="38.0" fitWidth="40.0" layoutX="895.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/star_favor.png" />
          </image>
       </ImageView>
       <Button fx:id="submitEditButton" layoutX="839.0" layoutY="384.0" mnemonicParsing="false" onAction="#submitEditWord" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
+      <ListView fx:id="suggestList" layoutX="123.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="211.0" prefWidth="706.0" />
    </children>
 </AnchorPane>

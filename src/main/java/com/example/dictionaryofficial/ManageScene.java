@@ -36,7 +36,7 @@ public class ManageScene {
 
    public enum THEME {
        BASIC("basic"),
-        PURPLE("purple"), RAIN_BOW("rain-bow");
+        PURPLE("purple");
 
 
         private final String basic;
@@ -49,7 +49,6 @@ public class ManageScene {
             List<String> list_theme = new ArrayList<>();
             list_theme.add("basic");
             list_theme.add("purple");
-            list_theme.add("rain-bow");
             return list_theme;
         }
 
@@ -141,15 +140,11 @@ public class ManageScene {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        switch (setting.get(2)) {
-            case "basic":
-                return BASIC;
-            case "purple":
-                return PURPLE;
-            case"rain-bow" :
-                return RAIN_BOW;
-        }
-        return null;
+        return switch (setting.get(2)) {
+            case "basic" -> BASIC;
+            case "purple" -> PURPLE;
+            default -> null;
+        };
 
 
     }
@@ -160,8 +155,6 @@ public class ManageScene {
                return "theme_basic/" + src;
             case PURPLE:
                 return src;
-            case RAIN_BOW:
-                return "theme_rainbow/" +src;
             default:
                 return src;
 
