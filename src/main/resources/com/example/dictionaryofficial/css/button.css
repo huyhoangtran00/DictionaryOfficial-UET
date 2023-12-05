@@ -20,9 +20,9 @@
 
 }
 #search_button:hover {
-    -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
-    -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
-    -fx-translate-y: -20px;
+    -fx-scale-x: 1.2; /* Tỉ lệ phóng to ngang khi di chuột vào */
+    -fx-scale-y: 1.2; /* Tỉ lệ phóng to dọc khi di chuột vào */
+    -fx-rotate: -10deg;
 
 }
 
@@ -36,9 +36,9 @@
     -fx-background-position: center center; /* Căn giữa hình ảnh */
 }
 #edit_button:hover {
-    -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
-    -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
-    -fx-translate-y: -20px;
+    -fx-scale-x: 1.2; /* Tỉ lệ phóng to ngang khi di chuột vào */
+    -fx-scale-y: 1.2; /* Tỉ lệ phóng to dọc khi di chuột vào */
+    -fx-rotate: -10deg;
 }
 
 
@@ -52,9 +52,9 @@
     -fx-background-position: center center; /* Căn giữa hình ảnh */
 }
 #game_button:hover {
-    -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
-    -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
-    -fx-translate-y: -20px;
+    -fx-scale-x: 1.2; /* Tỉ lệ phóng to ngang khi di chuột vào */
+    -fx-scale-y: 1.2; /* Tỉ lệ phóng to dọc khi di chuột vào */
+    -fx-rotate: -10deg;
 }
 #setting_button {
     -fx-background-color: transparent;
@@ -66,9 +66,9 @@
     -fx-background-position: center center; /* Căn giữa hình ảnh */
 }
 #setting_button:hover{
-    -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
-    -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
-    -fx-translate-y: -20px;
+    -fx-scale-x: 1.2; /* Tỉ lệ phóng to ngang khi di chuột vào */
+    -fx-scale-y: 1.2; /* Tỉ lệ phóng to dọc khi di chuột vào */
+    -fx-rotate: -10deg;
 }
 
 #translate_button {
@@ -82,9 +82,9 @@
 }
 
 #translate_button:hover {
-    -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
-    -fx-scale-y: 1.4; /* Tỉ lệ phóng to dọc khi di chuột vào */
-    -fx-translate-y: -20px;
+    -fx-scale-x: 1.2; /* Tỉ lệ phóng to ngang khi di chuột vào */
+    -fx-scale-y: 1.2; /* Tỉ lệ phóng to dọc khi di chuột vào */
+    -fx-rotate: -10deg;
 }
 
 
