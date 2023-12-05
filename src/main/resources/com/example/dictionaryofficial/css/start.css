@@ -6,7 +6,11 @@
     -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
     -fx-background-position: center center; /* Căn giữa hình ảnh */
 }
-
-.AnchorPane {
-    -fx-background-image: url('../backForDic.png');
+.label {
+    -fx-background-color: #F5F5F5;
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+    -fx-text-alignment: center;
+    -fx-font-size: 12px;
 }
+

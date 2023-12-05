@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -15,10 +16,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +39,12 @@ public class SettingController extends BaseController implements Initializable {
     ComboBox<String> theme;
     @FXML
     private Pane pane;
+    @FXML
+    private Label member1;
+    @FXML
+    private Label member2;
+    @FXML
+    private Label member3;
 
     List<String> list_theme = new ArrayList<>();
 
@@ -48,6 +57,27 @@ public class SettingController extends BaseController implements Initializable {
         suggestLabel();
         setting();
 
+        member1.setOnMouseClicked((event) -> {
+            try {
+                Desktop.getDesktop().browse(URI.create("https://github.com/huyhoangtran00"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        member2.setOnMouseClicked((event) -> {
+            try {
+                Desktop.getDesktop().browse(URI.create("https://github.com/Lhhiep-maxcode"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        member3.setOnMouseClicked((event) -> {
+            try {
+                Desktop.getDesktop().browse(URI.create("https://github.com/BlackRose484"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
 

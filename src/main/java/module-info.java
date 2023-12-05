@@ -4,6 +4,7 @@ module com.example.dictionaryofficial {
     requires java.sql;
     requires javafx.web;
     requires jlayer;
+    requires java.desktop;
 
 
     opens com.example.dictionaryofficial to javafx.fxml;

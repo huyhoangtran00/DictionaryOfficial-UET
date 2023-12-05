@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -86,11 +87,55 @@ public class BaseController {
     }
 
     public void suggestLabel() {
+        String style = "-fx-background-color: #F5F5F5;\n" +
+                "    -fx-border-color: black;\n" +
+                "    -fx-border-radius: 2px;\n" +
+                "    -fx-text-alignment: center;\n" +
+                "    -fx-font-size: 12px;";
+
+
         search_label.setVisible(false);
+        search_label.setStyle(style);
+        search_label.setPrefHeight(6);
+        search_label.setPrefWidth(51);
+        search_label.setLayoutX(316);
+        search_label.setLayoutY(531);
+        search_label.setAlignment(Pos.CENTER);
+
+
         edit_label.setVisible(false);
+        edit_label.setStyle(style);
+        edit_label.setPrefHeight(6);
+        edit_label.setPrefWidth(45);
+        edit_label.setLayoutX(409);
+        edit_label.setLayoutY(531);
+        edit_label.setAlignment(Pos.CENTER);
+
         studying_label.setVisible(false);
+        studying_label.setStyle(style);
+        studying_label.setPrefHeight(6);
+        studying_label.setPrefWidth(61);
+        studying_label.setLayoutX(486);
+        studying_label.setLayoutY(531);
+        studying_label.setAlignment(Pos.CENTER);
+
+
         gg_label.setVisible(false);
+        gg_label.setStyle(style);
+        gg_label.setPrefHeight(6);
+        gg_label.setPrefWidth(110);
+        gg_label.setLayoutX(543);
+        gg_label.setLayoutY(531);
+        gg_label.setAlignment(Pos.CENTER);
+
         setting_label.setVisible(false);
+        setting_label.setStyle(style);
+        setting_label.setPrefHeight(6);
+        setting_label.setPrefWidth(72);
+        setting_label.setLayoutX(645);
+        setting_label.setLayoutY(531);
+        setting_label.setAlignment(Pos.CENTER);
+
         suggestLabelVisible(search_button,search_label);
         suggestLabelVisible(edit_button,edit_label);
         suggestLabelVisible(game_button,studying_label);
@@ -110,7 +155,6 @@ public class BaseController {
     public static Parent getRoot() {
         return root;
     }
-
 
 
 }

@@ -315,6 +315,8 @@ public class IntoProgramController extends BaseController implements Initializab
         submitEditButton.setVisible(true);
         searchField.setEditable(false);
         String result = style + DictionaryCommandline.getWord(searchWord, DBConnect.connectDB());
+        result = result.replace("contenteditable=\"false\" ", "");
+        System.out.println(result);
 
         ToolBar toolBar = (ToolBar) editField.lookup(".top-toolbar");
         toolBar.setManaged(false);
@@ -324,6 +326,7 @@ public class IntoProgramController extends BaseController implements Initializab
         paragraphToolBar.setManaged(false);
         paragraphToolBar.setVisible(false);
 
+        historyList.setDisable(true);
         editField.setHtmlText(result);
         editField.setVisible(true);
         EditButton.setVisible(false);
@@ -332,11 +335,14 @@ public class IntoProgramController extends BaseController implements Initializab
     public void submitEditWord (ActionEvent e) {
         searchField.setEditable(true);
         String result = editField.getHtmlText();
+        System.out.println(result);
+        result = result.replace("true", "false");
+        System.out.println(result);
         DictionaryManagement.EditFromFront(searchWord, result, DBConnect.connectDB());
 
         searchResult.getEngine().loadContent(result);
 
-//        searchResult.setDisable(true);
+        historyList.setDisable(false);
         editField.setVisible(false);
         submitEditButton.setVisible(false);
         EditButton.setVisible(true);
