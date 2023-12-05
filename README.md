@@ -31,14 +31,13 @@ To get started with the English Learning App, follow these steps:
    git clone https://github.com/your-username/english-learning-app.git
 
 2. **Team Members**
-Meet the dedicated individuals behind this project:
-
-Trần Huy Hoàng
-## GitHub: huyhoangtran00
-Lại Hoàng Hiệp
-# #GitHub: Lhhiep-maxcode
-Nguyễn Ngọc Hưng
-## GitHub: BlackRose484
+   Meet the dedicated individuals behind this project:
+   # Trần Huy Hoàng
+   ## GitHub: huyhoangtran00
+   # Lại Hoàng Hiệp
+   ## GitHub: Lhhiep-maxcode
+   # Nguyễn Ngọc Hưng
+   ## GitHub: BlackRose484
 
 We welcome contributions from the community. If you find a bug, have a feature request, or want to contribute code, please open an issue or submit a pull request.
 
