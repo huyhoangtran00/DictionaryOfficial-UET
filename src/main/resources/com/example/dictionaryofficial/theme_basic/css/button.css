@@ -19,6 +19,7 @@
 
 
 }
+
 #search_button:hover {
     -fx-background-image: url('../Image/searching.gif');
     -fx-scale-x: 1.4; /* Tỉ lệ phóng to ngang khi di chuột vào */
@@ -283,7 +284,7 @@
     -fx-background-color: transparent;
     -fx-border-width: 0; /* Loại bỏ viền của nút */
     -fx-border-color: transparent;
-    -fx-background-image: url('../Image/verified.png');
+    -fx-background-image: url('../Image/accept.png');
     -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
     -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
     -fx-background-position: center center; /* Căn giữa hình ảnh */
@@ -294,7 +295,7 @@
     -fx-background-color: transparent;
     -fx-border-width: 0; /* Loại bỏ viền của nút */
     -fx-border-color: transparent;
-    -fx-background-image: url('../Image/verified-1--unscreen.gif');
+    -fx-background-image: url('../Image/accept.png');
     -fx-background-size: cover; /* Kích thước của hình ảnh theo tỷ lệ */
     -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
     -fx-background-position: center center; /* Căn giữa hình ảnh */
@@ -320,4 +321,15 @@
     -fx-background-position: center center; /* Căn giữa hình ảnh */
 }
 
+#correctionButton {
+    -fx-background-color: transparent;
+    -fx-text-fill: darkblue;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+}
+
+#correctionButton:hover {
+    -fx-scale-x: 1.4;
+    -fx-scale-y: 1.4;
+}
 

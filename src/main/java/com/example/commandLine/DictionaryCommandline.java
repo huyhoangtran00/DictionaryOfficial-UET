@@ -11,6 +11,23 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DictionaryCommandline {
+
+    public static List<String> getAllWords(Connection connect) {
+        List<String> allWords = new ArrayList<>();
+        try {
+            Statement smt = connect.createStatement();
+            ResultSet res = smt.executeQuery("SELECT wordTarget from " + DBConnect.DB_NAME);
+            while (res.next()) {
+                String wordTarget = res.getString(1);
+                allWords.add(wordTarget);
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return allWords;
+    }
+
     public static void showAllWords(Dictionary dictionary, Connection connect) {
 
         System.out.printf("%-3s | %-15s | %-20s \n", "No", "English", "Vietnamese");
@@ -141,11 +158,11 @@ public class DictionaryCommandline {
             System.out.println("Loi truy xuat Db");
             System.out.println(e);
         }
-        return "Oops! Your searched word is not available.\nYou can add new words to help us improve our dictionary.";
+        return "Oops! Your searched word is not available.<br>You can add new words to help us improve our dictionary.<br><br>Suggested Word:";
     }
 
     public static boolean isExist(String word, Connection connection) {
-        return !(getWord(word, connection).equals("Oops! Your searched word is not available.\nYou can add new words to help us improve our dictionary."));
+        return !(getWord(word, connection).equals("Oops! Your searched word is not available.<br>You can add new words to help us improve our dictionary.<br><br>Suggested Word:"));
     }
 
     public static String searchWordFromFront(String word, Connection connect) {
