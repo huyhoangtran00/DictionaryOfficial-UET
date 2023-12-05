@@ -127,6 +127,7 @@ public class TranslateController extends BaseController implements Initializable
         String res = GoogleTransAPI.translate(src_text.getText(),
                 switch_language(src_option.getSelectionModel().getSelectedItem()),
                 switch_language(des_option.getSelectionModel().getSelectedItem()));
+        res = outputTextFormatted(res);
         des_text.setText(res);
 
     }
