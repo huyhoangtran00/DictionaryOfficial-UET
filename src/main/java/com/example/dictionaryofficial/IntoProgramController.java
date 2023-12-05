@@ -155,7 +155,9 @@ public class IntoProgramController extends BaseController implements Initializab
     /* click button to start search */
     public void resultProcessing() {
         correctionButton.setVisible(false);
+        EditButton.setVisible(false);
         if (DictionaryCommandline.isExist(searchWord, DBConnect.connectDB())) {
+            EditButton.setVisible(true);
             favour_button.setVisible(true);
             if (FavouriteWord.IsFavour(searchWord)) {
                 favour_button.setGraphic(favour_star);
@@ -253,6 +255,7 @@ public class IntoProgramController extends BaseController implements Initializab
 
     public void resetHistory() {
         historyList.getItems().clear();
+        historyContainer.clear();
         try {
             saveHistory();
         } catch (IOException e) {
@@ -359,7 +362,7 @@ public class IntoProgramController extends BaseController implements Initializab
             throw new RuntimeException(e);
         }
 
-
+        EditButton.setVisible(false);
         correctionButton.setVisible(false);
         suggestList.setVisible(false);
         favour_button.setVisible(false);

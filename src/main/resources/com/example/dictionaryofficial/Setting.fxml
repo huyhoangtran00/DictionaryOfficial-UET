@@ -71,12 +71,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Label layoutX="148.0" layoutY="14.0" prefHeight="18.0" prefWidth="162.0" text="Information">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label alignment="TOP_LEFT" layoutX="72.0" layoutY="90.0" maxHeight="200.0" maxWidth="364.0" prefHeight="98.0" prefWidth="268.0" text="Hello the world" wrapText="true" />
             <Label layoutX="637.0" layoutY="14.0" text="Contact ">
                <font>
                   <Font size="24.0" />
@@ -85,9 +79,44 @@
             <Label fx:id="icon1" alignment="CENTER" layoutX="587.0" layoutY="60.0" prefHeight="30.0" prefWidth="30.0" stylesheets="@css/setting.css" />
             <Label fx:id="icon2" layoutX="587.0" layoutY="106.0" prefHeight="30.0" prefWidth="30.0" stylesheets="@css/setting.css" />
             <Label fx:id="icon3" layoutX="587.0" layoutY="154.0" prefHeight="30.0" prefWidth="30.0" stylesheets="@css/setting.css" />
-            <Label layoutX="238.0" layoutY="56.0" prefHeight="10.0" prefWidth="138.0" text="Hard time for easy future">
+            <Label layoutX="152.0" layoutY="19.0" prefHeight="18.0" prefWidth="162.0" text="Information">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="242.0" layoutY="61.0" prefHeight="10.0" prefWidth="138.0" text="Hard time for easy future">
                <font>
                   <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="65.0" layoutY="82.0" maxHeight="200.0" maxWidth="364.0" prefHeight="25.0" prefWidth="72.0" text="Product:" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="187.0" layoutY="84.0" prefHeight="18.0" prefWidth="189.0" text="TripH Dictionary">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="65.0" layoutY="113.0" maxHeight="200.0" maxWidth="364.0" prefHeight="26.0" prefWidth="113.0" text="Released Date:" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="187.0" layoutY="115.0" prefHeight="18.0" prefWidth="189.0" text="12/5/2023">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="65.0" layoutY="146.0" maxHeight="200.0" maxWidth="364.0" prefHeight="26.0" prefWidth="89.0" text="Policy:" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="186.0" layoutY="132.0" prefHeight="70.0" prefWidth="183.0" style="-fx-wrap-text: true;" text="This product is used for studying, not for commerce">
+               <font>
+                  <Font size="15.0" />
                </font>
             </Label>
          </children>

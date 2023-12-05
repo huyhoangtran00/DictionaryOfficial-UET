@@ -61,7 +61,7 @@
                   <URL value="@css/button.css" />
                </stylesheets>
             </Button>
-            <Label layoutX="34.0" layoutY="334.0" stylesheets="@css/edit.css" text="Example">
+            <Label layoutX="34.0" layoutY="323.0" stylesheets="@css/edit.css" text="Example">
                <font>
                   <Font size="14.0" />
                </font>
@@ -70,7 +70,7 @@
             <TextArea fx:id="advInput" layoutX="494.0" layoutY="263.0" prefHeight="54.0" prefWidth="300.0" promptText="Type the meaning of adverb" stylesheets="@css/edit.css" />
             <TextArea fx:id="nounInput" layoutX="33.0" layoutY="182.0" prefHeight="54.0" prefWidth="300.0" promptText="Type the meaning of noun" stylesheets="@css/edit.css" />
             <TextArea fx:id="verbInput" layoutX="494.0" layoutY="182.0" prefHeight="54.0" prefWidth="300.0" promptText="Type the meaning of verb" stylesheets="@css/edit.css" />
-            <TextArea fx:id="exampleInput" layoutX="33.0" layoutY="358.0" prefHeight="99.0" prefWidth="762.0" promptText="Type the meaning of adjective" stylesheets="@css/edit.css" />
+            <TextArea fx:id="exampleInput" layoutX="33.0" layoutY="347.0" prefHeight="110.0" prefWidth="762.0" promptText="Type the meaning of adjective" stylesheets="@css/edit.css" />
             <Label fx:id="notification" layoutX="51.0" layoutY="476.0" prefHeight="18.0" prefWidth="678.0" style="-fx-background-color: none;" />
          </children>
       </AnchorPane>

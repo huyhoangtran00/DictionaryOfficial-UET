@@ -104,18 +104,34 @@ public class DictionaryManagement {
         try {
             String CheckExist = "SELECT COUNT(*) FROM " + DBConnect.DB_NAME
                     + " WHERE wordTarget = ?";
-
+            String CheckExistInFavour = "SELECT COUNT(*) FROM avFavorite"
+                    + " WHERE word = ?";
             PreparedStatement checkExist = connect.prepareStatement(CheckExist);
+            PreparedStatement checkExistInFavour = connect.prepareStatement(CheckExistInFavour);
             checkExist.setString(1,wordTarget);
+            checkExistInFavour.setString(1, wordTarget);
             ResultSet res = checkExist.executeQuery();
+            ResultSet res1 = checkExistInFavour.executeQuery();
             res.next();
+            res1.next();
             int exist = res.getInt(1);
+            int existInfavour = res1.getInt(1);
             if(exist == 0) {
                 System.out.println("Không tồn tại từ này");
                 return false;
             } else {
                 String Delete = "DELETE FROM " + DBConnect.DB_NAME
                         + " WHERE wordTarget = ?";
+                PreparedStatement delete = connect.prepareStatement(Delete);
+                delete.setString(1, wordTarget);
+                connect.setAutoCommit(false);
+                delete.executeUpdate();
+                connect.commit();
+            }
+
+            if(existInfavour != 0) {
+                String Delete = "DELETE FROM avFavorite"
+                        + " WHERE word = ?";
                 PreparedStatement delete = connect.prepareStatement(Delete);
                 delete.setString(1, wordTarget);
                 connect.setAutoCommit(false);
