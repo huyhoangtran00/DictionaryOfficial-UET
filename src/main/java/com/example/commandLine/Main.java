@@ -7,16 +7,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
+import java.awt.Desktop;
+import java.net.URI;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) throws Exception {
-        Connection Connect = DBConnect.connectDB();
-        Dictionary dictionary = new Dictionary();
-//        while (true) {
-//            DictionaryCommandline.dictionaryBasic(dictionary, Connect);
-//        }
-        HashMap<String, String> danhtu = new HashMap<>();
-        danhtu.put("Danh tu", "nghi1\nnghia3\nnghia4");
+        Desktop.getDesktop().browse(URI.create("https://www.facebook.com/"));
     }
 }
