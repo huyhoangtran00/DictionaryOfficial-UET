@@ -11,10 +11,10 @@
    <children>
       <Label alignment="CENTER" layoutX="202.0" layoutY="88.0" prefHeight="51.0" prefWidth="556.0" text="WELCOME TO TRIPH-DICTIONARY" textAlignment="CENTER" textFill="#10a3ad">
          <font>
-            <Font name="Arial" size="30.0" />
+            <Font name="System Italic" size="24.0" />
          </font>
-      </Label>
-      <ImageView fitHeight="176.0" fitWidth="180.0" layoutX="670.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+      </Button>
+      <ImageView fitHeight="142.0" fitWidth="244.0" layoutX="702.0" layoutY="453.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Image/Duo_Love.png" />
          </image>
@@ -24,10 +24,11 @@
             <Image url="@Image/smileFrg.png" />
          </image>
       </ImageView>
-      <Button fx:id="logoutButton" layoutX="443.0" layoutY="268.0" mnemonicParsing="false" onAction="#showSearchScene" prefHeight="127.0" prefWidth="126.0" stylesheets="@css/button.css" textAlignment="CENTER" AnchorPane.topAnchor="268.0">
+      <Label fx:id="welcome" alignment="CENTER" layoutX="136.0" layoutY="281.0" prefHeight="98.0" prefWidth="181.0" text="Welcome to " />
+      <Label fx:id="nameDic" alignment="CENTER" layoutX="97.0" layoutY="338.0" prefHeight="116.0" prefWidth="258.0" text="TRIPH - DICTIONARY">
          <font>
-            <Font name="System Italic" size="24.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
-      </Button>
+      </Label>
    </children>
 </AnchorPane>

@@ -15,3 +15,18 @@
     -fx-font-size: 12px;
 }
 
+#welcome {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-alignment: center;
+    -fx-font-size: 24px;
+}
+
+#nameDic {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-alignment: center;
+    -fx-font-size: 25px;
+}
+
+
