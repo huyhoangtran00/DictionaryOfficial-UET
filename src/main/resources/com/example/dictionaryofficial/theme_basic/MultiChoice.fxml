@@ -41,7 +41,6 @@
          </image>
       </ImageView>
       <Label fx:id="taskbar" layoutX="255.0" layoutY="551.0" prefHeight="70.0" prefWidth="493.0" stylesheets="@css/intoprogram.css" />
-      <Button fx:id="back_menu_game" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="setting_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#showSettingScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="game_button" layoutX="492.0" layoutY="561.0" mnemonicParsing="false" onAction="#showGameScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
       <Button fx:id="edit_button" layoutX="411.0" layoutY="561.0" mnemonicParsing="false" onAction="#showAddScene" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/button.css" />
@@ -72,5 +71,6 @@
                 <Font size="18.0" />
             </font>
         </Label>
+      <Button fx:id="returnButton" layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#PlayBlossomGame" prefHeight="51.0" prefWidth="50.0" stylesheets="@../css/button.css" />
     </children>
 </AnchorPane>
