@@ -6,3 +6,7 @@
     -fx-background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
     -fx-background-position: center center; /* Căn giữa hình ảnh */
 }
+
+.AnchorPane {
+    -fx-background-image: url('../backForDic.png');
+}

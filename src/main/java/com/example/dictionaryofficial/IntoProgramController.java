@@ -89,6 +89,7 @@ public class IntoProgramController extends BaseController implements Initializab
     @FXML
     private Button correctionButton;
 
+    private static ArrayList<String> historyContainer = new ArrayList<>();
     private Vector<String> settingFont ;
     public static TextField static_searchField ;
 
@@ -205,9 +206,11 @@ public class IntoProgramController extends BaseController implements Initializab
     public void initHistory() throws IOException {
         File file = new File("database/history.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
+        historyContainer = new ArrayList<>();
         String word = "";
         while ((word = br.readLine()) != null) {
             historyList.getItems().add(word);
+            historyContainer.add(word);
         }
         br.close();
     }
@@ -216,11 +219,14 @@ public class IntoProgramController extends BaseController implements Initializab
         FileWriter fw = null;
         try {
             fw = new FileWriter("database/history.txt");
-            for (String s : historyList.getItems()) {
+            for (String s : historyContainer) {
+                System.out.println(s);
                 fw.write(s + '\n');
             }
         } catch (Exception e) {
-            System.out.println("Cant write file!");
+            System.out.println("Cant write file");
+            System.out.println(e.getMessage());
+
         } finally {
             if (fw != null) fw.close();
         }
@@ -230,15 +236,19 @@ public class IntoProgramController extends BaseController implements Initializab
         for (int i = 0; i < historyList.getItems().size(); i++) {
             if (historyList.getItems().get(i).equals(word)) {
                 historyList.getItems().remove(i);
+                historyContainer.remove(i);
                 break;
             }
         }
 
         while (historyList.getItems().size() >= 50) {
             historyList.getItems().remove(49);
+            historyContainer.remove(49);
         }
 
         historyList.getItems().add(0, word);
+        historyContainer.add(0, word);
+        System.out.println(historyContainer.size());
     }
 
     public void resetHistory() {

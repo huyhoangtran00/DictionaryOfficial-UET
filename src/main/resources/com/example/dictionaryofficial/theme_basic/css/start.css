@@ -1,4 +1,5 @@
 .root {
+    -fx-background-image: url('../backForDic.png');
     -fx-background-color: #F0FFF0;
     -fx-border-width: 0; /* Loại bỏ viền của nút */
     -fx-border-color: transparent;
